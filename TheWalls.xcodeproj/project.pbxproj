@@ -10,11 +10,12 @@
 		999CF7701B2D19A5006A0324 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF76F1B2D19A5006A0324 /* main.m */; };
 		999CF7731B2D19A5006A0324 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF7721B2D19A5006A0324 /* AppDelegate.m */; };
 		999CF7761B2D19A5006A0324 /* TheWalls.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 999CF7741B2D19A5006A0324 /* TheWalls.xcdatamodeld */; };
-		999CF7791B2D19A5006A0324 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF7781B2D19A5006A0324 /* ViewController.m */; };
+		999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF7781B2D19A5006A0324 /* RootViewController.m */; };
 		999CF77C1B2D19A5006A0324 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999CF77A1B2D19A5006A0324 /* Main.storyboard */; };
 		999CF77E1B2D19A5006A0324 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999CF77D1B2D19A5006A0324 /* Images.xcassets */; };
 		999CF7811B2D19A5006A0324 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999CF77F1B2D19A5006A0324 /* LaunchScreen.xib */; };
 		999CF78D1B2D19A5006A0324 /* TheWallsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF78C1B2D19A5006A0324 /* TheWallsTests.m */; };
+		999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF7991B2D2AAC006A0324 /* UIColor+CustomColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +35,16 @@
 		999CF7711B2D19A5006A0324 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		999CF7721B2D19A5006A0324 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		999CF7751B2D19A5006A0324 /* TheWalls.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheWalls.xcdatamodel; sourceTree = "<group>"; };
-		999CF7771B2D19A5006A0324 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		999CF7781B2D19A5006A0324 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		999CF7771B2D19A5006A0324 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		999CF7781B2D19A5006A0324 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		999CF77B1B2D19A5006A0324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		999CF77D1B2D19A5006A0324 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		999CF7801B2D19A5006A0324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		999CF7861B2D19A5006A0324 /* TheWallsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheWallsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		999CF78B1B2D19A5006A0324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		999CF78C1B2D19A5006A0324 /* TheWallsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheWallsTests.m; sourceTree = "<group>"; };
+		999CF7981B2D2AAC006A0324 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
+		999CF7991B2D2AAC006A0324 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +88,10 @@
 			children = (
 				999CF7711B2D19A5006A0324 /* AppDelegate.h */,
 				999CF7721B2D19A5006A0324 /* AppDelegate.m */,
-				999CF7771B2D19A5006A0324 /* ViewController.h */,
-				999CF7781B2D19A5006A0324 /* ViewController.m */,
+				999CF7771B2D19A5006A0324 /* RootViewController.h */,
+				999CF7781B2D19A5006A0324 /* RootViewController.m */,
+				999CF7981B2D2AAC006A0324 /* UIColor+CustomColors.h */,
+				999CF7991B2D2AAC006A0324 /* UIColor+CustomColors.m */,
 				999CF77A1B2D19A5006A0324 /* Main.storyboard */,
 				999CF77D1B2D19A5006A0324 /* Images.xcassets */,
 				999CF77F1B2D19A5006A0324 /* LaunchScreen.xib */,
@@ -224,7 +229,8 @@
 			files = (
 				999CF7761B2D19A5006A0324 /* TheWalls.xcdatamodeld in Sources */,
 				999CF7731B2D19A5006A0324 /* AppDelegate.m in Sources */,
-				999CF7791B2D19A5006A0324 /* ViewController.m in Sources */,
+				999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */,
+				999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */,
 				999CF7701B2D19A5006A0324 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +428,7 @@
 				999CF7921B2D19A5006A0324 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		999CF7931B2D19A5006A0324 /* Build configuration list for PBXNativeTarget "TheWallsTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +437,7 @@
 				999CF7951B2D19A5006A0324 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
