@@ -9,10 +9,24 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triad" translatesAutoresizingMaskIntoConstraints="NO" id="IA2-Ny-WoD">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="IA2-Ny-WoD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GwN-Di-QiT"/>
+                <constraint firstItem="IA2-Ny-WoD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Vzg-EK-cqN"/>
+                <constraint firstAttribute="trailing" secondItem="IA2-Ny-WoD" secondAttribute="trailing" id="hAA-lg-AjL"/>
+                <constraint firstAttribute="bottom" secondItem="IA2-Ny-WoD" secondAttribute="bottom" id="qmx-xC-qW9"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="triad" width="236" height="65"/>
+    </resources>
 </document>

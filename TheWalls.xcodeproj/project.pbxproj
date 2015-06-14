@@ -16,6 +16,7 @@
 		999CF7811B2D19A5006A0324 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999CF77F1B2D19A5006A0324 /* LaunchScreen.xib */; };
 		999CF78D1B2D19A5006A0324 /* TheWallsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF78C1B2D19A5006A0324 /* TheWallsTests.m */; };
 		999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF7991B2D2AAC006A0324 /* UIColor+CustomColors.m */; };
+		999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF79F1B2E05AB006A0324 /* SplashViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		999CF78C1B2D19A5006A0324 /* TheWallsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheWallsTests.m; sourceTree = "<group>"; };
 		999CF7981B2D2AAC006A0324 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
 		999CF7991B2D2AAC006A0324 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
+		999CF79E1B2E05AB006A0324 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		999CF79F1B2E05AB006A0324 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +91,10 @@
 			children = (
 				999CF7711B2D19A5006A0324 /* AppDelegate.h */,
 				999CF7721B2D19A5006A0324 /* AppDelegate.m */,
-				999CF7771B2D19A5006A0324 /* RootViewController.h */,
-				999CF7781B2D19A5006A0324 /* RootViewController.m */,
-				999CF7981B2D2AAC006A0324 /* UIColor+CustomColors.h */,
-				999CF7991B2D2AAC006A0324 /* UIColor+CustomColors.m */,
+				999CF79E1B2E05AB006A0324 /* SplashViewController.h */,
+				999CF79F1B2E05AB006A0324 /* SplashViewController.m */,
+				999CF7A21B2E05C0006A0324 /* RootViewController */,
+				999CF7A11B2E05B6006A0324 /* Custom Colors */,
 				999CF77A1B2D19A5006A0324 /* Main.storyboard */,
 				999CF77D1B2D19A5006A0324 /* Images.xcassets */,
 				999CF77F1B2D19A5006A0324 /* LaunchScreen.xib */,
@@ -125,6 +128,24 @@
 				999CF78B1B2D19A5006A0324 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		999CF7A11B2E05B6006A0324 /* Custom Colors */ = {
+			isa = PBXGroup;
+			children = (
+				999CF7981B2D2AAC006A0324 /* UIColor+CustomColors.h */,
+				999CF7991B2D2AAC006A0324 /* UIColor+CustomColors.m */,
+			);
+			name = "Custom Colors";
+			sourceTree = "<group>";
+		};
+		999CF7A21B2E05C0006A0324 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				999CF7771B2D19A5006A0324 /* RootViewController.h */,
+				999CF7781B2D19A5006A0324 /* RootViewController.m */,
+			);
+			name = RootViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +253,7 @@
 				999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */,
 				999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */,
 				999CF7701B2D19A5006A0324 /* main.m in Sources */,
+				999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

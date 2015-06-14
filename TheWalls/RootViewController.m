@@ -28,8 +28,8 @@
     self.areButtonsFanned = NO;
     self.view.backgroundColor = [UIColor paperColor];
     self.dynamicAnimator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
-    self.soundButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor limeColor]];
-    self.photoButton = [self createButtonWithTitle:@"P" chooseColor:[UIColor hamlindigoColor]];
+    self.soundButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor hamlindigoColor]];
+    self.photoButton = [self createButtonWithTitle:@"P" chooseColor:[UIColor limeColor]];
     self.drawButton =  [self createButtonWithTitle:@"D" chooseColor:[UIColor peonyColor]];
     self.mainButton =  [self createButtonWithTitle:@"M" chooseColor:[UIColor peonyColor]];
 
@@ -116,6 +116,7 @@
 }
 
 #pragma mark - Programmatic buttons
+//Need to subclass each button - draw, photo, audio
 
 -(UIButton *)createButtonWithTitle:(NSString *)title chooseColor:(UIColor *)color {
     CGRect frame = self.view.frame;
@@ -146,6 +147,7 @@
 }
 
 - (void)switchMainButtonState {
+    //trying to change the state when pressed
 //    [self.mainButton.layer setBackgroundColor:(__bridge CGColorRef)([UIColor clearColor])];
     [self.mainButton.layer setBorderColor:(__bridge CGColorRef)([UIColor peonyColor])];
     [self.mainButton.layer setBorderWidth:5.0];
