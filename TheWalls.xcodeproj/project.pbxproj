@@ -32,6 +32,8 @@
 		7EAAE4731B2F597800814E77 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE46B1B2F597800814E77 /* FBSDKLoginKit.framework */; };
 		7EAAE4741B2F597800814E77 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE46C1B2F597800814E77 /* FBSDKMessengerShareKit.framework */; };
 		7EAAE4751B2F597800814E77 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE46D1B2F597800814E77 /* FBSDKShareKit.framework */; };
+		7EAAE47A1B2F646C00814E77 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE4791B2F646C00814E77 /* LoginViewController.m */; };
+		7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */; };
 		999B3A851B2F31CA002BC1D6 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999B3A841B2F31CA002BC1D6 /* Onboarding.storyboard */; };
 		999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */; };
 		999B3A911B2F352C002BC1D6 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B3A901B2F352C002BC1D6 /* StoryboardManager.swift */; };
@@ -84,6 +86,10 @@
 		7EAAE46B1B2F597800814E77 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		7EAAE46C1B2F597800814E77 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = ../../FacebookSDK/FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		7EAAE46D1B2F597800814E77 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		7EAAE4781B2F646C00814E77 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		7EAAE4791B2F646C00814E77 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		7EAAE47B1B2F6D3700814E77 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		999B3A841B2F31CA002BC1D6 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PrimaryView.storyboard; sourceTree = "<group>"; };
 		999B3A8F1B2F352C002BC1D6 /* TheWalls-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheWalls-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -203,6 +209,10 @@
 			isa = PBXGroup;
 			children = (
 				999B3A841B2F31CA002BC1D6 /* Onboarding.storyboard */,
+				7EAAE47B1B2F6D3700814E77 /* HomeViewController.h */,
+				7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */,
+				7EAAE4781B2F646C00814E77 /* LoginViewController.h */,
+				7EAAE4791B2F646C00814E77 /* LoginViewController.m */,
 				999B3A861B2F31D8002BC1D6 /* SplashViewController */,
 			);
 			name = Onboarding;
@@ -421,10 +431,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EAAE47A1B2F646C00814E77 /* LoginViewController.m in Sources */,
 				999CF7761B2D19A5006A0324 /* TheWalls.xcdatamodeld in Sources */,
 				999B3A911B2F352C002BC1D6 /* StoryboardManager.swift in Sources */,
 				999CF7731B2D19A5006A0324 /* AppDelegate.m in Sources */,
 				999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */,
+				7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */,
 				999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */,
 				999CF7701B2D19A5006A0324 /* main.m in Sources */,
 				999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */,
