@@ -10,9 +10,11 @@
 #import "UIColor+CustomColors.h"
 
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface RootViewController () <MKMapViewDelegate>
+@interface RootViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 @property CLLocationManager *locationManager;
+@property CLLocation *userLocation;
 @property MKMapView *primaryMapView;
 
 @property UIDynamicAnimator *dynamicAnimator;
@@ -30,12 +32,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    //UI setup
     self.view.backgroundColor = [UIColor paperColor];
 
     //Map
-    [self initializeMap];
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    [self.locationManager requestWhenInUseAuthorization];
+    self.primaryMapView.showsUserLocation = YES;
+    [self.locationManager startUpdatingLocation];
     [self locationManagerInit];
-
+    [self initializeMap];
 
     //Buttons - to subclass
     self.areButtonsFanned = NO;
@@ -59,45 +67,59 @@
 
 #pragma mark - Map & Locations
 
+- (void)locationManagerInit {
+
+}
+
 - (void)initializeMap {
     self.primaryMapView = [[MKMapView alloc]initWithFrame:self.view.frame];
     [self.view addSubview:self.primaryMapView];
 }
 
--(void)locationManagerInit {
-    self.locationManager = [CLLocationManager new];
-    [self.locationManager requestWhenInUseAuthorization];
-    self.primaryMapView.showsUserLocation = YES;
+
+
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"%@",error);
 }
 
-
-
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    for (CLLocation *location in locations) {
+        if (location.verticalAccuracy < 1000 && location.horizontalAccuracy < 1000) {
+            //Reverse GeoCode would go here
+            [self.locationManager stopUpdatingLocation];
+            NSLog(@"3");
+        }
+        NSLog(@"2");
+    }
+    NSLog(@"1");
+}
 
 #pragma mark - Swipe Gestures
 
 //Initializations
--(void)rightSwipeGestureInitialization {
+- (void)rightSwipeGestureInitialization {
     UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
     rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     [rightRecognizer setNumberOfTouchesRequired:1];
     [self.view addGestureRecognizer:rightRecognizer];
 }
 
--(void)leftSwipeGestureInitialization {
+- (void)leftSwipeGestureInitialization {
     UISwipeGestureRecognizer *leftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeHandle:)];
     leftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
     [leftRecognizer setNumberOfTouchesRequired:1];
     [self.view addGestureRecognizer:leftRecognizer];
 }
 
--(void)upSwipeGestureInitialization {
+- (void)upSwipeGestureInitialization {
     UISwipeGestureRecognizer *upRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(upSwipeHandle:)];
     upRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
     [upRecognizer setNumberOfTouchesRequired:1];
     [self.view addGestureRecognizer:upRecognizer];
 }
 
--(void)downSwipeGestureInitialization {
+- (void)downSwipeGestureInitialization {
     UISwipeGestureRecognizer *downRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(downSwipeHandle:)];
     downRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
     [downRecognizer setNumberOfTouchesRequired:1];
@@ -145,7 +167,7 @@
 #pragma mark - Programmatic buttons
 //Need to subclass each button - draw, photo, audio
 
--(UIButton *)createButtonWithTitle:(NSString *)title chooseColor:(UIColor *)color {
+- (UIButton *)createButtonWithTitle:(NSString *)title chooseColor:(UIColor *)color {
     CGRect frame = self.view.frame;
     self.diameter = 65;
     self.gap = 20;
@@ -161,8 +183,7 @@
     return button;
 }
 
-
--(void)fanButtons:(id)sender{
+- (void)fanButtons:(id)sender{
     [self.dynamicAnimator removeAllBehaviors];
     if (self.areButtonsFanned) {
         [self fanIn];
@@ -197,7 +218,7 @@
     [self.dynamicAnimator addBehavior:snapBehavior];
 }
 
--(void)fanIn {
+- (void)fanIn {
     UISnapBehavior *snapBehavior;
 
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.soundButton snapToPoint:self.mainButton.center];
@@ -209,12 +230,5 @@
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.drawButton snapToPoint:self.mainButton.center];
     [self.dynamicAnimator addBehavior:snapBehavior];
 }
-
-
-
-
-
-
-
 
 @end

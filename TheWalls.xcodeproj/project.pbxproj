@@ -175,7 +175,7 @@
 			name = StoryboardManager;
 			sourceTree = "<group>";
 		};
-		999CF7611B2D19A5006A0324 = {
+		999B3A981B2F5E37002BC1D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				999B3A961B2F4D89002BC1D6 /* MapKit.framework */,
@@ -196,6 +196,14 @@
 				7EAAE45D1B2F4F2200814E77 /* ParseFacebookUtils.framework */,
 				7EAAE45E1B2F4F2200814E77 /* ParseFacebookUtilsV4.framework */,
 				7EAAE45F1B2F4F2200814E77 /* ParseUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		999CF7611B2D19A5006A0324 = {
+			isa = PBXGroup;
+			children = (
+				999B3A981B2F5E37002BC1D6 /* Frameworks */,
 				999CF76C1B2D19A5006A0324 /* TheWalls */,
 				999CF7891B2D19A5006A0324 /* TheWallsTests */,
 				999CF76B1B2D19A5006A0324 /* Products */,
