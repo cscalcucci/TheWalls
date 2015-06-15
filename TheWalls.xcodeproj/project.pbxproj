@@ -183,7 +183,6 @@
 		7EAAE4771B2F5BCD00814E77 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
-				7EAAE45A1B2F4F2200814E77 /* Bolts.framework */,
 				7EAAE45B1B2F4F2200814E77 /* Parse.framework */,
 				7EAAE45C1B2F4F2200814E77 /* ParseCrashReporting.framework */,
 				7EAAE45D1B2F4F2200814E77 /* ParseFacebookUtils.framework */,
@@ -246,13 +245,13 @@
 		999B3A981B2F5E37002BC1D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EAAE4581B2F3C8900814E77 /* libsqlite3.dylib */,
+				7EAAE4561B2F3C7900814E77 /* libz.dylib */,
 				999B3A9A1B2F6C2E002BC1D6 /* Fabric.framework */,
 				999B3A9B1B2F6C2E002BC1D6 /* Crashlytics.framework */,
 				7EAAE4771B2F5BCD00814E77 /* Parse */,
 				7EAAE4761B2F5BB300814E77 /* Facebook */,
 				999B3A961B2F4D89002BC1D6 /* MapKit.framework */,
-				7EAAE4581B2F3C8900814E77 /* libsqlite3.dylib */,
-				7EAAE4561B2F3C7900814E77 /* libz.dylib */,
 				7EAAE4541B2F3C6A00814E77 /* SystemConfiguration.framework */,
 				7EAAE4521B2F3C5E00814E77 /* StoreKit.framework */,
 				7EAAE4501B2F3C5400814E77 /* Security.framework */,
@@ -263,11 +262,6 @@
 				7EAAE4461B2F3C1E00814E77 /* CFNetwork.framework */,
 				7EAAE4441B2F3C1500814E77 /* AudioToolbox.framework */,
 				7EAAE45A1B2F4F2200814E77 /* Bolts.framework */,
-				7EAAE45B1B2F4F2200814E77 /* Parse.framework */,
-				7EAAE45C1B2F4F2200814E77 /* ParseCrashReporting.framework */,
-				7EAAE45D1B2F4F2200814E77 /* ParseFacebookUtils.framework */,
-				7EAAE45E1B2F4F2200814E77 /* ParseFacebookUtilsV4.framework */,
-				7EAAE45F1B2F4F2200814E77 /* ParseUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
