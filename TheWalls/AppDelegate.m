@@ -11,7 +11,6 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
->>>>>>> b7e8de95eb758c0e3dd7feee3e7fafa268e565dc
 
 @interface AppDelegate ()
 

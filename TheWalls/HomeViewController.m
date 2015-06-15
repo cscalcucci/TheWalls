@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import <Parse/Parse.h>
+#import "LoginViewController.h"
 
 @interface HomeViewController ()
 
@@ -16,7 +18,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    if ([PFUser currentUser] == nil) {
+        [self performSegueWithIdentifier:@"LoginSegue" sender:self];
+    }
+}
+
+-(void)bringUpLoginViewController {
+
+    NSLog(@"No current user, loading login screen.");
+
+
 }
 
 @end
