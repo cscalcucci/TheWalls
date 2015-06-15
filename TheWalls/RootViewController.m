@@ -9,7 +9,12 @@
 #import "RootViewController.h"
 #import "UIColor+CustomColors.h"
 
-@interface RootViewController ()
+#import <MapKit/MapKit.h>
+
+@interface RootViewController () <MKMapViewDelegate>
+@property CLLocationManager *locationManager;
+@property MKMapView *primaryMapView;
+
 @property UIDynamicAnimator *dynamicAnimator;
 @property UIButton *soundButton;
 @property UIButton *photoButton;
@@ -25,26 +30,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.areButtonsFanned = NO;
     self.view.backgroundColor = [UIColor paperColor];
+
+    //Map
+    [self initializeMap];
+    [self locationManagerInit];
+
+
+    //Buttons - to subclass
+    self.areButtonsFanned = NO;
     self.dynamicAnimator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
     self.soundButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor hamlindigoColor]];
     self.photoButton = [self createButtonWithTitle:@"P" chooseColor:[UIColor limeColor]];
     self.drawButton =  [self createButtonWithTitle:@"D" chooseColor:[UIColor peonyColor]];
     self.mainButton =  [self createButtonWithTitle:@"M" chooseColor:[UIColor peonyColor]];
-
     [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
 
+    //Future gestures stuff
     [self leftSwipeGestureInitialization];
     [self upSwipeGestureInitialization];
     [self downSwipeGestureInitialization];
-
     [self deviceOrientationNotificationInitialization];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
 
 }
+
+#pragma mark - Map & Locations
+
+- (void)initializeMap {
+    self.primaryMapView = [[MKMapView alloc]initWithFrame:self.view.frame];
+    [self.view addSubview:self.primaryMapView];
+}
+
+-(void)locationManagerInit {
+    self.locationManager = [CLLocationManager new];
+    [self.locationManager requestWhenInUseAuthorization];
+    self.primaryMapView.showsUserLocation = YES;
+}
+
+
+
 
 #pragma mark - Swipe Gestures
 
