@@ -106,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */,
+				999CF7A21B2E05C0006A0324 /* RootViewController */,
 			);
 			name = Primary;
 			sourceTree = "<group>";
@@ -146,7 +147,6 @@
 				999B3A951B2F36D7002BC1D6 /* StoryboardManager */,
 				999B3A881B2F3211002BC1D6 /* Onboarding */,
 				999B3A8B1B2F3252002BC1D6 /* Primary */,
-				999CF7A21B2E05C0006A0324 /* RootViewController */,
 				999CF77D1B2D19A5006A0324 /* Images.xcassets */,
 				999CF77F1B2D19A5006A0324 /* LaunchScreen.xib */,
 				999CF7741B2D19A5006A0324 /* TheWalls.xcdatamodeld */,
