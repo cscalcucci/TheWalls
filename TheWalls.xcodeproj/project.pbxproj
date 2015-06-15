@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		999B3A851B2F31CA002BC1D6 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999B3A841B2F31CA002BC1D6 /* Onboarding.storyboard */; };
+		999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */; };
+		999B3A911B2F352C002BC1D6 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B3A901B2F352C002BC1D6 /* StoryboardManager.swift */; };
+		999B3A941B2F3632002BC1D6 /* PrimaryMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999B3A931B2F3632002BC1D6 /* PrimaryMapViewController.m */; };
 		999CF7701B2D19A5006A0324 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF76F1B2D19A5006A0324 /* main.m */; };
 		999CF7731B2D19A5006A0324 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF7721B2D19A5006A0324 /* AppDelegate.m */; };
 		999CF7761B2D19A5006A0324 /* TheWalls.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 999CF7741B2D19A5006A0324 /* TheWalls.xcdatamodeld */; };
@@ -30,6 +34,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		999B3A841B2F31CA002BC1D6 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PrimaryView.storyboard; sourceTree = "<group>"; };
+		999B3A8F1B2F352C002BC1D6 /* TheWalls-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheWalls-Bridging-Header.h"; sourceTree = "<group>"; };
+		999B3A901B2F352C002BC1D6 /* StoryboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardManager.swift; sourceTree = "<group>"; };
+		999B3A921B2F3632002BC1D6 /* PrimaryMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimaryMapViewController.h; sourceTree = "<group>"; };
+		999B3A931B2F3632002BC1D6 /* PrimaryMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimaryMapViewController.m; sourceTree = "<group>"; };
 		999CF76A1B2D19A5006A0324 /* TheWalls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheWalls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		999CF76E1B2D19A5006A0324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		999CF76F1B2D19A5006A0324 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,6 +78,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		999B3A861B2F31D8002BC1D6 /* SplashViewController */ = {
+			isa = PBXGroup;
+			children = (
+				999CF79E1B2E05AB006A0324 /* SplashViewController.h */,
+				999CF79F1B2E05AB006A0324 /* SplashViewController.m */,
+			);
+			name = SplashViewController;
+			sourceTree = "<group>";
+		};
+		999B3A871B2F31EF002BC1D6 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				999CF7711B2D19A5006A0324 /* AppDelegate.h */,
+				999CF7721B2D19A5006A0324 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		999B3A881B2F3211002BC1D6 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				999B3A841B2F31CA002BC1D6 /* Onboarding.storyboard */,
+				999B3A861B2F31D8002BC1D6 /* SplashViewController */,
+				999CF7A21B2E05C0006A0324 /* RootViewController */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		999B3A8B1B2F3252002BC1D6 /* Primary */ = {
+			isa = PBXGroup;
+			children = (
+				999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */,
+				999B3A921B2F3632002BC1D6 /* PrimaryMapViewController.h */,
+				999B3A931B2F3632002BC1D6 /* PrimaryMapViewController.m */,
+			);
+			name = Primary;
+			sourceTree = "<group>";
+		};
+		999B3A951B2F36D7002BC1D6 /* StoryboardManager */ = {
+			isa = PBXGroup;
+			children = (
+				999CF77A1B2D19A5006A0324 /* Main.storyboard */,
+				999B3A901B2F352C002BC1D6 /* StoryboardManager.swift */,
+				999B3A8F1B2F352C002BC1D6 /* TheWalls-Bridging-Header.h */,
+			);
+			name = StoryboardManager;
+			sourceTree = "<group>";
+		};
 		999CF7611B2D19A5006A0324 = {
 			isa = PBXGroup;
 			children = (
@@ -89,13 +147,11 @@
 		999CF76C1B2D19A5006A0324 /* TheWalls */ = {
 			isa = PBXGroup;
 			children = (
-				999CF7711B2D19A5006A0324 /* AppDelegate.h */,
-				999CF7721B2D19A5006A0324 /* AppDelegate.m */,
-				999CF79E1B2E05AB006A0324 /* SplashViewController.h */,
-				999CF79F1B2E05AB006A0324 /* SplashViewController.m */,
-				999CF7A21B2E05C0006A0324 /* RootViewController */,
 				999CF7A11B2E05B6006A0324 /* Custom Colors */,
-				999CF77A1B2D19A5006A0324 /* Main.storyboard */,
+				999B3A871B2F31EF002BC1D6 /* AppDelegate */,
+				999B3A951B2F36D7002BC1D6 /* StoryboardManager */,
+				999B3A881B2F3211002BC1D6 /* Onboarding */,
+				999B3A8B1B2F3252002BC1D6 /* Primary */,
 				999CF77D1B2D19A5006A0324 /* Images.xcassets */,
 				999CF77F1B2D19A5006A0324 /* LaunchScreen.xib */,
 				999CF7741B2D19A5006A0324 /* TheWalls.xcdatamodeld */,
@@ -228,9 +284,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */,
 				999CF77C1B2D19A5006A0324 /* Main.storyboard in Resources */,
 				999CF7811B2D19A5006A0324 /* LaunchScreen.xib in Resources */,
 				999CF77E1B2D19A5006A0324 /* Images.xcassets in Resources */,
+				999B3A851B2F31CA002BC1D6 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,10 +307,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				999CF7761B2D19A5006A0324 /* TheWalls.xcdatamodeld in Sources */,
+				999B3A911B2F352C002BC1D6 /* StoryboardManager.swift in Sources */,
 				999CF7731B2D19A5006A0324 /* AppDelegate.m in Sources */,
 				999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */,
 				999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */,
 				999CF7701B2D19A5006A0324 /* main.m in Sources */,
+				999B3A941B2F3632002BC1D6 /* PrimaryMapViewController.m in Sources */,
 				999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,9 +441,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TheWalls/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheWalls/TheWalls-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -391,9 +454,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TheWalls/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheWalls/TheWalls-Bridging-Header.h";
 			};
 			name = Release;
 		};
