@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Primary Map View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="Hmx-8G-zBc">
             <objects>
-                <viewController storyboardIdentifier="PrimaryMapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ioJ-O0-tGR" customClass="PrimaryMapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RootViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ioJ-O0-tGR" customClass="RootViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fjf-7j-fjq"/>
                         <viewControllerLayoutGuide type="bottom" id="pr2-Ko-uZt"/>
@@ -20,7 +20,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kow-ta-eO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="582" y="375"/>
+            <point key="canvasLocation" x="479" y="375"/>
         </scene>
     </scenes>
 </document>

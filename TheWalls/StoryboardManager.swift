@@ -28,7 +28,7 @@ class WelcomeViewController: UIViewController {
     @IBAction func onPrimaryButtonPressed(sender: UIButton)
     {
         var storyboard = UIStoryboard(name: "PrimaryView", bundle: nil)
-        var controller = storyboard.instantiateViewControllerWithIdentifier("PrimaryMapViewController") as! UIViewController
+        var controller = storyboard.instantiateViewControllerWithIdentifier("RootViewController") as! UIViewController
 
         self.presentViewController(controller, animated: true, completion: nil)
     }
