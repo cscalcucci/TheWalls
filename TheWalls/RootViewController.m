@@ -14,7 +14,7 @@
 
 @interface RootViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 @property CLLocationManager *locationManager;
-@property CLLocation *userLocation;
+//@property MKUserLocation *userLocation;
 @property MKMapView *primaryMapView;
 
 @property UIDynamicAnimator *dynamicAnimator;
@@ -37,11 +37,6 @@
     self.view.backgroundColor = [UIColor paperColor];
 
     //Map
-    self.locationManager = [CLLocationManager new];
-    self.locationManager.delegate = self;
-    [self.locationManager requestWhenInUseAuthorization];
-    self.primaryMapView.showsUserLocation = YES;
-    [self.locationManager startUpdatingLocation];
     [self locationManagerInit];
     [self initializeMap];
 
@@ -68,15 +63,22 @@
 #pragma mark - Map & Locations
 
 - (void)locationManagerInit {
+    self.locationManager = [CLLocationManager new];
+    [self.locationManager requestWhenInUseAuthorization];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.delegate = self;
 
+    [self.locationManager startUpdatingLocation];
 }
 
 - (void)initializeMap {
     self.primaryMapView = [[MKMapView alloc]initWithFrame:self.view.frame];
+    self.primaryMapView.showsUserLocation = YES;
+    self.primaryMapView.delegate = self;
+
     [self.view addSubview:self.primaryMapView];
 }
-
-
 
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
