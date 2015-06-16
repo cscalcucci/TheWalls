@@ -49,29 +49,30 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W15-7R-gRk">
-                                <rect key="frame" x="278" y="144" width="44" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poU-ev-yDW">
+                                <rect key="frame" x="278" y="143" width="44" height="30"/>
                                 <state key="normal" title="logout">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onLogoutTapped:" destination="wRe-9J-1Hb" eventType="touchUpInside" id="mGc-Va-fBg"/>
+                                    <segue destination="sAp-yN-Zzu" kind="presentation" id="GTT-Rf-ikH"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cbk-Ax-aGL" firstAttribute="centerX" secondItem="H9h-Cb-bCh" secondAttribute="centerX" id="CF7-7g-9Zb"/>
+                            <constraint firstItem="poU-ev-yDW" firstAttribute="top" secondItem="cbk-Ax-aGL" secondAttribute="bottom" constant="30" id="Cgk-Wa-qwG"/>
                             <constraint firstItem="cbk-Ax-aGL" firstAttribute="top" secondItem="3HF-wM-ci2" secondAttribute="bottom" constant="72" id="G76-ab-phh"/>
                             <constraint firstAttribute="centerY" secondItem="H9h-Cb-bCh" secondAttribute="centerY" id="OOs-hY-CMY"/>
-                            <constraint firstItem="W15-7R-gRk" firstAttribute="centerX" secondItem="cbk-Ax-aGL" secondAttribute="centerX" id="buW-7X-K5q"/>
-                            <constraint firstItem="W15-7R-gRk" firstAttribute="top" secondItem="cbk-Ax-aGL" secondAttribute="bottom" constant="31" id="dxZ-lh-l6p"/>
-                            <constraint firstItem="W15-7R-gRk" firstAttribute="top" secondItem="Tpd-24-mn2" secondAttribute="top" constant="144" id="jQe-MV-heV"/>
+                            <constraint firstItem="poU-ev-yDW" firstAttribute="centerX" secondItem="cbk-Ax-aGL" secondAttribute="centerX" id="SG6-TE-tVp"/>
                             <constraint firstAttribute="centerX" secondItem="H9h-Cb-bCh" secondAttribute="centerX" id="rVI-yN-ixz"/>
+                            <constraint firstItem="poU-ev-yDW" firstAttribute="top" secondItem="Tpd-24-mn2" secondAttribute="top" constant="143" id="wTN-zj-raU"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="currentUserLabel" destination="cbk-Ax-aGL" id="7Ty-vX-cWJ"/>
+                        <outlet property="currentUserLabel" destination="cbk-Ax-aGL" id="Y0L-ry-bKE"/>
+                        <outlet property="logoutButton" destination="poU-ev-yDW" id="sUu-Wn-Nn3"/>
                         <segue destination="sAp-yN-Zzu" kind="presentation" identifier="LoginSegue" id="O6j-ih-SyP"/>
                     </connections>
                 </viewController>
@@ -119,6 +120,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W15-7R-gRk">
+                                <rect key="frame" x="281" y="142" width="44" height="30"/>
+                                <state key="normal" title="logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onLogoutTapped:" destination="sAp-yN-Zzu" eventType="touchUpInside" id="o1k-9W-JnO"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8CX-Vy-7jR">
                                 <rect key="frame" x="204" y="206" width="193" height="30"/>
                                 <constraints>
@@ -130,6 +140,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8CX-Vy-7jR" firstAttribute="top" secondItem="W15-7R-gRk" secondAttribute="bottom" constant="34" id="9pa-Gw-lbu"/>
                             <constraint firstItem="siS-Jm-gma" firstAttribute="centerX" secondItem="XHk-tz-5FC" secondAttribute="centerX" id="AFt-ke-Cby"/>
                             <constraint firstItem="siS-Jm-gma" firstAttribute="centerX" secondItem="DAI-if-lCB" secondAttribute="centerX" id="C94-eF-Joq"/>
                             <constraint firstItem="8CX-Vy-7jR" firstAttribute="leading" secondItem="psX-th-XrW" secondAttribute="leading" id="Eo9-e2-Wxz"/>
@@ -141,12 +152,16 @@
                             <constraint firstItem="8CX-Vy-7jR" firstAttribute="top" secondItem="2pr-xh-bqm" secondAttribute="bottom" constant="186" id="iwQ-l4-l3b"/>
                             <constraint firstItem="siS-Jm-gma" firstAttribute="top" secondItem="DAI-if-lCB" secondAttribute="bottom" constant="3" id="lay-B8-hHq"/>
                             <constraint firstItem="DAI-if-lCB" firstAttribute="top" secondItem="XHk-tz-5FC" secondAttribute="bottom" constant="32" id="pU6-2R-wmC"/>
+                            <constraint firstItem="W15-7R-gRk" firstAttribute="leading" secondItem="siS-Jm-gma" secondAttribute="leading" id="v4G-ov-T1g"/>
                             <constraint firstItem="XHk-tz-5FC" firstAttribute="trailing" secondItem="psX-th-XrW" secondAttribute="trailing" id="yfx-qd-BN1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="psX-th-XrW" id="bhg-86-IWd"/>
+                        <outlet property="loginButton" destination="siS-Jm-gma" id="PRu-9Y-HMS"/>
+                        <outlet property="logoutButton" destination="W15-7R-gRk" id="1MD-VA-0n1"/>
                         <outlet property="passwordTextField" destination="XHk-tz-5FC" id="1a7-i4-87C"/>
+                        <outlet property="signupButton" destination="DAI-if-lCB" id="mnO-47-NEO"/>
                         <outlet property="usernameTextField" destination="8CX-Vy-7jR" id="Qa8-Z8-1xe"/>
                     </connections>
                 </viewController>
@@ -155,4 +170,7 @@
             <point key="canvasLocation" x="1192" y="265"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="O6j-ih-SyP"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -12,21 +12,36 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
+@property (weak, nonatomic) IBOutlet UIButton *signupButton;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property PFUser *currentUser;
 @end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    if ([PFUser currentUser] == nil) {
+        [self.logoutButton setHidden:YES];
+    } else {
+        [self.usernameTextField setHidden:YES];
+        [self.emailTextField setHidden:YES];
+        [self.passwordTextField setHidden:YES];
+        [self.signupButton setHidden:YES];
+        [self.loginButton setHidden:YES];
+    }
 }
 
 - (IBAction)onLoginTapped:(UIButton *)sender {
     [self userLogIn];
 }
-
 - (IBAction)onSignupTapped:(UIButton *)sender {
     [self userSignUp];
+}
+- (IBAction)onLogoutTapped:(UIButton *)sender {
+    [self userLogout];
 }
 
 -(void)userSignUp {
@@ -52,6 +67,11 @@
             [self showAlert:@"Login error" param2:error];
         }
     }];
+}
+
+- (void)userLogout {
+    [PFUser logOutInBackground];
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 -(void)showAlert:(NSString *)message param2:(NSError *)error {
