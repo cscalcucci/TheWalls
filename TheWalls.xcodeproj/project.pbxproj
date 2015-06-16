@@ -27,6 +27,7 @@
 		7EAAE47A1B2F646C00814E77 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE4791B2F646C00814E77 /* LoginViewController.m */; };
 		7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */; };
 		7EAAE4811B2FA08000814E77 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE4801B2FA08000814E77 /* FBSDKCoreKit.framework */; };
+		99894F7E1B2FB64E00367E67 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F7D1B2FB64E00367E67 /* Photo.m */; };
 		999B3A851B2F31CA002BC1D6 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999B3A841B2F31CA002BC1D6 /* Onboarding.storyboard */; };
 		999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */; };
 		999B3A911B2F352C002BC1D6 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B3A901B2F352C002BC1D6 /* StoryboardManager.swift */; };
@@ -78,6 +79,8 @@
 		7EAAE47B1B2F6D3700814E77 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		7EAAE4801B2FA08000814E77 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		99894F7C1B2FB64E00367E67 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		99894F7D1B2FB64E00367E67 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		999B3A841B2F31CA002BC1D6 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PrimaryView.storyboard; sourceTree = "<group>"; };
 		999B3A8F1B2F352C002BC1D6 /* TheWalls-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheWalls-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -162,6 +165,24 @@
 				7EAAE45F1B2F4F2200814E77 /* ParseUI.framework */,
 			);
 			name = Parse;
+			sourceTree = "<group>";
+		};
+		99894F7F1B2FB65300367E67 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				99894F7C1B2FB64E00367E67 /* Photo.h */,
+				99894F7D1B2FB64E00367E67 /* Photo.m */,
+			);
+			name = Photo;
+			sourceTree = "<group>";
+		};
+		99894F801B2FB72400367E67 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				999CF7A11B2E05B6006A0324 /* Custom Colors */,
+				99894F7F1B2FB65300367E67 /* Photo */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		999B3A861B2F31D8002BC1D6 /* SplashViewController */ = {
@@ -260,7 +281,7 @@
 		999CF76C1B2D19A5006A0324 /* TheWalls */ = {
 			isa = PBXGroup;
 			children = (
-				999CF7A11B2E05B6006A0324 /* Custom Colors */,
+				99894F801B2FB72400367E67 /* Models */,
 				999B3A871B2F31EF002BC1D6 /* AppDelegate */,
 				999B3A951B2F36D7002BC1D6 /* StoryboardManager */,
 				999B3A881B2F3211002BC1D6 /* Onboarding */,
@@ -444,6 +465,7 @@
 				7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */,
 				999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */,
 				999CF7701B2D19A5006A0324 /* main.m in Sources */,
+				99894F7E1B2FB64E00367E67 /* Photo.m in Sources */,
 				999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
