@@ -14,7 +14,8 @@
 #import "Photo.h"
 #import "CameraViewController.h"
 
-
+//Notification center - will probably have to refactor instead of passing location throughout the application
+static NSString * const currentLocationDidChangeNotification = @"currentLocationDidChangeNotification";
 
 @interface RootViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
@@ -22,6 +23,7 @@
 @property CLLocationManager *locationManager;
 @property CLLocation *userLocation;
 @property MKMapView *primaryMapView;
+
 
 //Photo properties
 @property UIImage *imageDidSelected;
