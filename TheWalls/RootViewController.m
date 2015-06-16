@@ -202,15 +202,12 @@
 - (void)fanOut {
     UISnapBehavior *snapBehavior;
     CGPoint point;
-
     point = CGPointMake(self.mainButton.frame.origin.x - (_diameter * 0.75), self.mainButton.frame.origin.y + (_diameter/2));
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.soundButton snapToPoint:point];
     [self.dynamicAnimator addBehavior:snapBehavior];
-
     point = CGPointMake(self.mainButton.frame.origin.x - (_diameter * 2), self.mainButton.frame.origin.y + (_diameter/2));
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.photoButton snapToPoint:point];
     [self.dynamicAnimator addBehavior:snapBehavior];
-
     point = CGPointMake(self.mainButton.frame.origin.x - (_diameter * 3.25), self.mainButton.frame.origin.y + (_diameter/2));
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.drawButton snapToPoint:point];
     [self.dynamicAnimator addBehavior:snapBehavior];
@@ -218,13 +215,10 @@
 
 - (void)fanIn {
     UISnapBehavior *snapBehavior;
-
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.soundButton snapToPoint:self.mainButton.center];
     [self.dynamicAnimator addBehavior:snapBehavior];
-
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.photoButton snapToPoint:self.mainButton.center];
     [self.dynamicAnimator addBehavior:snapBehavior];
-
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.drawButton snapToPoint:self.mainButton.center];
     [self.dynamicAnimator addBehavior:snapBehavior];
 }
