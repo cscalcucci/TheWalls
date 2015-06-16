@@ -26,7 +26,7 @@
 		7EAAE4651B2F4F2300814E77 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE45F1B2F4F2200814E77 /* ParseUI.framework */; };
 		7EAAE47A1B2F646C00814E77 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE4791B2F646C00814E77 /* LoginViewController.m */; };
 		7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */; };
-		7EAAE47F1B2F9E5A00814E77 /* FacebookSDK in Resources */ = {isa = PBXBuildFile; fileRef = 7EAAE47E1B2F9E5A00814E77 /* FacebookSDK */; };
+		7EAAE4811B2FA08000814E77 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE4801B2FA08000814E77 /* FBSDKCoreKit.framework */; };
 		999B3A851B2F31CA002BC1D6 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999B3A841B2F31CA002BC1D6 /* Onboarding.storyboard */; };
 		999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */; };
 		999B3A911B2F352C002BC1D6 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B3A901B2F352C002BC1D6 /* StoryboardManager.swift */; };
@@ -77,7 +77,7 @@
 		7EAAE4791B2F646C00814E77 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7EAAE47B1B2F6D3700814E77 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		7EAAE47E1B2F9E5A00814E77 /* FacebookSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FacebookSDK; sourceTree = "<group>"; };
+		7EAAE4801B2FA08000814E77 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		999B3A841B2F31CA002BC1D6 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PrimaryView.storyboard; sourceTree = "<group>"; };
 		999B3A8F1B2F352C002BC1D6 /* TheWalls-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheWalls-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -114,6 +114,7 @@
 				7EAAE4571B2F3C7900814E77 /* libz.dylib in Frameworks */,
 				999B3A971B2F4D89002BC1D6 /* MapKit.framework in Frameworks */,
 				999B3A9C1B2F6C2E002BC1D6 /* Fabric.framework in Frameworks */,
+				7EAAE4811B2FA08000814E77 /* FBSDKCoreKit.framework in Frameworks */,
 				7EAAE4551B2F3C6A00814E77 /* SystemConfiguration.framework in Frameworks */,
 				7EAAE4601B2F4F2200814E77 /* Bolts.framework in Frameworks */,
 				999B3A9D1B2F6C2E002BC1D6 /* Crashlytics.framework in Frameworks */,
@@ -146,7 +147,7 @@
 		7EAAE4761B2F5BB300814E77 /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
-				7EAAE47E1B2F9E5A00814E77 /* FacebookSDK */,
+				7EAAE4801B2FA08000814E77 /* FBSDKCoreKit.framework */,
 			);
 			name = Facebook;
 			sourceTree = "<group>";
@@ -400,7 +401,6 @@
 				999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */,
 				999CF77C1B2D19A5006A0324 /* Main.storyboard in Resources */,
 				999CF7811B2D19A5006A0324 /* LaunchScreen.xib in Resources */,
-				7EAAE47F1B2F9E5A00814E77 /* FacebookSDK in Resources */,
 				999CF77E1B2D19A5006A0324 /* Images.xcassets in Resources */,
 				999B3A851B2F31CA002BC1D6 /* Onboarding.storyboard in Resources */,
 			);
