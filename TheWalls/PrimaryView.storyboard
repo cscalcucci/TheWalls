@@ -38,8 +38,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="aNq-7W-GRM" kind="unwind" identifier="UnwindToRoot" unwindAction="unwindToRoot:" id="TFZ-q7-Kh7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBp-5X-VbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aNq-7W-GRM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1215" y="362"/>
         </scene>

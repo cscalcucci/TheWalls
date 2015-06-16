@@ -13,22 +13,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    //Setup background and imageview
     self.view.backgroundColor = [UIColor paperColor];
     self.imagePreview = [[UIImageView alloc]initWithFrame:self.view.frame];
+    self.imagePreview.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:self.imagePreview];
 
-    self.cameraButton = [self createButtonWithTitle:@"P" chooseColor:[UIColor peonyColor] andPosition:100];
+    //Setup UI buttons;
+    self.cameraButton = [self createButtonWithTitle:@"P" chooseColor:[UIColor peonyColor] andPosition:250];
     [self.cameraButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
 
-    self.saveButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor limeColor] andPosition:200];
-    [self.saveButton addTarget:self action:@selector(savePhoto) forControlEvents:UIControlEventTouchUpInside];
+    self.saveButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor limeColor] andPosition:100];
+    [self.saveButton addTarget:self action:@selector(savePhoto:) forControlEvents:UIControlEventTouchUpInside];
+
+    //Track if a picture has been taken, automatically call camera first time
+    self.photoTaken = NO;
+    [self takePhoto];
 
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-//    [self takePhoto];
 }
+
+#pragma mark - Take photo, save photo, unwind
 
 - (void)takePhoto {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -41,11 +49,14 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     self.imageDidSelected = info[UIImagePickerControllerEditedImage];
     self.imagePreview.image = self.imageDidSelected;
+    self.photoTaken = YES;
     [picker dismissViewControllerAnimated:YES completion:NULL];
 
 }
 
 - (IBAction)savePhoto:(id)sender {
+    if (self.photoTaken == YES) {
+    //Render and save image
     NSData *imageData = UIImagePNGRepresentation(self.imageDidSelected);
     Photo *newPhoto = [Photo new];
     newPhoto.imagePhoto = [PFFile fileWithName:@"image.png" data:imageData];
@@ -54,12 +65,11 @@
     newPhoto.longitude = self.userLocation.coordinate.longitude;
 //    [newPhoto setObject:[PFUser currentUser] forKey:@"createdBy"];
     [newPhoto saveInBackground];
+    }
+    //Perform segue back to RootViewController
+    [self performSegueWithIdentifier:@"UnwindToRoot" sender:self];
+
 }
-
-#pragma mark - Unwind
-
-
-
 
 #pragma mark - Create buttons
 //Need to subclass each button - draw, photo, audio
