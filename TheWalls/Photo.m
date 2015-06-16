@@ -10,9 +10,9 @@
 #import <Parse/PFObject+Subclass.h>
 
 @implementation Photo
-//@dynamic caption;
+@dynamic caption;
 @dynamic imagePhoto;
-@dynamic createdBy;
+//@dynamic createdBy;
 @dynamic latitude;
 @dynamic longitude;
 

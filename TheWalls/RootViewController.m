@@ -7,34 +7,6 @@
 //
 
 #import "RootViewController.h"
-#import "UIColor+CustomColors.h"
-#import "Photo.h"
-
-#import <MapKit/MapKit.h>
-#import <CoreLocation/CoreLocation.h>
-
-@interface RootViewController () <MKMapViewDelegate, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-
-//Location properties
-@property CLLocationManager *locationManager;
-@property CLLocation *userLocation;
-@property MKMapView *primaryMapView;
-
-//Photo properties
-@property UIImage *imageDidSelected;
-
-
-//Button properties
-@property UIDynamicAnimator *dynamicAnimator;
-@property UIButton *soundButton;
-@property UIButton *photoButton;
-@property UIButton *drawButton;
-@property UIButton *mainButton;
-@property BOOL areButtonsFanned;
-@property int diameter;
-@property int gap;
-
-@end
 
 @implementation RootViewController
 
@@ -56,7 +28,7 @@
     self.drawButton =  [self createButtonWithTitle:@"D" chooseColor:[UIColor peonyColor]];
     self.mainButton =  [self createButtonWithTitle:@"M" chooseColor:[UIColor peonyColor]];
     [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
-    [self.photoButton addTarget:self action:@selector(onPhotoButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.photoButton addTarget:self action:@selector(onCameraButtonPressed) forControlEvents:UIControlEventTouchUpInside];
 
     //Future gestures stuff
     [self leftSwipeGestureInitialization];
@@ -256,53 +228,30 @@
     [self.dynamicAnimator addBehavior:snapBehavior];
 }
 
-#pragma mark - Photo button
+#pragma mark - Photo button & segue
 
-- (void)onPhotoButtonPressed {
-    NSLog(@"Photo button pressed!");
-    [self takePhoto];
+- (void)onCameraButtonPressed {
+    [self performSegueWithIdentifier:@"RootToCamera" sender:self];
 }
 
-- (void)takePhoto {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    [self presentViewController:picker animated:YES completion:^{
-    }];
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"RootToCamera"]) {
+        CameraViewController *cameraVC = segue.destinationViewController;
+        cameraVC.userLocation = self.userLocation;
+    }
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    self.imageDidSelected = info[UIImagePickerControllerEditedImage];
-    //Size image with button
-    CGSize size = self.photoButton.frame.size;
-    UIGraphicsBeginImageContext(size);
-    [self.imageDidSelected drawInRect:CGRectMake(0, 0, size.width, size.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    self.photoButton.backgroundColor = [UIColor colorWithPatternImage:newImage];
-    //
-    [picker dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"Woot!");
-        [self savePhoto];
-    }];
+/*
+//Size image with button
+CGSize size = self.photoButton.frame.size;
+UIGraphicsBeginImageContext(size);
+[self.imageDidSelected drawInRect:CGRectMake(0, 0, size.width, size.height)];
+UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+UIGraphicsEndImageContext();
+self.photoButton.backgroundColor = [UIColor colorWithPatternImage:newImage];
+//
+*/
 
-}
-
-- (void) savePhoto{
-    NSData *imageData = UIImagePNGRepresentation(self.imageDidSelected);
-    Photo *newPhoto = [Photo new];
-    newPhoto.imagePhoto = [PFFile fileWithName:@"image.png" data:imageData];
-//    newPhoto.caption = @"Photo";
-    newPhoto.latitude = self.userLocation.coordinate.latitude;
-    newPhoto.longitude = self.userLocation.coordinate.longitude;
-    [newPhoto setObject:[PFUser currentUser] forKey:@"createdBy"];
-    [newPhoto saveInBackground];
-
-    //Reset
-//    self.photoPreview.image = nil;
-//    self.captionText.text = nil;
-}
 
 
 

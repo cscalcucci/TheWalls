@@ -13,9 +13,9 @@
 
 + (NSString *)parseClassName;
 
-//@property NSString *caption;
+@property NSString *caption;
 @property PFFile *imagePhoto;
-@property PFUser *createdBy;
+//@property PFUser *createdBy;
 @property NSInteger latitude;
 @property NSInteger longitude;
 
