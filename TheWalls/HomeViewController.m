@@ -32,6 +32,7 @@
     } else {
         self.currentUser = [PFUser currentUser];
         self.currentUserLabel.text = self.currentUser.email;
+
     }
 }
 
