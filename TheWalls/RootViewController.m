@@ -69,6 +69,7 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     for (CLLocation *location in locations) {
         if (location.verticalAccuracy < 1000 && location.horizontalAccuracy < 1000) {
+            [self reverseGeoCode:locations.firstObject];
             [self.locationManager stopUpdatingLocation];
             NSLog(@"3");
         }
@@ -238,8 +239,16 @@
     if ([segue.identifier isEqualToString:@"RootToCamera"]) {
         CameraViewController *cameraVC = segue.destinationViewController;
         cameraVC.userLocation = self.userLocation;
+        NSLog(@"%@", self.userLocation);
     }
 }
+
+#pragma mark - Unwind methods
+
+-(IBAction)unwindToHome:(UIStoryboardSegue *)segue {
+}
+
+
 
 /*
 //Size image with button

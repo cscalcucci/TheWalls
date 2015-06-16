@@ -13,15 +13,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    //Setup background and imageview
     self.view.backgroundColor = [UIColor paperColor];
     self.imagePreview = [[UIImageView alloc]initWithFrame:self.view.frame];
+    self.imagePreview.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:self.imagePreview];
 
-    self.cameraButton = [self createButtonWithTitle:@"P" chooseColor:[UIColor peonyColor] andPosition:100];
+    //Setup UI buttons;
+    self.cameraButton = [self createButtonWithTitle:@"P" chooseColor:[UIColor peonyColor] andPosition:250];
     [self.cameraButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
 
-    self.saveButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor limeColor] andPosition:200];
-    [self.saveButton addTarget:self action:@selector(savePhoto) forControlEvents:UIControlEventTouchUpInside];
+    self.saveButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor limeColor] andPosition:100];
+    [self.saveButton addTarget:self action:@selector(savePhoto:) forControlEvents:UIControlEventTouchUpInside];
+
+    //Automatically call camera first time
+    [self takePhoto];
 
 }
 
@@ -54,6 +60,8 @@
     newPhoto.longitude = self.userLocation.coordinate.longitude;
 //    [newPhoto setObject:[PFUser currentUser] forKey:@"createdBy"];
     [newPhoto saveInBackground];
+    CameraViewController *viewController;
+    [viewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark - Unwind
