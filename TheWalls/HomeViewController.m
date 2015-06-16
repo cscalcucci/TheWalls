@@ -11,7 +11,7 @@
 #import "LoginViewController.h"
 
 @interface HomeViewController ()
-
+@property PFUser *currentUser;
 @end
 
 @implementation HomeViewController
@@ -20,6 +20,7 @@
     [super viewDidLoad];
 
     if ([PFUser currentUser] == nil) {
+        NSLog(@"LoginSegue called");
         [self performSegueWithIdentifier:@"LoginSegue" sender:self];
     }
 }
