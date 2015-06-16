@@ -26,15 +26,17 @@
     self.saveButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor limeColor] andPosition:100];
     [self.saveButton addTarget:self action:@selector(savePhoto:) forControlEvents:UIControlEventTouchUpInside];
 
-    //Automatically call camera first time
+    //Track if a picture has been taken, automatically call camera first time
+    self.photoTaken = NO;
     [self takePhoto];
-    self.description
 
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
 }
+
+#pragma mark - Take photo, save photo, unwind
 
 - (void)takePhoto {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -47,11 +49,13 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     self.imageDidSelected = info[UIImagePickerControllerEditedImage];
     self.imagePreview.image = self.imageDidSelected;
+    self.photoTaken = YES;
     [picker dismissViewControllerAnimated:YES completion:NULL];
 
 }
 
 - (IBAction)savePhoto:(id)sender {
+    if (self.photoTaken == YES) {
     //Render and save image
     NSData *imageData = UIImagePNGRepresentation(self.imageDidSelected);
     Photo *newPhoto = [Photo new];
@@ -61,15 +65,11 @@
     newPhoto.longitude = self.userLocation.coordinate.longitude;
 //    [newPhoto setObject:[PFUser currentUser] forKey:@"createdBy"];
     [newPhoto saveInBackground];
+    }
     //Perform segue back to RootViewController
     [self performSegueWithIdentifier:@"UnwindToRoot" sender:self];
 
 }
-
-#pragma mark - Unwind
-
-
-
 
 #pragma mark - Create buttons
 //Need to subclass each button - draw, photo, audio
