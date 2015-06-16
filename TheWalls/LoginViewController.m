@@ -26,16 +26,16 @@
 //    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
 //    loginButton.center = self.view.center;
 //    [self.view addSubview:loginButton];
-//
-//    if ([PFUser currentUser] == nil) {
-//        [self.logoutButton setHidden:YES];
-//    } else {
-//        [self.usernameTextField setHidden:YES];
-//        [self.emailTextField setHidden:YES];
-//        [self.passwordTextField setHidden:YES];
-//        [self.signupButton setHidden:YES];
-//        [self.loginButton setHidden:YES];
-//    }
+
+    if ([PFUser currentUser] == nil) {
+        [self.logoutButton setHidden:YES];
+    } else {
+        [self.usernameTextField setHidden:YES];
+        [self.emailTextField setHidden:YES];
+        [self.passwordTextField setHidden:YES];
+        [self.signupButton setHidden:YES];
+        [self.loginButton setHidden:YES];
+    }
 }
 
 - (IBAction)onLoginTapped:(UIButton *)sender {
@@ -75,8 +75,8 @@
 
 - (void)_loginWithFacebook {
     // Set permissions required from the facebook user account
-    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
-
+//    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
+//
 //    // Login PFUser using Facebook
 //    [PFFacebookUtils logInInBackgroundWithReadPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
 //        if (!user) {
