@@ -29,7 +29,6 @@
     //Track if a picture has been taken, automatically call camera first time
     self.photoTaken = NO;
     [self takePhoto];
-
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -57,18 +56,17 @@
 - (IBAction)savePhoto:(id)sender {
     if (self.photoTaken == YES) {
     //Render and save image
-    NSData *imageData = UIImagePNGRepresentation(self.imageDidSelected);
-    Photo *newPhoto = [Photo new];
-    newPhoto.imagePhoto = [PFFile fileWithName:@"image.png" data:imageData];
-    newPhoto.caption = @"Photo";
-    newPhoto.latitude = self.userLocation.coordinate.latitude;
-    newPhoto.longitude = self.userLocation.coordinate.longitude;
-//    [newPhoto setObject:[PFUser currentUser] forKey:@"createdBy"];
-    [newPhoto saveInBackground];
+        NSData *imageData = UIImagePNGRepresentation(self.imageDidSelected);
+        Photo *newPhoto = [Photo new];
+        newPhoto.imagePhoto = [PFFile fileWithName:@"image.png" data:imageData];
+        newPhoto.caption = @"Photo";
+        newPhoto.latitude = self.userLocation.coordinate.latitude;
+        newPhoto.longitude = self.userLocation.coordinate.longitude;
+        //[newPhoto setObject:[PFUser currentUser] forKey:@"createdBy"];
+        [newPhoto saveInBackground];
     }
     //Perform segue back to RootViewController
     [self performSegueWithIdentifier:@"UnwindToRoot" sender:self];
-
 }
 
 #pragma mark - Create buttons
@@ -89,12 +87,6 @@
     [self.view addSubview:button];
     return button;
 }
-
-
-
-
-
-
 
 
 

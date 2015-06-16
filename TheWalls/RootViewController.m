@@ -32,9 +32,6 @@
 
     //Future gestures stuff
     [self leftSwipeGestureInitialization];
-    [self upSwipeGestureInitialization];
-    [self downSwipeGestureInitialization];
-    [self deviceOrientationNotificationInitialization];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -95,13 +92,6 @@
 #pragma mark - Swipe Gestures
 
 //Initializations
-- (void)rightSwipeGestureInitialization {
-    UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
-    rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-    [rightRecognizer setNumberOfTouchesRequired:1];
-    [self.view addGestureRecognizer:rightRecognizer];
-}
-
 - (void)leftSwipeGestureInitialization {
     UISwipeGestureRecognizer *leftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeHandle:)];
     leftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
@@ -109,56 +99,9 @@
     [self.view addGestureRecognizer:leftRecognizer];
 }
 
-- (void)upSwipeGestureInitialization {
-    UISwipeGestureRecognizer *upRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(upSwipeHandle:)];
-    upRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
-    [upRecognizer setNumberOfTouchesRequired:1];
-    [self.view addGestureRecognizer:upRecognizer];
-}
-
-- (void)downSwipeGestureInitialization {
-    UISwipeGestureRecognizer *downRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(downSwipeHandle:)];
-    downRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
-    [downRecognizer setNumberOfTouchesRequired:1];
-    [self.view addGestureRecognizer:downRecognizer];
-}
-
 //Methods
-- (void)rightSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer {
-    NSLog(@"rightSwipe");
-}
-
 - (void)leftSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer {
     NSLog(@"leftSwipe");
-}
-
-- (void)upSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer {
-    NSLog(@"upSwipe");
-}
-
-- (void)downSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer {
-    NSLog(@"downSwipe");
-}
-
-#pragma mark - Device Orientation
-
-//Initializations
-
-- (void)deviceOrientationNotificationInitialization {
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(orientationChanged) name:UIDeviceOrientationDidChangeNotification object: nil];
-
-}
-
-- (void) orientationChanged {
-    //Respond to changes
-    NSLog(@"Shaked");
-}
-
-//Request to stop receiving acceleromator events and turn off accelerometer
-- (void)deviceOrientationNotificationDemobilization {
-    [[NSNotificationCenter defaultCenter]removeObserver:self];
-    [[UIDevice currentDevice]endGeneratingDeviceOrientationNotifications];
 }
 
 #pragma mark - Create buttons
@@ -241,8 +184,6 @@
 
 -(IBAction)unwindToRoot:(UIStoryboardSegue *)segue {
 }
-
-
 
 /*
 //Size image with button
