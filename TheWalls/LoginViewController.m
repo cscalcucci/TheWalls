@@ -23,6 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    loginButton.center = self.view.center;
+    [self.view addSubview:loginButton];
+
     if ([PFUser currentUser] == nil) {
         [self.logoutButton setHidden:YES];
     } else {

@@ -22,16 +22,16 @@
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];
-
     // Initialize Parse.
     [Parse setApplicationId:@"Rp2G3M8fLLrhJ3AGN2ykXQtplJzQOWS4vpKWVwr3"
                   clientKey:@"ILnYHAZXfEYbcrvo9nW7uZ65NUwb6s01ibvcQNbl"];
-
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-
     // Initialize Crashlytics
     [Fabric with:@[CrashlyticsKit]];
+    // Initialize FacebookSDK
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                    didFinishLaunchingWithOptions:launchOptions];
 
     return YES;
 }

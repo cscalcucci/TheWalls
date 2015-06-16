@@ -22,5 +22,18 @@
 	<string>1</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Need access to your location.</string>
+	<key>FacebookAppID</key>
+	<string>1630343507243736</string>
+	<key>FacebookDisplayName</key>
+	<string>Splat</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1630343507243736</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
