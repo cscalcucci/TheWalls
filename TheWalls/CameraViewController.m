@@ -28,12 +28,12 @@
 
     //Automatically call camera first time
     [self takePhoto];
+    self.description
 
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-//    [self takePhoto];
 }
 
 - (void)takePhoto {
@@ -52,6 +52,7 @@
 }
 
 - (IBAction)savePhoto:(id)sender {
+    //Render and save image
     NSData *imageData = UIImagePNGRepresentation(self.imageDidSelected);
     Photo *newPhoto = [Photo new];
     newPhoto.imagePhoto = [PFFile fileWithName:@"image.png" data:imageData];
@@ -60,8 +61,9 @@
     newPhoto.longitude = self.userLocation.coordinate.longitude;
 //    [newPhoto setObject:[PFUser currentUser] forKey:@"createdBy"];
     [newPhoto saveInBackground];
-    CameraViewController *viewController;
-    [viewController dismissViewControllerAnimated:YES completion:NULL];
+    //Perform segue back to RootViewController
+    [self performSegueWithIdentifier:@"UnwindToRoot" sender:self];
+
 }
 
 #pragma mark - Unwind

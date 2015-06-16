@@ -20,5 +20,6 @@
 @property UIButton *cameraButton;
 @property UIButton *importButton;
 @property UIButton *saveButton;
+@property int photoTaken;
 
 @end
