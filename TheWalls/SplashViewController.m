@@ -19,7 +19,7 @@
     [self performSelector:@selector(rotateImageView:) withObject:self.secondShape afterDelay:0.2];
     [self performSelector:@selector(expandImageView:) withObject:self.thirdShape afterDelay:0.4];
 
-    [self performSelector:@selector(showMainMenu) withObject:nil afterDelay:3.0];
+    [self performSelector:@selector(showMainMenu) withObject:nil afterDelay:2.0];
 }
 
 - (void)showMainMenu {

@@ -12,6 +12,7 @@
 
 @interface HomeViewController ()
 @property PFUser *currentUser;
+@property (weak, nonatomic) IBOutlet UILabel *currentUserLabel;
 @end
 
 @implementation HomeViewController
@@ -19,17 +20,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"Logged in as: %@", self.currentUser.username);
     if ([PFUser currentUser] == nil) {
-        NSLog(@"LoginSegue called");
         [self performSegueWithIdentifier:@"LoginSegue" sender:self];
+    } else {
+        self.currentUser = [PFUser currentUser];
+        self.currentUserLabel.text = self.currentUser.email;
     }
 }
 
--(void)bringUpLoginViewController {
+- (IBAction)onLogoutTapped:(UIButton *)sender {
+    [self userLogout];
+}
 
-    NSLog(@"No current user, loading login screen.");
-
-
+- (void)userLogout {
+    NSLog(@"logout attempted");
+    [PFUser logOutInBackground];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Logged Out" message:@"You have logged out." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+    [alert show];
 }
 
 @end
