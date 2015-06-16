@@ -23,7 +23,6 @@
     self.saveButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor limeColor] andPosition:200];
     [self.saveButton addTarget:self action:@selector(savePhoto) forControlEvents:UIControlEventTouchUpInside];
 
-
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -46,7 +45,7 @@
 
 }
 
-- (void) savePhoto{
+- (IBAction)savePhoto:(id)sender {
     NSData *imageData = UIImagePNGRepresentation(self.imageDidSelected);
     Photo *newPhoto = [Photo new];
     newPhoto.imagePhoto = [PFFile fileWithName:@"image.png" data:imageData];
@@ -56,6 +55,11 @@
 //    [newPhoto setObject:[PFUser currentUser] forKey:@"createdBy"];
     [newPhoto saveInBackground];
 }
+
+#pragma mark - Unwind
+
+
+
 
 #pragma mark - Create buttons
 //Need to subclass each button - draw, photo, audio
