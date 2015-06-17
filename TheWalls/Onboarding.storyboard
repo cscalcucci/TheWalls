@@ -29,7 +29,7 @@
         <!--Home View Controller-->
         <scene sceneID="HlI-Sy-mWL">
             <objects>
-                <viewController id="wRe-9J-1Hb" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="wRe-9J-1Hb" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3HF-wM-ci2"/>
                         <viewControllerLayoutGuide type="bottom" id="CjO-TO-oiQ"/>
