@@ -38,6 +38,7 @@ static NSString * const currentLocationDidChangeNotification = @"currentLocation
 @property UIButton *photoButton;
 @property UIButton *drawButton;
 @property UIButton *mainButton;
+@property UIButton *logoutButton;
 @property BOOL areButtonsFanned;
 @property int diameter;
 @property int gap;

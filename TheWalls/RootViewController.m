@@ -24,12 +24,14 @@
     //Buttons - to subclass
     self.areButtonsFanned = NO;
     self.dynamicAnimator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
-    self.soundButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor hamlindigoColor]];
-    self.photoButton = [self createButtonWithTitle:@"P" chooseColor:[UIColor limeColor]];
-    self.drawButton =  [self createButtonWithTitle:@"D" chooseColor:[UIColor peonyColor]];
-    self.mainButton =  [self createButtonWithTitle:@"M" chooseColor:[UIColor peonyColor]];
+    self.soundButton =  [self createButtonWithTitle:@"S" chooseColor:[UIColor hamlindigoColor]];
+    self.photoButton =  [self createButtonWithTitle:@"P" chooseColor:[UIColor limeColor]];
+    self.drawButton =   [self createButtonWithTitle:@"D" chooseColor:[UIColor peonyColor]];
+    self.mainButton =   [self createButtonWithTitle:@"M" chooseColor:[UIColor peonyColor]];
+    self.logoutButton = [self createLogoutButton];
     [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
     [self.photoButton addTarget:self action:@selector(onCameraButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.logoutButton addTarget:self action:@selector(userLogout) forControlEvents:UIControlEventTouchUpInside];
 
     //Future gestures stuff
     [self leftSwipeGestureInitialization];
@@ -165,6 +167,17 @@
     return button;
 }
 
+- (UIButton *)createLogoutButton {
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 100, 50, 100, 25)];
+    button.backgroundColor = [UIColor redColor];
+    button.tintColor = [UIColor whiteColor];
+    button.userInteractionEnabled = YES;
+    button.hidden = YES;
+    [button setTitle:@"Logout" forState:UIControlStateNormal];
+    [self.view addSubview:button];
+    return button;
+}
+
 #pragma mark - Main button
 
 - (void)fanButtons:(id)sender{
@@ -196,6 +209,8 @@
     point = CGPointMake(self.mainButton.frame.origin.x - (_diameter * 3.25), self.mainButton.frame.origin.y + (_diameter/2));
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.drawButton snapToPoint:point];
     [self.dynamicAnimator addBehavior:snapBehavior];
+
+    self.logoutButton.hidden = NO;
 }
 
 - (void)fanIn {
@@ -206,6 +221,21 @@
     [self.dynamicAnimator addBehavior:snapBehavior];
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.drawButton snapToPoint:self.mainButton.center];
     [self.dynamicAnimator addBehavior:snapBehavior];
+
+    self.logoutButton.hidden = YES;
+}
+
+#pragma mark - Logout;
+
+- (void)userLogout {
+    [PFUser logOutInBackground];
+    [self refreshView];
+}
+
+-(void)refreshView {
+    [self viewDidLoad];
+//    [self viewWillAppear:YES];
+
 }
 
 #pragma mark - Photo button & segue
