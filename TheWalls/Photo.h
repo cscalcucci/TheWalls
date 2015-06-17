@@ -15,7 +15,7 @@
 
 @property NSString *caption;
 @property PFFile *imagePhoto;
-//@property PFUser *createdBy;
+@property PFUser *createdBy;
 @property float latitude;
 @property float longitude;
 

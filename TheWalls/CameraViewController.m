@@ -62,7 +62,7 @@
         newPhoto.caption = @"Photo";
         newPhoto.latitude = self.userLocation.coordinate.latitude;
         newPhoto.longitude = self.userLocation.coordinate.longitude;
-        //[newPhoto setObject:[PFUser currentUser] forKey:@"createdBy"];
+        [newPhoto setObject:[PFUser currentUser] forKey:@"createdBy"];
         [newPhoto saveInBackground];
     }
     //Perform segue back to RootViewController
