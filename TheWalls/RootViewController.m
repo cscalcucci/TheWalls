@@ -91,7 +91,7 @@
 #pragma mark - Content location plots
 
 - (void)letThereBeMKAnnotation {
-    PFQuery *query = [Splat query];
+    PFQuery *query = [Yaat query];
     [query whereKey:@"createdBy" equalTo:[PFUser currentUser]];
 
     query.limit = 20;
@@ -99,7 +99,7 @@
         if (!error) {
         }
         NSArray *array = [[NSArray alloc]initWithArray:pictures];
-        for (Splat *splat in array) {
+        for (Yaat *splat in array) {
             [self.primaryMapView addAnnotation:splat.annotation];
         }
     }];
@@ -125,10 +125,10 @@
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     [mapView deselectAnnotation:view.annotation animated:YES];
-    self.splat = [Splat new];
-    self.splat = view.annotation;
+    self.yaat = [Yaat new];
+    self.yaat = view.annotation;
     [self performSegueWithIdentifier:@"RootToDetail" sender:self];
-    NSLog(@"%@", self.splat);
+    NSLog(@"%@", self.yaat);
 }
 
 #pragma mark - Swipe Gestures
@@ -252,7 +252,7 @@
         NSLog(@"%@", self.userLocation);
     } else if ([segue.identifier isEqualToString:@"RootToDetail"]) {
         DetailViewController *detailVC = segue.destinationViewController;
-        detailVC.splat = self.splat;
+        detailVC.splat = self.yaat;
     }
 }
 

@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 machine^n. All rights reserved.
 //
 
-#import "Splat.h"
+#import "Yaat.h"
 #import <Parse/PFObject+Subclass.h>
 
-@implementation Splat
+@implementation Yaat
 
 @dynamic objectID;
 @dynamic caption;
@@ -24,7 +24,7 @@
 }
 
 + (NSString *)parseClassName {
-    return @"Splat";
+    return @"Yaat";
 }
 
 @end

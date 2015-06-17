@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
 
-@interface Splat : PFObject<PFSubclassing>
+@interface Yaat : PFObject<PFSubclassing>
 
 + (NSString *)parseClassName;
 
