@@ -57,8 +57,8 @@
     if (self.photoTaken == YES) {
     //Render and save image
         NSData *imageData = UIImagePNGRepresentation(self.imageDidSelected);
-        Photo *newPhoto = [Photo new];
-        newPhoto.imagePhoto = [PFFile fileWithName:@"image.png" data:imageData];
+        Splat *newPhoto = [Splat new];
+        newPhoto.splatFile = [PFFile fileWithName:@"image.png" data:imageData];
         newPhoto.caption = @"Photo";
         newPhoto.latitude = self.userLocation.coordinate.latitude;
         newPhoto.longitude = self.userLocation.coordinate.longitude;

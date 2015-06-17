@@ -11,7 +11,6 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "UIColor+CustomColors.h"
-#import "Photo.h"
 #import "Splat.h"
 #import "CameraViewController.h"
 #import "DetailViewController.h"

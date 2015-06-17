@@ -91,7 +91,7 @@
 #pragma mark - Content location plots
 
 - (void)letThereBeMKAnnotation {
-    PFQuery *query = [Photo query];
+    PFQuery *query = [Splat query];
     [query whereKey:@"createdBy" equalTo:[PFUser currentUser]];
 
     query.limit = 20;
@@ -99,10 +99,8 @@
         if (!error) {
         }
         NSArray *array = [[NSArray alloc]initWithArray:pictures];
-        for (Photo *photo in array) {
-            Splat *annotation = [Splat new];
-            annotation.coordinate = CLLocationCoordinate2DMake(photo.latitude, photo.longitude);
-            [self.primaryMapView addAnnotation:annotation];
+        for (Splat *splat in array) {
+            [self.primaryMapView addAnnotation:splat.annotation];
         }
     }];
 }

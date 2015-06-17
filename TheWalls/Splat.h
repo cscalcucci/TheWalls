@@ -1,8 +1,8 @@
 //
-//  Splat.h
+//  Photo.h
 //  TheWalls
 //
-//  Created by John McClelland on 6/16/15.
+//  Created by John McClelland on 6/15/15.
 //  Copyright (c) 2015 machine^n. All rights reserved.
 //
 
@@ -10,14 +10,18 @@
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
 
+@interface Splat : PFObject<PFSubclassing>
 
-@interface Splat : MKPointAnnotation
++ (NSString *)parseClassName;
 
-@property CLLocation *location;
-@property PFUser *user;
-@property PFFile *contentFile;
-@property NSDate *timeCreated;
+@property NSString *objectID;
+@property NSString *caption;
+@property PFFile *splatFile;
+@property PFUser *createdBy;
+@property MKPointAnnotation *annotation;
+@property double latitude;
+@property double longitude;
 
--(instancetype)init;
+
 
 @end

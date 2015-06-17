@@ -35,8 +35,7 @@
 		7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532121B31D64D00CF94BF /* UsernameViewController.m */; };
 		7EC532161B31DA0200CF94BF /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532151B31DA0200CF94BF /* AddressBookViewController.m */; };
 		99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99349E431B31CC95001C47F7 /* DetailViewController.m */; };
-		995E47761B30B5E1008A17FC /* Splat.m in Sources */ = {isa = PBXBuildFile; fileRef = 995E47751B30B5E1008A17FC /* Splat.m */; };
-		99894F7E1B2FB64E00367E67 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F7D1B2FB64E00367E67 /* Photo.m */; };
+		99894F7E1B2FB64E00367E67 /* Splat.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F7D1B2FB64E00367E67 /* Splat.m */; };
 		99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F821B2FBF1700367E67 /* CameraViewController.m */; };
 		998950741B30986E00367E67 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998950721B30986E00367E67 /* FBSDKCoreKit.framework */; };
 		998950751B30986E00367E67 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998950731B30986E00367E67 /* FBSDKLoginKit.framework */; };
@@ -100,10 +99,8 @@
 		7EC532151B31DA0200CF94BF /* AddressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookViewController.m; sourceTree = "<group>"; };
 		99349E421B31CC95001C47F7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		99349E431B31CC95001C47F7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		995E47741B30B5E1008A17FC /* Splat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Splat.h; sourceTree = "<group>"; };
-		995E47751B30B5E1008A17FC /* Splat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Splat.m; sourceTree = "<group>"; };
-		99894F7C1B2FB64E00367E67 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
-		99894F7D1B2FB64E00367E67 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		99894F7C1B2FB64E00367E67 /* Splat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Splat.h; sourceTree = "<group>"; };
+		99894F7D1B2FB64E00367E67 /* Splat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Splat.m; sourceTree = "<group>"; };
 		99894F811B2FBF1700367E67 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		99894F821B2FBF1700367E67 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		998950721B30986E00367E67 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -208,8 +205,8 @@
 		995E47771B30B5E6008A17FC /* Splat */ = {
 			isa = PBXGroup;
 			children = (
-				995E47741B30B5E1008A17FC /* Splat.h */,
-				995E47751B30B5E1008A17FC /* Splat.m */,
+				99894F7C1B2FB64E00367E67 /* Splat.h */,
+				99894F7D1B2FB64E00367E67 /* Splat.m */,
 			);
 			name = Splat;
 			sourceTree = "<group>";
@@ -217,8 +214,6 @@
 		99894F7F1B2FB65300367E67 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
-				99894F7C1B2FB64E00367E67 /* Photo.h */,
-				99894F7D1B2FB64E00367E67 /* Photo.m */,
 			);
 			name = Photo;
 			sourceTree = "<group>";
@@ -270,7 +265,6 @@
 				7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */,
 				7EAAE4781B2F646C00814E77 /* LoginViewController.h */,
 				7EAAE4791B2F646C00814E77 /* LoginViewController.m */,
-				7EC532091B31BED200CF94BF /* SignupViewController.h */,
 				7EC5320A1B31BED200CF94BF /* SignupViewController.m */,
 				7EC5320C1B31BEE800CF94BF /* SessionViewController.h */,
 				7EC5320D1B31BEE800CF94BF /* SessionViewController.m */,
@@ -477,7 +471,6 @@
 			files = (
 				999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */,
 				7EC532101B31BFF000CF94BF /* Onboarding.storyboard in Resources */,
-				999CF77C1B2D19A5006A0324 /* Main.storyboard in Resources */,
 				999CF7811B2D19A5006A0324 /* LaunchScreen.xib in Resources */,
 				999CF77E1B2D19A5006A0324 /* Images.xcassets in Resources */,
 			);
@@ -522,10 +515,9 @@
 				99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */,
 				7EC532161B31DA0200CF94BF /* AddressBookViewController.m in Sources */,
 				7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */,
-				995E47761B30B5E1008A17FC /* Splat.m in Sources */,
 				999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */,
 				999CF7701B2D19A5006A0324 /* main.m in Sources */,
-				99894F7E1B2FB64E00367E67 /* Photo.m in Sources */,
+				99894F7E1B2FB64E00367E67 /* Splat.m in Sources */,
 				7EC5320E1B31BEE800CF94BF /* SessionViewController.m in Sources */,
 				999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */,
 				99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */,
