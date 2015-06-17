@@ -40,14 +40,15 @@
     } else {
 
     }
-
     return YES;
 }
 
 -(void)userLogIn {
     [PFUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser *user, NSError *error) {
         if (!error) {
-            [self dismissViewControllerAnimated:true completion:nil];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
+            UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
+            [self presentViewController:viewController animated:NO completion:NULL];
         } else {
             [self showAlert:@"Login error" param2:error];
         }
