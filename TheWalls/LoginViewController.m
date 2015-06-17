@@ -10,7 +10,6 @@
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property PFUser *currentUser;
@@ -24,6 +23,8 @@
 
     self.loginNav.topItem.title = @"Log In";
     self.passwordTextField.secureTextEntry = YES;
+    self.usernameTextField.placeholder = @"username";
+    self.passwordTextField.placeholder = @"password";
 //    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
 //    loginButton.center = self.view.center;
 //    [self.view addSubview:loginButton];

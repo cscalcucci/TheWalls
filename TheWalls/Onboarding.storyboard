@@ -93,29 +93,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siS-Jm-gma">
-                                <rect key="frame" x="281" y="360" width="38" height="30"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onLoginTapped:" destination="sAp-yN-Zzu" eventType="touchUpInside" id="RN6-pm-jTU"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XHk-tz-5FC">
-                                <rect key="frame" x="204" y="294" width="193" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XHk-tz-5FC">
+                                <rect key="frame" x="0.0" y="130" width="600" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="VFA-Oy-MFg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="sAp-yN-Zzu" id="po3-sl-Cfp"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8CX-Vy-7jR">
-                                <rect key="frame" x="204" y="242" width="193" height="30"/>
+                                <rect key="frame" x="0.0" y="100" width="600" height="65"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="193" id="bWD-Rt-aTG"/>
+                                    <constraint firstAttribute="height" constant="65" id="0gV-Pf-gR0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="sAp-yN-Zzu" id="zd1-mP-K89"/>
@@ -136,19 +130,31 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siS-Jm-gma">
+                                <rect key="frame" x="281" y="216" width="38" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7u7-ul-jZl"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onLoginTapped:" destination="sAp-yN-Zzu" eventType="touchUpInside" id="RN6-pm-jTU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XHk-tz-5FC" firstAttribute="top" secondItem="8CX-Vy-7jR" secondAttribute="bottom" constant="22" id="02E-Rn-0zV"/>
-                            <constraint firstItem="8CX-Vy-7jR" firstAttribute="centerX" secondItem="9WZ-hR-wTn" secondAttribute="centerX" id="AH5-r7-rXc"/>
-                            <constraint firstItem="XHk-tz-5FC" firstAttribute="leading" secondItem="8CX-Vy-7jR" secondAttribute="leading" id="AJI-h5-LAU"/>
-                            <constraint firstItem="8CX-Vy-7jR" firstAttribute="top" secondItem="2pr-xh-bqm" secondAttribute="bottom" constant="222" id="Fzq-nf-JQe"/>
-                            <constraint firstItem="XHk-tz-5FC" firstAttribute="trailing" secondItem="8CX-Vy-7jR" secondAttribute="trailing" id="HGN-2m-mCi"/>
+                            <constraint firstItem="XHk-tz-5FC" firstAttribute="leading" secondItem="9WZ-hR-wTn" secondAttribute="leadingMargin" constant="-16" id="3sO-Op-i74"/>
+                            <constraint firstItem="8CX-Vy-7jR" firstAttribute="leading" secondItem="9WZ-hR-wTn" secondAttribute="leadingMargin" constant="-16" id="Gxv-58-JP4"/>
+                            <constraint firstAttribute="centerX" secondItem="siS-Jm-gma" secondAttribute="centerX" id="Hnk-xB-aDj"/>
+                            <constraint firstItem="siS-Jm-gma" firstAttribute="top" secondItem="XHk-tz-5FC" secondAttribute="bottom" constant="56" id="KoI-Lq-nYl"/>
                             <constraint firstItem="eY4-bj-mUr" firstAttribute="top" secondItem="9WZ-hR-wTn" secondAttribute="topMargin" id="L4Z-tG-idh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eY4-bj-mUr" secondAttribute="trailing" constant="-16" id="PmW-3Y-B18"/>
-                            <constraint firstItem="siS-Jm-gma" firstAttribute="top" secondItem="XHk-tz-5FC" secondAttribute="bottom" constant="36" id="fKv-hU-ls2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8CX-Vy-7jR" secondAttribute="trailing" constant="-16" id="c98-ld-wMH"/>
+                            <constraint firstItem="8CX-Vy-7jR" firstAttribute="top" secondItem="eY4-bj-mUr" secondAttribute="bottom" constant="56" id="nCD-cp-lyl"/>
                             <constraint firstItem="eY4-bj-mUr" firstAttribute="leading" secondItem="9WZ-hR-wTn" secondAttribute="leadingMargin" constant="-16" id="o5O-H9-JjN"/>
-                            <constraint firstItem="siS-Jm-gma" firstAttribute="centerX" secondItem="XHk-tz-5FC" secondAttribute="centerX" id="sne-YU-TJ5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XHk-tz-5FC" secondAttribute="trailing" constant="-16" id="uGY-4w-ffl"/>
                         </constraints>
                     </view>
                     <connections>
@@ -235,12 +241,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yJv-T8-G2u">
-                                <rect key="frame" x="0.0" y="136" width="600" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yJv-T8-G2u">
+                                <rect key="frame" x="0.0" y="136" width="600" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="O3s-6c-k7c"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="sAp-yN-Zzu" id="xS3-NG-X51"/>
@@ -251,7 +257,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="4vS-9S-5Rt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="sAp-yN-Zzu" id="V3q-dh-Kod"/>

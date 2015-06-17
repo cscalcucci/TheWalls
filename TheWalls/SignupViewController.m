@@ -22,6 +22,8 @@
 
     self.signupNav.topItem.title = @"Sign Up";
     self.passwordTextField.secureTextEntry = YES;
+    self.emailTextField.placeholder = @"email";
+    self.passwordTextField.placeholder = @"password";
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
