@@ -6,15 +6,16 @@
 //  Copyright (c) 2015 machine^n. All rights reserved.
 //
 
-#import "Yaat.h"
+#import "Object.h"
 #import <Parse/PFObject+Subclass.h>
 
-@implementation Yaat
+@implementation Object
 
 @dynamic objectID;
 @dynamic caption;
-@dynamic splatFile;
+@dynamic file;
 @dynamic createdBy;
+@dynamic location;
 @dynamic annotation;
 @dynamic latitude;
 @dynamic longitude;
@@ -24,7 +25,7 @@
 }
 
 + (NSString *)parseClassName {
-    return @"Yaat";
+    return @"Object";
 }
 
 @end

@@ -12,7 +12,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.splat.debugDescription);
+    NSLog(@"%@", self.object.debugDescription);
 //    self.imageView.file = self.splat.contentFile;
 
     [self.imageView loadInBackground];

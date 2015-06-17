@@ -91,16 +91,17 @@
 #pragma mark - Content location plots
 
 - (void)letThereBeMKAnnotation {
-    PFQuery *query = [Yaat query];
+    PFQuery *query = [Object query];
     [query whereKey:@"createdBy" equalTo:[PFUser currentUser]];
-
     query.limit = 20;
     [query findObjectsInBackgroundWithBlock:^(NSArray *pictures, NSError *error) {
         if (!error) {
+            NSLog(@"%@", error);
         }
         NSArray *array = [[NSArray alloc]initWithArray:pictures];
-        for (Yaat *splat in array) {
-            [self.primaryMapView addAnnotation:splat.annotation];
+        for (Object *object in array) {
+
+            [self.primaryMapView addAnnotation:object.annotation];
         }
     }];
 }
@@ -125,10 +126,10 @@
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     [mapView deselectAnnotation:view.annotation animated:YES];
-    self.yaat = [Yaat new];
-    self.yaat = view.annotation;
+    self.object = [Object new];
+    self.object.annotation = view.annotation;
     [self performSegueWithIdentifier:@"RootToDetail" sender:self];
-    NSLog(@"%@", self.yaat);
+    NSLog(@"%@", self.object);
 }
 
 #pragma mark - Swipe Gestures
@@ -252,7 +253,7 @@
         NSLog(@"%@", self.userLocation);
     } else if ([segue.identifier isEqualToString:@"RootToDetail"]) {
         DetailViewController *detailVC = segue.destinationViewController;
-        detailVC.splat = self.yaat;
+        detailVC.object = self.object;
     }
 }
 

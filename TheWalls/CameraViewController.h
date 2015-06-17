@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-#import "Yaat.h"
+#import "Object.h"
 
 #import "UIColor+CustomColors.h"
 

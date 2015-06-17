@@ -10,14 +10,15 @@
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
 
-@interface Yaat : PFObject<PFSubclassing>
+@interface Object : PFObject<PFSubclassing>
 
 + (NSString *)parseClassName;
 
 @property NSString *objectID;
 @property NSString *caption;
-@property PFFile *splatFile;
+@property PFFile *file;
 @property PFUser *createdBy;
+@property PFGeoPoint *location;
 @property MKPointAnnotation *annotation;
 @property double latitude;
 @property double longitude;
