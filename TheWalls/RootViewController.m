@@ -233,7 +233,10 @@
 }
 
 -(void)refreshView {
-    [self viewDidLoad];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Onboarding" bundle:[NSBundle mainBundle]];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    [self presentViewController:viewController animated:NO completion:NULL];
+//    [self viewDidLoad];
 //    [self viewWillAppear:YES];
 
 }
