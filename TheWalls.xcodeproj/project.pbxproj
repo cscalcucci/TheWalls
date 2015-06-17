@@ -29,6 +29,7 @@
 		7EC532051B30A44800CF94BF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532031B30A44800CF94BF /* FBSDKCoreKit.framework */; };
 		7EC532061B30A44800CF94BF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532041B30A44800CF94BF /* FBSDKLoginKit.framework */; };
 		7EC532081B30A45600CF94BF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532071B30A45600CF94BF /* FBSDKShareKit.framework */; };
+		99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99349E431B31CC95001C47F7 /* DetailViewController.m */; };
 		995E47761B30B5E1008A17FC /* Splat.m in Sources */ = {isa = PBXBuildFile; fileRef = 995E47751B30B5E1008A17FC /* Splat.m */; };
 		99894F7E1B2FB64E00367E67 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F7D1B2FB64E00367E67 /* Photo.m */; };
 		99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F821B2FBF1700367E67 /* CameraViewController.m */; };
@@ -85,6 +86,8 @@
 		7EC532031B30A44800CF94BF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		7EC532041B30A44800CF94BF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		7EC532071B30A45600CF94BF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		99349E421B31CC95001C47F7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		99349E431B31CC95001C47F7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		995E47741B30B5E1008A17FC /* Splat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Splat.h; sourceTree = "<group>"; };
 		995E47751B30B5E1008A17FC /* Splat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Splat.m; sourceTree = "<group>"; };
 		99894F7C1B2FB64E00367E67 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
@@ -182,6 +185,15 @@
 			name = Parse;
 			sourceTree = "<group>";
 		};
+		99349E451B31CC9B001C47F7 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				99349E421B31CC95001C47F7 /* DetailViewController.h */,
+				99349E431B31CC95001C47F7 /* DetailViewController.m */,
+			);
+			name = DetailViewController;
+			sourceTree = "<group>";
+		};
 		995E47771B30B5E6008A17FC /* Splat */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */,
+				99349E451B31CC9B001C47F7 /* DetailViewController */,
 				999CF7A21B2E05C0006A0324 /* RootViewController */,
 				99894F841B2FBF2000367E67 /* CameraViewController */,
 			);
@@ -491,6 +504,7 @@
 				999CF7701B2D19A5006A0324 /* main.m in Sources */,
 				99894F7E1B2FB64E00367E67 /* Photo.m in Sources */,
 				999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */,
+				99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
