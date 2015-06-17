@@ -34,12 +34,12 @@
 		7EC532101B31BFF000CF94BF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */; };
 		7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532121B31D64D00CF94BF /* UsernameViewController.m */; };
 		7EC532161B31DA0200CF94BF /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532151B31DA0200CF94BF /* AddressBookViewController.m */; };
+		995E47761B30B5E1008A17FC /* Splat.m in Sources */ = {isa = PBXBuildFile; fileRef = 995E47751B30B5E1008A17FC /* Splat.m */; };
 		99894F7E1B2FB64E00367E67 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F7D1B2FB64E00367E67 /* Photo.m */; };
 		99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F821B2FBF1700367E67 /* CameraViewController.m */; };
 		998950741B30986E00367E67 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998950721B30986E00367E67 /* FBSDKCoreKit.framework */; };
 		998950751B30986E00367E67 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998950731B30986E00367E67 /* FBSDKLoginKit.framework */; };
 		999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */; };
-		999B3A911B2F352C002BC1D6 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B3A901B2F352C002BC1D6 /* StoryboardManager.swift */; };
 		999B3A971B2F4D89002BC1D6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999B3A961B2F4D89002BC1D6 /* MapKit.framework */; };
 		999B3A9C1B2F6C2E002BC1D6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999B3A9A1B2F6C2E002BC1D6 /* Fabric.framework */; };
 		999B3A9D1B2F6C2E002BC1D6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999B3A9B1B2F6C2E002BC1D6 /* Crashlytics.framework */; };
@@ -47,7 +47,6 @@
 		999CF7731B2D19A5006A0324 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF7721B2D19A5006A0324 /* AppDelegate.m */; };
 		999CF7761B2D19A5006A0324 /* TheWalls.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 999CF7741B2D19A5006A0324 /* TheWalls.xcdatamodeld */; };
 		999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF7781B2D19A5006A0324 /* RootViewController.m */; };
-		999CF77C1B2D19A5006A0324 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999CF77A1B2D19A5006A0324 /* Main.storyboard */; };
 		999CF77E1B2D19A5006A0324 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999CF77D1B2D19A5006A0324 /* Images.xcassets */; };
 		999CF7811B2D19A5006A0324 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999CF77F1B2D19A5006A0324 /* LaunchScreen.xib */; };
 		999CF78D1B2D19A5006A0324 /* TheWallsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF78C1B2D19A5006A0324 /* TheWallsTests.m */; };
@@ -99,6 +98,8 @@
 		7EC532121B31D64D00CF94BF /* UsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameViewController.m; sourceTree = "<group>"; };
 		7EC532141B31DA0200CF94BF /* AddressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookViewController.h; sourceTree = "<group>"; };
 		7EC532151B31DA0200CF94BF /* AddressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookViewController.m; sourceTree = "<group>"; };
+		995E47741B30B5E1008A17FC /* Splat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Splat.h; sourceTree = "<group>"; };
+		995E47751B30B5E1008A17FC /* Splat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Splat.m; sourceTree = "<group>"; };
 		99894F7C1B2FB64E00367E67 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		99894F7D1B2FB64E00367E67 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		99894F811B2FBF1700367E67 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
@@ -106,8 +107,6 @@
 		998950721B30986E00367E67 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		998950731B30986E00367E67 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PrimaryView.storyboard; sourceTree = "<group>"; };
-		999B3A8F1B2F352C002BC1D6 /* TheWalls-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheWalls-Bridging-Header.h"; sourceTree = "<group>"; };
-		999B3A901B2F352C002BC1D6 /* StoryboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardManager.swift; sourceTree = "<group>"; };
 		999B3A961B2F4D89002BC1D6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		999B3A9A1B2F6C2E002BC1D6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		999B3A9B1B2F6C2E002BC1D6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -119,7 +118,6 @@
 		999CF7751B2D19A5006A0324 /* TheWalls.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheWalls.xcdatamodel; sourceTree = "<group>"; };
 		999CF7771B2D19A5006A0324 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		999CF7781B2D19A5006A0324 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		999CF77B1B2D19A5006A0324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		999CF77D1B2D19A5006A0324 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		999CF7801B2D19A5006A0324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		999CF7861B2D19A5006A0324 /* TheWallsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheWallsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +194,15 @@
 			name = Parse;
 			sourceTree = "<group>";
 		};
+		995E47771B30B5E6008A17FC /* Splat */ = {
+			isa = PBXGroup;
+			children = (
+				995E47741B30B5E1008A17FC /* Splat.h */,
+				995E47751B30B5E1008A17FC /* Splat.m */,
+			);
+			name = Splat;
+			sourceTree = "<group>";
+		};
 		99894F7F1B2FB65300367E67 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +215,7 @@
 		99894F801B2FB72400367E67 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				995E47771B30B5E6008A17FC /* Splat */,
 				999CF7A11B2E05B6006A0324 /* Custom Colors */,
 				99894F7F1B2FB65300367E67 /* Photo */,
 			);
@@ -272,16 +280,6 @@
 			name = Primary;
 			sourceTree = "<group>";
 		};
-		999B3A951B2F36D7002BC1D6 /* StoryboardManager */ = {
-			isa = PBXGroup;
-			children = (
-				999CF77A1B2D19A5006A0324 /* Main.storyboard */,
-				999B3A901B2F352C002BC1D6 /* StoryboardManager.swift */,
-				999B3A8F1B2F352C002BC1D6 /* TheWalls-Bridging-Header.h */,
-			);
-			name = StoryboardManager;
-			sourceTree = "<group>";
-		};
 		999B3A981B2F5E37002BC1D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,7 +328,6 @@
 			children = (
 				99894F801B2FB72400367E67 /* Models */,
 				999B3A871B2F31EF002BC1D6 /* AppDelegate */,
-				999B3A951B2F36D7002BC1D6 /* StoryboardManager */,
 				999B3A881B2F3211002BC1D6 /* Onboarding */,
 				999B3A8B1B2F3252002BC1D6 /* Primary */,
 				999CF77D1B2D19A5006A0324 /* Images.xcassets */,
@@ -506,7 +503,6 @@
 			files = (
 				7EAAE47A1B2F646C00814E77 /* LoginViewController.m in Sources */,
 				999CF7761B2D19A5006A0324 /* TheWalls.xcdatamodeld in Sources */,
-				999B3A911B2F352C002BC1D6 /* StoryboardManager.swift in Sources */,
 				999CF7731B2D19A5006A0324 /* AppDelegate.m in Sources */,
 				999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */,
 				7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */,
@@ -514,6 +510,7 @@
 				99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */,
 				7EC532161B31DA0200CF94BF /* AddressBookViewController.m in Sources */,
 				7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */,
+				995E47761B30B5E1008A17FC /* Splat.m in Sources */,
 				999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */,
 				999CF7701B2D19A5006A0324 /* main.m in Sources */,
 				99894F7E1B2FB64E00367E67 /* Photo.m in Sources */,
@@ -541,14 +538,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		999CF77A1B2D19A5006A0324 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				999CF77B1B2D19A5006A0324 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		999CF77F1B2D19A5006A0324 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

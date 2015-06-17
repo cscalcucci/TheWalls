@@ -12,7 +12,7 @@
 @implementation Photo
 @dynamic caption;
 @dynamic imagePhoto;
-//@dynamic createdBy;
+@dynamic createdBy;
 @dynamic latitude;
 @dynamic longitude;
 
