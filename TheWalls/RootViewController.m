@@ -19,6 +19,7 @@
     //Map
     [self locationManagerInit];
     [self initializeMap];
+    [self letThereBeMKAnnotation];
 
     //Buttons - to subclass
     self.areButtonsFanned = NO;
@@ -38,7 +39,7 @@
 
 }
 
-#pragma mark - Map & Locations
+#pragma mark - Map & user location
 
 - (void)locationManagerInit {
     self.locationManager = [CLLocationManager new];
@@ -58,7 +59,6 @@
     [self.view addSubview:self.primaryMapView];
 }
 
-
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"%@",error);
 }
@@ -68,11 +68,8 @@
         if (location.verticalAccuracy < 1000 && location.horizontalAccuracy < 1000) {
             [self reverseGeoCode:locations.firstObject];
             [self.locationManager stopUpdatingLocation];
-            NSLog(@"3");
         }
-        NSLog(@"2");
     }
-    NSLog(@"1");
 }
 
 -(void)reverseGeoCode:(CLLocation *)location {
@@ -87,6 +84,37 @@
     CLLocationCoordinate2D location = [userLocation coordinate];
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
     [self.primaryMapView setRegion:region animated:YES];
+}
+
+#pragma mark - Content location plots
+
+- (void)letThereBeMKAnnotation {
+    PFQuery *query = [Photo query];
+    [query whereKey:@"createdBy" equalTo:[PFUser currentUser]];
+
+    query.limit = 20;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *pictures, NSError *error) {
+        if (!error) {
+        }
+        NSArray *array = [[NSArray alloc]initWithArray:pictures];
+        for (Photo *photo in array) {
+            MKPointAnnotation *annotation = [MKPointAnnotation new];
+            annotation.coordinate = CLLocationCoordinate2DMake(photo.latitude, photo.longitude);
+            NSLog(@"%@", annotation);
+            [self.primaryMapView addAnnotation:annotation];
+        }
+    }];
+}
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    if ([annotation isEqual:self.primaryMapView.userLocation]) {
+        return nil;
+    }
+    MKAnnotationView *pin = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
+    pin.image = [UIImage imageNamed:@"shape1"];
+    pin.canShowCallout =  YES;
+    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    return pin;
 }
 
 #pragma mark - Swipe Gestures
