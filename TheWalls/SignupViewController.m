@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property PFUser *currentUser;
+@property (weak, nonatomic) IBOutlet UINavigationBar *signupNav;
 @end
 
 @implementation SignupViewController
@@ -19,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"Sign Up";
+    self.signupNav.topItem.title = @"Sign Up";
     self.passwordTextField.secureTextEntry = YES;
 }
 
@@ -32,7 +33,9 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    [self userSignUp];
+    if ( [segue.identifier isEqualToString:@"signupSegue"]) {
+        [self userSignUp];
+    }
 }
 
 -(void)userSignUp {

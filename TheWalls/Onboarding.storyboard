@@ -153,6 +153,7 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="siS-Jm-gma" id="PRu-9Y-HMS"/>
+                        <outlet property="loginNav" destination="eY4-bj-mUr" id="iS6-A2-jtr"/>
                         <outlet property="passwordTextField" destination="XHk-tz-5FC" id="1a7-i4-87C"/>
                         <outlet property="usernameTextField" destination="8CX-Vy-7jR" id="Qa8-Z8-1xe"/>
                     </connections>
@@ -280,7 +281,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lsa-1G-1No" kind="show" id="JRh-mE-R44"/>
+                                    <segue destination="lsa-1G-1No" kind="show" identifier="signupSegue" id="JRh-mE-R44"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -302,6 +303,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="yJv-T8-G2u" id="DWo-Ce-6DN"/>
                         <outlet property="passwordTextField" destination="7ka-Nw-PkK" id="Z2Q-Zd-ZnZ"/>
+                        <outlet property="signupNav" destination="3bm-Lr-vHS" id="FQe-V2-1M7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHs-eI-h8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
