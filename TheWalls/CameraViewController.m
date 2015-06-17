@@ -20,10 +20,10 @@
     [self.view addSubview:self.imagePreview];
 
     //Setup UI buttons;
-    self.cameraButton = [self createButtonWithTitle:@"P" chooseColor:[UIColor peonyColor] andPosition:250];
+    self.cameraButton = [self createButtonWithTitle:@"P" chooseColor:[UIColor limeColor] andPosition:250];
     [self.cameraButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
 
-    self.saveButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor limeColor] andPosition:100];
+    self.saveButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor peonyColor] andPosition:100];
     [self.saveButton addTarget:self action:@selector(savePhoto:) forControlEvents:UIControlEventTouchUpInside];
 
     //Track if a picture has been taken, automatically call camera first time

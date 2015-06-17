@@ -111,7 +111,13 @@
         return nil;
     }
     MKAnnotationView *pin = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
-    pin.image = [UIImage imageNamed:@"shape1"];
+    UIImage *image = [UIImage imageNamed:@"shape2"];
+    CGSize scaleSize = CGSizeMake(32.5, 32.5);
+    UIGraphicsBeginImageContextWithOptions(scaleSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, scaleSize.width, scaleSize.height)];
+    UIImage * resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    pin.image = resizedImage;
     pin.canShowCallout =  YES;
     pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     return pin;
