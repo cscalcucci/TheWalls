@@ -12,8 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
-@property (weak, nonatomic) IBOutlet UIButton *signupButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property PFUser *currentUser;
 @end
@@ -23,44 +21,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.title = @"Log In";
+    self.passwordTextField.secureTextEntry = YES;
 //    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
 //    loginButton.center = self.view.center;
 //    [self.view addSubview:loginButton];
 
-    if ([PFUser currentUser] == nil) {
-        [self.logoutButton setHidden:YES];
-    } else {
-        [self.usernameTextField setHidden:YES];
-        [self.emailTextField setHidden:YES];
-        [self.passwordTextField setHidden:YES];
-        [self.signupButton setHidden:YES];
-        [self.loginButton setHidden:YES];
-    }
 }
 
 - (IBAction)onLoginTapped:(UIButton *)sender {
     [self userLogIn];
 }
-- (IBAction)onSignupTapped:(UIButton *)sender {
-    [self userSignUp];
-}
-- (IBAction)onLogoutTapped:(UIButton *)sender {
-    [self userLogout];
-}
 
--(void)userSignUp {
-    PFUser *user = [PFUser new];
-    user.username = self.usernameTextField.text;
-    user.email = self.emailTextField.text;
-    user.password = self.passwordTextField.text;
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([PFUser currentUser] == nil) {
+        [self userLogIn];
+    } else {
 
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            [self dismissViewControllerAnimated:true completion:nil];
-        } else {
-            [self showAlert:@"Signup error" param2:error];
-        }
-    }];
+    }
+
+    return YES;
 }
 
 -(void)userLogIn {
@@ -87,11 +67,6 @@
 //            NSLog(@"User logged in through Facebook!");
 //        }
 //    }];
-}
-
-- (void)userLogout {
-    [PFUser logOutInBackground];
-    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 -(void)showAlert:(NSString *)message param2:(NSError *)error {

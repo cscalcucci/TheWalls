@@ -29,12 +29,15 @@
 		7EC532051B30A44800CF94BF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532031B30A44800CF94BF /* FBSDKCoreKit.framework */; };
 		7EC532061B30A44800CF94BF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532041B30A44800CF94BF /* FBSDKLoginKit.framework */; };
 		7EC532081B30A45600CF94BF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532071B30A45600CF94BF /* FBSDKShareKit.framework */; };
+		7EC5320B1B31BED200CF94BF /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5320A1B31BED200CF94BF /* SignupViewController.m */; };
+		7EC5320E1B31BEE800CF94BF /* SessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5320D1B31BEE800CF94BF /* SessionViewController.m */; };
+		7EC532101B31BFF000CF94BF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */; };
+		7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532121B31D64D00CF94BF /* UsernameViewController.m */; };
+		7EC532161B31DA0200CF94BF /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532151B31DA0200CF94BF /* AddressBookViewController.m */; };
 		99894F7E1B2FB64E00367E67 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F7D1B2FB64E00367E67 /* Photo.m */; };
 		99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F821B2FBF1700367E67 /* CameraViewController.m */; };
-		998950711B30985F00367E67 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998950701B30985F00367E67 /* FBSDKShareKit.framework */; };
 		998950741B30986E00367E67 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998950721B30986E00367E67 /* FBSDKCoreKit.framework */; };
 		998950751B30986E00367E67 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998950731B30986E00367E67 /* FBSDKLoginKit.framework */; };
-		999B3A851B2F31CA002BC1D6 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999B3A841B2F31CA002BC1D6 /* Onboarding.storyboard */; };
 		999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */; };
 		999B3A911B2F352C002BC1D6 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B3A901B2F352C002BC1D6 /* StoryboardManager.swift */; };
 		999B3A971B2F4D89002BC1D6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999B3A961B2F4D89002BC1D6 /* MapKit.framework */; };
@@ -87,14 +90,21 @@
 		7EC532031B30A44800CF94BF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		7EC532041B30A44800CF94BF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		7EC532071B30A45600CF94BF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		7EC532091B31BED200CF94BF /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		7EC5320A1B31BED200CF94BF /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		7EC5320C1B31BEE800CF94BF /* SessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionViewController.h; sourceTree = "<group>"; };
+		7EC5320D1B31BEE800CF94BF /* SessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionViewController.m; sourceTree = "<group>"; };
+		7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		7EC532111B31D64D00CF94BF /* UsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsernameViewController.h; sourceTree = "<group>"; };
+		7EC532121B31D64D00CF94BF /* UsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameViewController.m; sourceTree = "<group>"; };
+		7EC532141B31DA0200CF94BF /* AddressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookViewController.h; sourceTree = "<group>"; };
+		7EC532151B31DA0200CF94BF /* AddressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookViewController.m; sourceTree = "<group>"; };
 		99894F7C1B2FB64E00367E67 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		99894F7D1B2FB64E00367E67 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		99894F811B2FBF1700367E67 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		99894F821B2FBF1700367E67 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
-		998950701B30985F00367E67 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		998950721B30986E00367E67 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		998950731B30986E00367E67 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		999B3A841B2F31CA002BC1D6 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PrimaryView.storyboard; sourceTree = "<group>"; };
 		999B3A8F1B2F352C002BC1D6 /* TheWalls-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheWalls-Bridging-Header.h"; sourceTree = "<group>"; };
 		999B3A901B2F352C002BC1D6 /* StoryboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardManager.swift; sourceTree = "<group>"; };
@@ -234,11 +244,19 @@
 		999B3A881B2F3211002BC1D6 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				999B3A841B2F31CA002BC1D6 /* Onboarding.storyboard */,
+				7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */,
+				7EC532141B31DA0200CF94BF /* AddressBookViewController.h */,
+				7EC532151B31DA0200CF94BF /* AddressBookViewController.m */,
 				7EAAE47B1B2F6D3700814E77 /* HomeViewController.h */,
 				7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */,
 				7EAAE4781B2F646C00814E77 /* LoginViewController.h */,
 				7EAAE4791B2F646C00814E77 /* LoginViewController.m */,
+				7EC532091B31BED200CF94BF /* SignupViewController.h */,
+				7EC5320A1B31BED200CF94BF /* SignupViewController.m */,
+				7EC5320C1B31BEE800CF94BF /* SessionViewController.h */,
+				7EC5320D1B31BEE800CF94BF /* SessionViewController.m */,
+				7EC532111B31D64D00CF94BF /* UsernameViewController.h */,
+				7EC532121B31D64D00CF94BF /* UsernameViewController.m */,
 				999B3A861B2F31D8002BC1D6 /* SplashViewController */,
 			);
 			name = Onboarding;
@@ -449,10 +467,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */,
+				7EC532101B31BFF000CF94BF /* Onboarding.storyboard in Resources */,
 				999CF77C1B2D19A5006A0324 /* Main.storyboard in Resources */,
 				999CF7811B2D19A5006A0324 /* LaunchScreen.xib in Resources */,
 				999CF77E1B2D19A5006A0324 /* Images.xcassets in Resources */,
-				999B3A851B2F31CA002BC1D6 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,10 +510,14 @@
 				999CF7731B2D19A5006A0324 /* AppDelegate.m in Sources */,
 				999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */,
 				7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */,
+				7EC5320B1B31BED200CF94BF /* SignupViewController.m in Sources */,
 				99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */,
+				7EC532161B31DA0200CF94BF /* AddressBookViewController.m in Sources */,
+				7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */,
 				999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */,
 				999CF7701B2D19A5006A0324 /* main.m in Sources */,
 				99894F7E1B2FB64E00367E67 /* Photo.m in Sources */,
+				7EC5320E1B31BEE800CF94BF /* SessionViewController.m in Sources */,
 				999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

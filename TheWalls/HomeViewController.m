@@ -7,8 +7,8 @@
 //
 
 #import "HomeViewController.h"
-#import <Parse/Parse.h>
 #import "LoginViewController.h"
+#import "SessionViewController.h"
 
 @interface HomeViewController ()
 @property PFUser *currentUser;
@@ -20,19 +20,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    if ([PFUser currentUser] == nil) {
+//        [self.currentUserLabel setHidden:YES];
+//        [self.logoutButton setHidden:YES];
+//        [self performSegueWithIdentifier:@"NewSessionSegue" sender:self];
+//    } else {
+//        self.currentUser = [PFUser currentUser];
+//        self.currentUserLabel.text = self.currentUser.email;
+//    }
 
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"Logged in as: %@", self.currentUser.username);
+- (void)viewWillAppear:(BOOL)animated {
     if ([PFUser currentUser] == nil) {
         [self.currentUserLabel setHidden:YES];
         [self.logoutButton setHidden:YES];
-        [self performSegueWithIdentifier:@"LoginSegue" sender:self];
+        [self performSegueWithIdentifier:@"NewSessionSegue" sender:self];
     } else {
         self.currentUser = [PFUser currentUser];
         self.currentUserLabel.text = self.currentUser.email;
     }
+}
+
+- (IBAction)onLogoutButtonPressed:(UIButton *)sender {
+    [self userLogout];
+}
+
+- (void)userLogout {
+    [PFUser logOutInBackground];
+    [self refreshView];
+}
+
+-(void)refreshView {
+    [self viewDidLoad];
+    [self viewWillAppear:YES];
+    
 }
 
 @end
