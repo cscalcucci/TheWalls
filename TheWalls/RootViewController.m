@@ -98,9 +98,8 @@
         }
         NSArray *array = [[NSArray alloc]initWithArray:pictures];
         for (Photo *photo in array) {
-            MKPointAnnotation *annotation = [MKPointAnnotation new];
+            Splat *annotation = [Splat new];
             annotation.coordinate = CLLocationCoordinate2DMake(photo.latitude, photo.longitude);
-            NSLog(@"%@", annotation);
             [self.primaryMapView addAnnotation:annotation];
         }
     }];
@@ -112,15 +111,24 @@
     }
     MKAnnotationView *pin = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
     UIImage *image = [UIImage imageNamed:@"shape2"];
-    CGSize scaleSize = CGSizeMake(32.5, 32.5);
+    CGSize scaleSize = CGSizeMake(48.0, 48.0);
     UIGraphicsBeginImageContextWithOptions(scaleSize, NO, 0.0);
     [image drawInRect:CGRectMake(0, 0, scaleSize.width, scaleSize.height)];
     UIImage * resizedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     pin.image = resizedImage;
-    pin.canShowCallout =  YES;
-    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    pin.canShowCallout =  NO;
+    pin.userInteractionEnabled = YES;
+//    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     return pin;
+}
+
+-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    [mapView deselectAnnotation:view.annotation animated:YES];
+    self.splat = [Splat new];
+    self.splat = view.annotation;
+    [self performSegueWithIdentifier:@"RootToDetail" sender:self];
+    NSLog(@"%@", self.splat);
 }
 
 #pragma mark - Swipe Gestures
@@ -211,6 +219,9 @@
         CameraViewController *cameraVC = segue.destinationViewController;
         cameraVC.userLocation = self.userLocation;
         NSLog(@"%@", self.userLocation);
+    } else if ([segue.identifier isEqualToString:@"RootToDetail"]) {
+        DetailViewController *detailVC = segue.destinationViewController;
+        detailVC.splat = self.splat;
     }
 }
 

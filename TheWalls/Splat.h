@@ -11,7 +11,7 @@
 #import <Parse/Parse.h>
 
 
-@interface Splat : NSObject <MKAnnotation>
+@interface Splat : MKPointAnnotation
 
 @property CLLocation *location;
 @property PFUser *user;

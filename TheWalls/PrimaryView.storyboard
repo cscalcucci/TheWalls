@@ -19,11 +19,34 @@
                     </view>
                     <connections>
                         <segue destination="wRu-Hl-bDO" kind="presentation" identifier="RootToCamera" id="Szt-Ba-Q8q"/>
+                        <segue destination="28h-ye-sAi" kind="presentation" identifier="RootToDetail" id="uK8-RY-cPE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kow-ta-eO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="462" y="362"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="OdN-5D-f9y">
+            <objects>
+                <viewController id="28h-ye-sAi" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z4j-sa-3WK"/>
+                        <viewControllerLayoutGuide type="bottom" id="3c9-fq-UwJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C4f-LD-qZc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="A03-e6-qfy" kind="unwind" identifier="UnwindToRoot" unwindAction="unwindToRoot:" id="SKx-Ho-6sZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wUd-BD-slc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="A03-e6-qfy" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="462" y="1082"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="j4L-PR-cNi">

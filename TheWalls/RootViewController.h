@@ -14,6 +14,7 @@
 #import "Photo.h"
 #import "Splat.h"
 #import "CameraViewController.h"
+#import "DetailViewController.h"
 
 //Notification center - will probably have to refactor instead of passing location throughout the application
 static NSString * const currentLocationDidChangeNotification = @"currentLocationDidChangeNotification";
