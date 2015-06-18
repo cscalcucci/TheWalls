@@ -14,6 +14,7 @@
     [super viewDidLoad];
 
     //Foursquare API
+    self.venueUrlCall = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%f,%f.6&oauth_token=N5Z3YJNLEWD4KIBIOB1C22YOPTPSJSL3NAEXVUMYGJC35FMP&v=20150617", self.userLocation.coordinate.latitude, self.userLocation.coordinate.longitude]];
     self.foursquareResults = [NSMutableArray new];
     [self foursquareResultsLoad];
 
@@ -42,8 +43,7 @@
 #pragma mark - Foursquare API call
 
 -(void) foursquareResultsLoad {
-    NSURL *url = [NSURL URLWithString:@"https://api.foursquare.com/v2/venues/search?ll=41.8,-87.6&oauth_token=N5Z3YJNLEWD4KIBIOB1C22YOPTPSJSL3NAEXVUMYGJC35FMP&v=20150617"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:self.venueUrlCall];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSError *jsonError = nil;
         NSDictionary *parsedResults = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
@@ -52,15 +52,8 @@
         for (NSDictionary *result in results) {
             FoursquareAPI *item = [[FoursquareAPI alloc]initWithJSONAndParse:result];
             [self.foursquareResults addObject:item];
-
-
         }
-        FoursquareAPI *test = self.foursquareResults.firstObject;
-        NSLog(@"%@", test.venueID);
-        NSLog(@"%@", test.venueName);
-        NSLog(@"%@", test.category);
-
-
+        NSLog(@"%@",self.foursquareResults);
     }];
 }
 

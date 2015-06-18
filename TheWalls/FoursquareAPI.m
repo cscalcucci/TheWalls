@@ -20,8 +20,6 @@
     return self;
 }
 /*
-@property (copy, nonatomic) NSString *category;
-@property (copy, nonatomic) NSString *city;
 @property (copy, nonatomic) NSString *state;
 @property (copy, nonatomic) NSString *zipcode;
 @property (nonatomic) float latitude;
@@ -32,38 +30,41 @@
     return json[@"id"];
 }
 
-
 -(NSString *)venueName {
     return json[@"name"];
 }
 
-//-(NSString *)category {
-//    NSDictionary *categories = json[@"categories"];
-//    return [categories objectForKey:@"name"];
-//}
-
--(NSString *)userProfilePictureURL {
-    NSDictionary *user = json[@"user"];
-    return [user objectForKey:@"profile_picture"];
+-(NSString *)category {
+    NSArray *categories = json[@"categories"];
+    NSDictionary *name = categories[0];
+    return [name objectForKey:@"name"];
 }
 
--(NSString *)imageThumbNailURL; {
-    NSDictionary *images = json[@"images"];
-    NSDictionary *thumbnail = [images objectForKey:@"thumbnail"];
-    return [thumbnail objectForKey:@"url"];
+-(NSString *)city {
+    NSDictionary *location = json[@"location"];
+    return [location objectForKey:@"city"];
 }
 
--(NSString *)imageLowResolutionURL; {
-    NSDictionary *images = json[@"images"];
-    NSDictionary *lowRes = [images objectForKey:@"low_resolution"];
-    return [lowRes objectForKey:@"url"];
+-(NSString *)state {
+    NSDictionary *location = json[@"location"];
+    return [location objectForKey:@"state"];
 }
 
--(NSString *)imageStandardResolutionURL; {
-    NSDictionary *images = json[@"images"];
-    NSDictionary *stdRes = [images objectForKey:@"standard_resolution"];
-    return [stdRes objectForKey:@"url"];
+-(NSString *)zipcode {
+    NSDictionary *location = json[@"location"];
+    return [location objectForKey:@"postalCode"];
 }
 
+-(float)latitude {
+    NSDictionary *lat = json[@"location"];
+    NSString *latitude = [lat objectForKey:@"lat"];
+    return latitude.floatValue;
+}
+
+-(float)longitude {
+    NSDictionary *lat = json[@"location"];
+    NSString *longitude = [lat objectForKey:@"lng"];
+    return longitude.floatValue;
+}
 
 @end

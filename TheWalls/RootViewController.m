@@ -92,7 +92,7 @@
 
 - (void)letThereBeMKAnnotation {
     PFQuery *query = [Object query];
-    [query whereKey:@"caption" equalTo:@"Photo"];
+//    [query whereKey:@"caption" equalTo:@"Photo"];
     query.limit = 20;
     [query findObjectsInBackgroundWithBlock:^(NSArray *pictures, NSError *error) {
         if (!error) {
@@ -112,7 +112,8 @@
         return nil;
     }
     MKAnnotationView *pin = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
-    UIImage *image = [UIImage imageNamed:@"shape2"];
+    UIImage *image = [UIImage imageNamed:@"shape3"];
+
     CGSize scaleSize = CGSizeMake(48.0, 48.0);
     UIGraphicsBeginImageContextWithOptions(scaleSize, NO, 0.0);
     [image drawInRect:CGRectMake(0, 0, scaleSize.width, scaleSize.height)];
