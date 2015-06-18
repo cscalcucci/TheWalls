@@ -18,10 +18,10 @@
 @property NSString *caption;
 @property PFFile *file;
 @property PFUser *createdBy;
-@property PFGeoPoint *location;
-@property MKPointAnnotation *annotation;
-@property double latitude;
-@property double longitude;
+@property PFGeoPoint *location; //fucked
+@property MKPointAnnotation *annotation; //fucked
+@property double latitude; //fucked
+@property double longitude; //fucked
 
 
 

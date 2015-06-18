@@ -127,6 +127,7 @@
 }
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    //fuckkkkked
     [mapView deselectAnnotation:view.annotation animated:YES];
 //    NSLog(@"%@", view.description);
     NSLog(@"%@",[[view.annotation superclass] superclass]);
@@ -236,9 +237,6 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Onboarding" bundle:[NSBundle mainBundle]];
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
     [self presentViewController:viewController animated:NO completion:NULL];
-//    [self viewDidLoad];
-//    [self viewWillAppear:YES];
-
 }
 
 #pragma mark - Photo button & segue
@@ -253,6 +251,7 @@
         cameraVC.userLocation = self.userLocation;
         NSLog(@"%@", self.userLocation);
     } else if ([segue.identifier isEqualToString:@"RootToDetail"]) {
+        //fucked
         DetailViewController *detailVC = segue.destinationViewController;
         detailVC.object = self.object;
     }
