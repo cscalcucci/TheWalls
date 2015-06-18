@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface AddressBookViewController : UIViewController
+@interface AddressBookViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate>
 
 @end

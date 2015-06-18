@@ -24,20 +24,21 @@
     self.passwordTextField.secureTextEntry = YES;
     self.emailTextField.placeholder = @"email";
     self.passwordTextField.placeholder = @"password";
+    [self.emailTextField becomeFirstResponder];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if ([PFUser currentUser] == nil) {
+    if (self.emailTextField.isFirstResponder) {
+        [self.passwordTextField becomeFirstResponder];
+    } else if (self.passwordTextField.isFirstResponder) {
         [self userSignUp];
     }
 
     return YES;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ( [segue.identifier isEqualToString:@"signupSegue"]) {
-        [self userSignUp];
-    }
+- (IBAction)onSignupPressed:(UIButton *)sender {
+    [self userSignUp];
 }
 
 -(void)userSignUp {
@@ -49,6 +50,8 @@
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
             [self showAlert:@"Signup error" param2:error];
+        } else {
+            [self performSegueWithIdentifier:@"signupSegue" sender:self];
         }
     }];
 }

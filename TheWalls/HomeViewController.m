@@ -40,8 +40,9 @@
         self.currentUser = [PFUser currentUser];
         self.currentUserLabel.text = self.currentUser.email;
 
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
-        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Onboarding" bundle:[NSBundle mainBundle]];
+        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"AddressBookViewController"];
         [self presentViewController:viewController animated:NO completion:NULL];
     }
 }

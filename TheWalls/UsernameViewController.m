@@ -19,15 +19,27 @@
     [super viewDidLoad];
 
     self.usernameTextField.placeholder = @"create a username";
+    [self.usernameTextField becomeFirstResponder];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self updateUsername];
+
+    return YES;
+}
+
+- (IBAction)onContinuePressed:(UIButton *)sender {
     [self updateUsername];
 }
 
 -(void)updateUsername {
     self.currentUser.username = self.usernameTextField.text;
     [self.currentUser saveInBackground];
+    [self performSegueWithIdentifier:@"usernameSegue" sender:self];
+}
+
+-(IBAction)unwindUsername:(UIStoryboardSegue *)segue {
+
 }
 
 @end

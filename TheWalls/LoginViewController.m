@@ -25,6 +25,7 @@
     self.passwordTextField.secureTextEntry = YES;
     self.usernameTextField.placeholder = @"username";
     self.passwordTextField.placeholder = @"password";
+    [self.usernameTextField becomeFirstResponder];
 //    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
 //    loginButton.center = self.view.center;
 //    [self.view addSubview:loginButton];
