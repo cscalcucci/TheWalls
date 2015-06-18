@@ -6,13 +6,17 @@
 //  Copyright (c) 2015 machine^n. All rights reserved.
 //
 
-#import "Photo.h"
+#import "Object.h"
 #import <Parse/PFObject+Subclass.h>
 
-@implementation Photo
+@implementation Object
+
+@dynamic objectID;
 @dynamic caption;
-@dynamic imagePhoto;
+@dynamic file;
 @dynamic createdBy;
+@dynamic location;
+@dynamic annotation;
 @dynamic latitude;
 @dynamic longitude;
 
@@ -21,7 +25,7 @@
 }
 
 + (NSString *)parseClassName {
-    return @"Photo";
+    return @"Object";
 }
 
 @end

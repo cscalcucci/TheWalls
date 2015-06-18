@@ -7,17 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
 
-@interface Photo : PFObject<PFSubclassing>
+@interface Object : PFObject<PFSubclassing>
 
 + (NSString *)parseClassName;
 
+@property NSString *objectID;
 @property NSString *caption;
-@property PFFile *imagePhoto;
+@property PFFile *file;
 @property PFUser *createdBy;
-@property float latitude;
-@property float longitude;
+@property PFGeoPoint *location;
+@property MKPointAnnotation *annotation;
+@property double latitude;
+@property double longitude;
+
 
 
 @end

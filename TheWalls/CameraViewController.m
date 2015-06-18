@@ -13,6 +13,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    //Foursquare API
+    self.foursquareResults = [NSMutableArray new];
+    [self foursquareResultsLoad];
+
     //Setup background and imageview
     self.view.backgroundColor = [UIColor paperColor];
     self.imagePreview = [[UIImageView alloc]initWithFrame:self.view.frame];
@@ -33,6 +37,31 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
+}
+
+#pragma mark - Foursquare API call
+
+-(void) foursquareResultsLoad {
+    NSURL *url = [NSURL URLWithString:@"https://api.foursquare.com/v2/venues/search?ll=41.8,-87.6&oauth_token=N5Z3YJNLEWD4KIBIOB1C22YOPTPSJSL3NAEXVUMYGJC35FMP&v=20150617"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSError *jsonError = nil;
+        NSDictionary *parsedResults = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        NSDictionary *parsedResults2 = [parsedResults valueForKey:@"response"];
+        NSArray *results = [parsedResults2 valueForKey:@"venues"];
+        for (NSDictionary *result in results) {
+            FoursquareAPI *item = [[FoursquareAPI alloc]initWithJSONAndParse:result];
+            [self.foursquareResults addObject:item];
+
+
+        }
+        FoursquareAPI *test = self.foursquareResults.firstObject;
+        NSLog(@"%@", test.venueID);
+        NSLog(@"%@", test.venueName);
+        NSLog(@"%@", test.category);
+
+
+    }];
 }
 
 #pragma mark - Take photo, save photo, unwind
@@ -57,13 +86,15 @@
     if (self.photoTaken == YES) {
     //Render and save image
         NSData *imageData = UIImagePNGRepresentation(self.imageDidSelected);
-        Photo *newPhoto = [Photo new];
-        newPhoto.imagePhoto = [PFFile fileWithName:@"image.png" data:imageData];
-        newPhoto.caption = @"Photo";
-        newPhoto.latitude = self.userLocation.coordinate.latitude;
-        newPhoto.longitude = self.userLocation.coordinate.longitude;
-        [newPhoto setObject:[PFUser currentUser] forKey:@"createdBy"];
-        [newPhoto saveInBackground];
+        Object *object = [Object new];
+        object.file = [PFFile fileWithName:@"image.png" data:imageData];
+        object.caption = @"Photo";
+        object.latitude = self.userLocation.coordinate.latitude;
+        object.longitude = self.userLocation.coordinate.longitude;
+        [object setObject:[PFUser currentUser] forKey:@"createdBy"];
+
+
+        [object saveInBackground];
     }
     //Perform segue back to RootViewController
     [self performSegueWithIdentifier:@"UnwindToRoot" sender:self];

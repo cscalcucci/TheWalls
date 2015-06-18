@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Splat.h"
+#import "Object.h"
 #import <ParseUI/ParseUI.h>
 
 @interface DetailViewController : UIViewController
 @property PFImageView *imageView;
-@property Splat *splat;
+@property Object *object;
 
 @end

@@ -11,8 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "UIColor+CustomColors.h"
-#import "Photo.h"
-#import "Splat.h"
+#import "Object.h"
 #import "CameraViewController.h"
 #import "DetailViewController.h"
 
@@ -26,7 +25,7 @@ static NSString * const currentLocationDidChangeNotification = @"currentLocation
 @property CLLocation *userLocation;
 @property MKMapView *primaryMapView;
 @property MKAnnotationView *splatAnnotationView;
-@property Splat *splat;
+@property Object *object;
 
 
 //Photo properties

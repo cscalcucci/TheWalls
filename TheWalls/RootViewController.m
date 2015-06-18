@@ -91,17 +91,17 @@
 #pragma mark - Content location plots
 
 - (void)letThereBeMKAnnotation {
-    PFQuery *query = [Photo query];
-    [query whereKey:@"createdBy" equalTo:[PFUser currentUser]];
-
+    PFQuery *query = [Object query];
+    [query whereKey:@"caption" equalTo:@"Photo"];
     query.limit = 20;
     [query findObjectsInBackgroundWithBlock:^(NSArray *pictures, NSError *error) {
         if (!error) {
+            NSLog(@"%@", error);
         }
         NSArray *array = [[NSArray alloc]initWithArray:pictures];
-        for (Photo *photo in array) {
-            Splat *annotation = [Splat new];
-            annotation.coordinate = CLLocationCoordinate2DMake(photo.latitude, photo.longitude);
+        for (Object *object in array) {
+            MKPointAnnotation *annotation = [MKPointAnnotation new];
+            annotation.coordinate = CLLocationCoordinate2DMake(object.latitude, object.longitude);
             [self.primaryMapView addAnnotation:annotation];
         }
     }];
@@ -127,10 +127,9 @@
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     [mapView deselectAnnotation:view.annotation animated:YES];
-    self.splat = [Splat new];
-    self.splat = view.annotation;
+//    NSLog(@"%@", view.description);
+    NSLog(@"%@",[[view.annotation superclass] superclass]);
     [self performSegueWithIdentifier:@"RootToDetail" sender:self];
-    NSLog(@"%@", self.splat);
 }
 
 #pragma mark - Swipe Gestures
@@ -254,7 +253,7 @@
         NSLog(@"%@", self.userLocation);
     } else if ([segue.identifier isEqualToString:@"RootToDetail"]) {
         DetailViewController *detailVC = segue.destinationViewController;
-        detailVC.splat = self.splat;
+        detailVC.object = self.object;
     }
 }
 
