@@ -34,6 +34,7 @@
 		7EC532101B31BFF000CF94BF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */; };
 		7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532121B31D64D00CF94BF /* UsernameViewController.m */; };
 		7EC532161B31DA0200CF94BF /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532151B31DA0200CF94BF /* AddressBookViewController.m */; };
+		991AA1321B324AA2004F2B2C /* FoursquareAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 991AA1311B324AA2004F2B2C /* FoursquareAPI.m */; };
 		99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99349E431B31CC95001C47F7 /* DetailViewController.m */; };
 		99894F7E1B2FB64E00367E67 /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F7D1B2FB64E00367E67 /* Object.m */; };
 		99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F821B2FBF1700367E67 /* CameraViewController.m */; };
@@ -97,6 +98,8 @@
 		7EC532121B31D64D00CF94BF /* UsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameViewController.m; sourceTree = "<group>"; };
 		7EC532141B31DA0200CF94BF /* AddressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookViewController.h; sourceTree = "<group>"; };
 		7EC532151B31DA0200CF94BF /* AddressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookViewController.m; sourceTree = "<group>"; };
+		991AA1301B324AA2004F2B2C /* FoursquareAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoursquareAPI.h; sourceTree = "<group>"; };
+		991AA1311B324AA2004F2B2C /* FoursquareAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoursquareAPI.m; sourceTree = "<group>"; };
 		99349E421B31CC95001C47F7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		99349E431B31CC95001C47F7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		99894F7C1B2FB64E00367E67 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
@@ -193,6 +196,15 @@
 			name = Parse;
 			sourceTree = "<group>";
 		};
+		991AA1331B324AA8004F2B2C /* Foursquare */ = {
+			isa = PBXGroup;
+			children = (
+				991AA1301B324AA2004F2B2C /* FoursquareAPI.h */,
+				991AA1311B324AA2004F2B2C /* FoursquareAPI.m */,
+			);
+			name = Foursquare;
+			sourceTree = "<group>";
+		};
 		99349E451B31CC9B001C47F7 /* DetailViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +233,7 @@
 		99894F801B2FB72400367E67 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				991AA1331B324AA8004F2B2C /* Foursquare */,
 				995E47771B30B5E6008A17FC /* Splat */,
 				999CF7A11B2E05B6006A0324 /* Custom Colors */,
 				99894F7F1B2FB65300367E67 /* Photo */,
@@ -507,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EAAE47A1B2F646C00814E77 /* LoginViewController.m in Sources */,
+				991AA1321B324AA2004F2B2C /* FoursquareAPI.m in Sources */,
 				999CF7761B2D19A5006A0324 /* TheWalls.xcdatamodeld in Sources */,
 				999CF7731B2D19A5006A0324 /* AppDelegate.m in Sources */,
 				999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */,

@@ -127,10 +127,9 @@
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     [mapView deselectAnnotation:view.annotation animated:YES];
-    self.object = [Object new];
-    self.object.annotation = view.annotation;
+//    NSLog(@"%@", view.description);
+    NSLog(@"%@",[[view.annotation superclass] superclass]);
     [self performSegueWithIdentifier:@"RootToDetail" sender:self];
-    NSLog(@"%@", self.object);
 }
 
 #pragma mark - Swipe Gestures

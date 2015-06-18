@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "Object.h"
-
+#import "FoursquareAPI.h"
 #import "UIColor+CustomColors.h"
 
 @interface CameraViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -21,6 +21,7 @@
 @property UIButton *cameraButton;
 @property UIButton *importButton;
 @property UIButton *saveButton;
+@property NSMutableArray *foursquareResults;
 @property BOOL photoTaken;
 
 @end
