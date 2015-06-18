@@ -92,7 +92,7 @@
 
 - (void)letThereBeMKAnnotation {
     PFQuery *query = [Object query];
-    [query whereKey:@"createdBy" equalTo:[PFUser currentUser]];
+    [query whereKey:@"caption" equalTo:@"Photo"];
     query.limit = 20;
     [query findObjectsInBackgroundWithBlock:^(NSArray *pictures, NSError *error) {
         if (!error) {
@@ -100,8 +100,9 @@
         }
         NSArray *array = [[NSArray alloc]initWithArray:pictures];
         for (Object *object in array) {
-
-            [self.primaryMapView addAnnotation:object.annotation];
+            MKPointAnnotation *annotation = [MKPointAnnotation new];
+            annotation.coordinate = CLLocationCoordinate2DMake(object.latitude, object.longitude);
+            [self.primaryMapView addAnnotation:annotation];
         }
     }];
 }

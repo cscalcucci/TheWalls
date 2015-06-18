@@ -57,13 +57,13 @@
     if (self.photoTaken == YES) {
     //Render and save image
         NSData *imageData = UIImagePNGRepresentation(self.imageDidSelected);
-        Object *newPhoto = [Object new];
-        newPhoto.file = [PFFile fileWithName:@"image.png" data:imageData];
-        newPhoto.caption = @"Photo";
-        newPhoto.latitude = self.userLocation.coordinate.latitude;
-        newPhoto.longitude = self.userLocation.coordinate.longitude;
-        [newPhoto setObject:[PFUser currentUser] forKey:@"createdBy"];
-        [newPhoto saveInBackground];
+        Object *object = [Object new];
+        object.file = [PFFile fileWithName:@"image.png" data:imageData];
+        object.caption = @"Photo";
+        object.latitude = self.userLocation.coordinate.latitude;
+        object.longitude = self.userLocation.coordinate.longitude;
+        [object setObject:[PFUser currentUser] forKey:@"createdBy"];
+        [object saveInBackground];
     }
     //Perform segue back to RootViewController
     [self performSegueWithIdentifier:@"UnwindToRoot" sender:self];
