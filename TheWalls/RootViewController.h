@@ -15,6 +15,8 @@
 #import "CameraViewController.h"
 #import "DetailViewController.h"
 
+#import "CustomPointAnnotation.h"
+
 //Notification center - will probably have to refactor instead of passing location throughout the application
 static NSString * const currentLocationDidChangeNotification = @"currentLocationDidChangeNotification";
 
@@ -23,6 +25,8 @@ static NSString * const currentLocationDidChangeNotification = @"currentLocation
 //Chris Properties
 @property NSArray *objectArray;
 @property NSInteger indexPath;
+@property NSMutableArray *annotationArray;
+
 
 //Location properties
 @property CLLocationManager *locationManager;

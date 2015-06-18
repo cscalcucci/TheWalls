@@ -93,11 +93,13 @@
 - (void)letThereBeMKAnnotation {
     PFQuery *query = [Object query];
 //    [query whereKey:@"caption" equalTo:@"Photo"];
+    [query orderByDescending:@"createdAt"];
     query.limit = 20;
     [query findObjectsInBackgroundWithBlock:^(NSArray *pictures, NSError *error) {
         if (!error) {
             NSLog(@"%@", error);
         }
+        self.annotationArray = [[NSMutableArray alloc] init];
         self.objectArray = [[NSArray alloc]initWithArray:pictures];
 //        for (Object *object in self.objectArray) {
         for (int i; i < self.objectArray.count; i++) {
@@ -105,7 +107,8 @@
             [object setObject:[NSString stringWithFormat:@"%i", i] forKey:@"indexPath" ];
             MKPointAnnotation *annotation = [MKPointAnnotation new];
             annotation.coordinate = CLLocationCoordinate2DMake(object.latitude, object.longitude);
-            
+            [self.annotationArray addObject:annotation];
+//            [self.annotationDic setValue:[NSString stringWithFormat:@"%i", i] forKey:[NSString stringWithFormat:<#(NSString *), ...#>]annotation];
             [self.primaryMapView addAnnotation:annotation];
         }
     }];
@@ -132,9 +135,9 @@
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     //fuckkkkked
-
     [mapView deselectAnnotation:view.annotation animated:YES];
 //    NSLog(@"%@", view.description);
+    self.indexPath = [self.annotationArray indexOfObject:view.annotation];
     NSLog(@"%@",[[view.annotation superclass] superclass]);
     [self performSegueWithIdentifier:@"RootToDetail" sender:self];
 }
@@ -258,7 +261,9 @@
     } else if ([segue.identifier isEqualToString:@"RootToDetail"]) {
         //fucked
         DetailViewController *detailVC = segue.destinationViewController;
-        detailVC.object = self.object;
+        detailVC.objectArray = self.objectArray;
+        detailVC.indexPath = self.indexPath;
+        
     }
 }
 
