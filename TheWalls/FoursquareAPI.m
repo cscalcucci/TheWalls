@@ -19,12 +19,6 @@
     }
     return self;
 }
-/*
-@property (copy, nonatomic) NSString *state;
-@property (copy, nonatomic) NSString *zipcode;
-@property (nonatomic) float latitude;
-@property (nonatomic) float longitude;
-*/
 
 -(NSString *)venueID {
     return json[@"id"];
@@ -66,5 +60,23 @@
     NSString *longitude = [lat objectForKey:@"lng"];
     return longitude.floatValue;
 }
+
++ (void)retrieveFoursquareResults:(NSURL *)url completion:(void(^)(NSArray *array))complete {
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSError *jsonError = nil;
+        NSMutableArray *storedObjects;
+        NSDictionary *parsedResults = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        NSDictionary *parsedResults2 = [parsedResults valueForKey:@"response"];
+        NSArray *results = [parsedResults2 valueForKey:@"venues"];
+        for (NSDictionary *result in results) {
+            FoursquareAPI *item = [[FoursquareAPI alloc]initWithJSONAndParse:result];
+            [storedObjects addObject:item];
+        }
+        NSArray *array = [NSArray arrayWithArray:storedObjects];
+        complete(array);
+    }];
+}
+
 
 @end

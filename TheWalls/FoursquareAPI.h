@@ -19,6 +19,7 @@
 @property (nonatomic) float latitude;
 @property (nonatomic) float longitude;
 
--(instancetype)initWithJSONAndParse:(NSDictionary *)jSONDictionary;
+- (instancetype)initWithJSONAndParse:(NSDictionary *)jSONDictionary;
++ (void)retrieveFoursquareResults:(NSURL *)url completion:(void(^)(NSArray *array))complete;
 
 @end

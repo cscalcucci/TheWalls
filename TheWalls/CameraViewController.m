@@ -14,9 +14,8 @@
     [super viewDidLoad];
 
     //Foursquare API
-    self.venueUrlCall = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%f,%f.6&oauth_token=N5Z3YJNLEWD4KIBIOB1C22YOPTPSJSL3NAEXVUMYGJC35FMP&v=20150617", self.userLocation.coordinate.latitude, self.userLocation.coordinate.longitude]];
+    self.venueUrlCall = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%f,%f&oauth_token=N5Z3YJNLEWD4KIBIOB1C22YOPTPSJSL3NAEXVUMYGJC35FMP&v=20150617", self.userLocation.coordinate.latitude, self.userLocation.coordinate.longitude]];
     self.foursquareResults = [NSMutableArray new];
-    [self foursquareResultsLoad];
 
     //Setup background and imageview
     self.view.backgroundColor = [UIColor paperColor];
@@ -42,19 +41,17 @@
 
 #pragma mark - Foursquare API call
 
--(void) foursquareResultsLoad {
-    NSURLRequest *request = [NSURLRequest requestWithURL:self.venueUrlCall];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        NSError *jsonError = nil;
-        NSDictionary *parsedResults = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-        NSDictionary *parsedResults2 = [parsedResults valueForKey:@"response"];
-        NSArray *results = [parsedResults2 valueForKey:@"venues"];
-        for (NSDictionary *result in results) {
-            FoursquareAPI *item = [[FoursquareAPI alloc]initWithJSONAndParse:result];
-            [self.foursquareResults addObject:item];
-        }
-        NSLog(@"%@",self.foursquareResults);
+- (void)retrieveFoursquareResults {
+    [FoursquareAPI retrieveFoursquareResults:self.venueUrlCall completion:^(NSArray *array) {
+        self.foursquareResults = array;
+        //reload tableview
+        NSLog(@"%@", array);
     }];
+}
+
+- (void)setFoursquareResults:(NSArray *)foursquareResults {
+    _foursquareResults = foursquareResults;
+    //reload tableview;
 }
 
 #pragma mark - Take photo, save photo, unwind

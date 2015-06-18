@@ -21,7 +21,7 @@
 @property UIButton *cameraButton;
 @property UIButton *importButton;
 @property UIButton *saveButton;
-@property NSMutableArray *foursquareResults;
+@property (nonatomic) NSArray *foursquareResults;
 @property NSURL *venueUrlCall;
 @property BOOL photoTaken;
 
