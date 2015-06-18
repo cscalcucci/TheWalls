@@ -30,6 +30,9 @@
     self.saveButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor peonyColor] andPosition:100];
     [self.saveButton addTarget:self action:@selector(savePhoto:) forControlEvents:UIControlEventTouchUpInside];
 
+    self.locationButton = [self createButtonWithTitle:@"L" chooseColor:[UIColor hamlindigoColor] andPosition:300];
+    [self.locationButton addTarget:self action:@selector(segueToLocationTable) forControlEvents:UIControlEventTouchUpInside];
+
     //Track if a picture has been taken, automatically call camera first time
     self.photoTaken = NO;
     [self takePhoto];
@@ -40,6 +43,11 @@
 }
 
 #pragma mark - Foursquare API call
+
+- (void)segueToLocationTable {
+    [self performSegueWithIdentifier:@"CameraToSelectLocation" sender:self];
+}
+
 
 - (void)retrieveFoursquareResults {
     [FoursquareAPI retrieveFoursquareResults:self.venueUrlCall completion:^(NSArray *array) {
@@ -107,6 +115,9 @@
 
     [self.view addSubview:button];
     return button;
+}
+
+- (IBAction)unwindToCamera:(UIStoryboardSegue *)segue {
 }
 
 

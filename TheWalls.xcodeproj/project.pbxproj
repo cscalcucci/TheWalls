@@ -39,6 +39,7 @@
 		7EC5321D1B32322B00CF94BF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		991AA1321B324AA2004F2B2C /* FoursquareAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 991AA1311B324AA2004F2B2C /* FoursquareAPI.m */; };
 		99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99349E431B31CC95001C47F7 /* DetailViewController.m */; };
+		996D51E81B334A6F002304E5 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 996D51E71B334A6F002304E5 /* SelectLocationViewController.m */; };
 		99894F7E1B2FB64E00367E67 /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F7D1B2FB64E00367E67 /* Object.m */; };
 		99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F821B2FBF1700367E67 /* CameraViewController.m */; };
 		999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */; };
@@ -103,6 +104,8 @@
 		991AA1311B324AA2004F2B2C /* FoursquareAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoursquareAPI.m; sourceTree = "<group>"; };
 		99349E421B31CC95001C47F7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		99349E431B31CC95001C47F7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		996D51E61B334A6F002304E5 /* SelectLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationViewController.h; sourceTree = "<group>"; };
+		996D51E71B334A6F002304E5 /* SelectLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationViewController.m; sourceTree = "<group>"; };
 		99894F7C1B2FB64E00367E67 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
 		99894F7D1B2FB64E00367E67 /* Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Object.m; sourceTree = "<group>"; };
 		99894F811B2FBF1700367E67 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
@@ -222,6 +225,15 @@
 			name = Splat;
 			sourceTree = "<group>";
 		};
+		996D51E91B334A7B002304E5 /* SelectLocation */ = {
+			isa = PBXGroup;
+			children = (
+				996D51E61B334A6F002304E5 /* SelectLocationViewController.h */,
+				996D51E71B334A6F002304E5 /* SelectLocationViewController.m */,
+			);
+			name = SelectLocation;
+			sourceTree = "<group>";
+		};
 		99894F801B2FB72400367E67 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */,
+				996D51E91B334A7B002304E5 /* SelectLocation */,
 				99349E451B31CC9B001C47F7 /* DetailViewController */,
 				999CF7A21B2E05C0006A0324 /* RootViewController */,
 				99894F841B2FBF2000367E67 /* CameraViewController */,
@@ -519,6 +532,7 @@
 				7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */,
 				7EC5320B1B31BED200CF94BF /* SignupViewController.m in Sources */,
 				99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */,
+				996D51E81B334A6F002304E5 /* SelectLocationViewController.m in Sources */,
 				7EC532161B31DA0200CF94BF /* AddressBookViewController.m in Sources */,
 				7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */,
 				999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */,
