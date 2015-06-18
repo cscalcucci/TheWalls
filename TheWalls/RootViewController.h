@@ -20,6 +20,10 @@ static NSString * const currentLocationDidChangeNotification = @"currentLocation
 
 @interface RootViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
+//Chris Properties
+@property NSArray *objectArray;
+@property NSInteger indexPath;
+
 //Location properties
 @property CLLocationManager *locationManager;
 @property CLLocation *userLocation;

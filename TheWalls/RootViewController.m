@@ -98,10 +98,14 @@
         if (!error) {
             NSLog(@"%@", error);
         }
-        NSArray *array = [[NSArray alloc]initWithArray:pictures];
-        for (Object *object in array) {
+        self.objectArray = [[NSArray alloc]initWithArray:pictures];
+//        for (Object *object in self.objectArray) {
+        for (int i; i < self.objectArray.count; i++) {
+            Object *object = self.objectArray[i];
+            [object setObject:[NSString stringWithFormat:@"%i", i] forKey:@"indexPath" ];
             MKPointAnnotation *annotation = [MKPointAnnotation new];
             annotation.coordinate = CLLocationCoordinate2DMake(object.latitude, object.longitude);
+            
             [self.primaryMapView addAnnotation:annotation];
         }
     }];
@@ -128,6 +132,7 @@
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     //fuckkkkked
+
     [mapView deselectAnnotation:view.annotation animated:YES];
 //    NSLog(@"%@", view.description);
     NSLog(@"%@",[[view.annotation superclass] superclass]);

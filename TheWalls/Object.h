@@ -14,7 +14,7 @@
 
 + (NSString *)parseClassName;
 
-@property NSString *objectID;
+//@property NSString *objectID;
 @property NSString *caption;
 @property PFFile *file;
 @property PFUser *createdBy;
