@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property PFUser *currentUser;
 @property (weak, nonatomic) IBOutlet UINavigationBar *signupNav;
+@property (weak, nonatomic) IBOutlet UIButton *signupButton;
 @end
 
 @implementation SignupViewController
@@ -24,7 +25,13 @@
     self.passwordTextField.secureTextEntry = YES;
     self.emailTextField.placeholder = @"email";
     self.passwordTextField.placeholder = @"password";
+    [self.signupButton setHidden:YES];
     [self.emailTextField becomeFirstResponder];
+    self.signupButton.backgroundColor = [UIColor
+                                        colorWithRed:0.518
+                                        green:0.894
+                                        blue:0.345
+                                        alpha:1];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -32,6 +39,14 @@
         [self.passwordTextField becomeFirstResponder];
     } else if (self.passwordTextField.isFirstResponder) {
         [self userSignUp];
+    }
+
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (self.passwordTextField.isFirstResponder) {
+        [self.signupButton setHidden:NO];
     }
 
     return YES;

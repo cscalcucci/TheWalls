@@ -12,6 +12,7 @@
 @property PFUser *currentUser;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UINavigationBar *phoneNav;
+@property (weak, nonatomic) IBOutlet UIButton *phoneButton;
 @end
 
 @implementation PhoneViewController
@@ -22,10 +23,22 @@
     self.phoneNav.topItem.title = @"Phone Number";
     self.phoneTextField.placeholder = @"enter your phone number";
     [self.phoneTextField becomeFirstResponder];
+    [self.phoneButton setHidden:YES];
+    self.phoneButton.backgroundColor = [UIColor
+                                         colorWithRed:0.518
+                                         green:0.894
+                                         blue:0.345
+                                         alpha:1];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self updatePhone];
+
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    [self.phoneButton setHidden:NO];
 
     return YES;
 }

@@ -37,6 +37,7 @@
 		7EC532181B32031700CF94BF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532171B32031700CF94BF /* AddressBook.framework */; };
 		7EC5321A1B32032000CF94BF /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532191B32032000CF94BF /* AddressBookUI.framework */; };
 		7EC5321D1B32322B00CF94BF /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5321C1B32322B00CF94BF /* PhoneViewController.m */; };
+		7EC532201B33572300CF94BF /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5321F1B33572300CF94BF /* Contact.m */; };
 		99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99349E431B31CC95001C47F7 /* DetailViewController.m */; };
 		995E47761B30B5E1008A17FC /* Splat.m in Sources */ = {isa = PBXBuildFile; fileRef = 995E47751B30B5E1008A17FC /* Splat.m */; };
 		99894F7E1B2FB64E00367E67 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F7D1B2FB64E00367E67 /* Photo.m */; };
@@ -103,6 +104,8 @@
 		7EC532191B32032000CF94BF /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		7EC5321B1B32322B00CF94BF /* PhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
 		7EC5321C1B32322B00CF94BF /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
+		7EC5321E1B33572300CF94BF /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		7EC5321F1B33572300CF94BF /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		99349E421B31CC95001C47F7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		99349E431B31CC95001C47F7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		995E47741B30B5E1008A17FC /* Splat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Splat.h; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 				7EC5321C1B32322B00CF94BF /* PhoneViewController.m */,
 				7EC532141B31DA0200CF94BF /* AddressBookViewController.h */,
 				7EC532151B31DA0200CF94BF /* AddressBookViewController.m */,
+				7EC5321E1B33572300CF94BF /* Contact.h */,
+				7EC5321F1B33572300CF94BF /* Contact.m */,
 				7EAAE47B1B2F6D3700814E77 /* HomeViewController.h */,
 				7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */,
 				7EAAE4781B2F646C00814E77 /* LoginViewController.h */,
@@ -534,6 +539,7 @@
 				99894F7E1B2FB64E00367E67 /* Photo.m in Sources */,
 				7EC5320E1B31BEE800CF94BF /* SessionViewController.m in Sources */,
 				999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */,
+				7EC532201B33572300CF94BF /* Contact.m in Sources */,
 				99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

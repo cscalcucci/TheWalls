@@ -26,6 +26,13 @@
     self.usernameTextField.placeholder = @"username";
     self.passwordTextField.placeholder = @"password";
     [self.usernameTextField becomeFirstResponder];
+    [self.loginButton setHidden:YES];
+    self.loginButton.backgroundColor = [UIColor
+                                         colorWithRed:0.518
+                                         green:0.894
+                                         blue:0.345
+                                         alpha:1];
+
 //    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
 //    loginButton.center = self.view.center;
 //    [self.view addSubview:loginButton];
@@ -42,6 +49,14 @@
     } else {
 
     }
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (self.passwordTextField.isFirstResponder) {
+        [self.loginButton setHidden:NO];
+    }
+
     return YES;
 }
 
