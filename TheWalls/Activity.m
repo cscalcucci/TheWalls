@@ -23,6 +23,3 @@
 + (NSString *)parseClassName {
     return @"Object";
 }
-
-
-@end
