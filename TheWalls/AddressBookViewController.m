@@ -15,6 +15,7 @@
 @property NSMutableArray *members;
 @property NSMutableArray *nonmembers;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *sectionOne;
 @end
 
 @implementation AddressBookViewController
@@ -82,7 +83,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return @"SplatChatters";
+        return @"SplatChatters in Address Book";
     } else {
         return @"Invite to SplatChat";
     }
@@ -165,24 +166,6 @@
         CFRelease(phoneNumbers);
     }
     completionHandler(contactsArray);
-}
-
-- (void)findProfilesFromNumbers:(NSArray *)numbers withCompletion:(void (^)(NSArray *profiles))completionHandler {
-    // Using PFQuery
-    PFQuery *userQuery = [PFQuery queryWithClassName:@"PFUser"];
-    [userQuery includeKey:@"phone"];
-
-    [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-
-        NSMutableArray *matches = [NSMutableArray new];
-        NSLog(@"%@",objects.firstObject);
-        for (PFUser *profile in objects) {
-            if ([numbers containsObject:profile.username]) {
-                [matches addObject:profile];
-            }
-        }
-        completionHandler(matches);
-    }];
 }
 
 @end
