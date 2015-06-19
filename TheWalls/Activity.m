@@ -21,8 +21,7 @@
 }
 
 + (NSString *)parseClassName {
-    return @"Object";
+    return @"Activity";
 }
-
 
 @end
