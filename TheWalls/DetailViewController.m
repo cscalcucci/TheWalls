@@ -42,14 +42,14 @@
 
 - (void)leftSwipeGestureInitialization {
     UISwipeGestureRecognizer *leftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeHandle:)];
-    leftRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+    leftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
     [leftRecognizer setNumberOfTouchesRequired:1];
     [self.view addGestureRecognizer:leftRecognizer];
 }
 
 - (void)rightSwipeGestureInitialization {
     UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
-    rightRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+    rightRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
     [rightRecognizer setNumberOfTouchesRequired:1];
     [self.view addGestureRecognizer:rightRecognizer];
 }

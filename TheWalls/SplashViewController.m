@@ -73,13 +73,7 @@
         [UIView animateWithDuration:0.1 animations:^{
             shape.frame = upMovement;
         }];
-
-
-
-
     }];
-
-
 }
 
 @end

@@ -6,17 +6,17 @@
 //  Copyright (c) 2015 machine^n. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <Parse/Parse.h>
-
-
-@interface Activity : PFObject<PFSubclassing>
-
-+ (NSString *)parseClassName;
-
-@property PFUser *fromUser;
-@property PFUser *toUser;
-@property NSString *type;
-@property PFObject *content;
-
-@end
+//#import <Foundation/Foundation.h>
+//#import <Parse/Parse.h>
+//
+//
+//@interface Activity : PFObject<PFSubclassing>
+//
+//+ (NSString *)parseClassName;
+//
+//@property PFUser *fromUser;
+//@property PFUser *toUser;
+//@property NSString *type;
+//@property PFObject *content;
+//
+//@end
