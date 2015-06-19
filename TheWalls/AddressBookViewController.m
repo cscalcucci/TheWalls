@@ -15,6 +15,7 @@
 @property NSMutableArray *members;
 @property NSMutableArray *nonmembers;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *sectionOne;
 @end
 
 @implementation AddressBookViewController
@@ -82,7 +83,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return @"SplatChatters";
+        return @"SplatChatters in Address Book";
     } else {
         return @"Invite to SplatChat";
     }
@@ -112,11 +113,6 @@
 
     return cell;
 }
-
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger) section
-//{
-//    return self.myHeaderView2;
-//}
 
 - (void)requestAddressBookAccess {
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusDenied ||
