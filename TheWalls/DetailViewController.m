@@ -12,9 +12,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.object.description);
-//    self.imageView.file = self.object.contentFile;
-//    [self.imageView loadInBackground];
+    NSLog(@"%li", self.indexPath);
+    NSLog(@"%@",self.objectArray);
+
+    self.selectedObject = [Object new];
+    self.selectedObject = [self.objectArray objectAtIndex:self.indexPath];
+
+    self.imageView.frame = self.view.frame;
+    self.imageView.file = self.selectedObject.file;
+    [self.view addSubview:self.imageView];
+    [self.imageView loadInBackground];
     [self downSwipeGestureInitialization];
 
 }
