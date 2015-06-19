@@ -28,10 +28,14 @@
     self.photoButton =  [self createButtonWithTitle:@"P" chooseColor:[UIColor limeColor]];
     self.drawButton =   [self createButtonWithTitle:@"D" chooseColor:[UIColor peonyColor]];
     self.mainButton =   [self createButtonWithTitle:@"M" chooseColor:[UIColor peonyColor]];
+    self.centerMapButton = [self createCenterMapButton];
+
     self.logoutButton = [self createLogoutButton];
     [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
     [self.photoButton addTarget:self action:@selector(onCameraButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.logoutButton addTarget:self action:@selector(userLogout) forControlEvents:UIControlEventTouchUpInside];
+    [self.centerMapButton addTarget:self action:@selector(didTapCenterMapButton:) forControlEvents:UIControlEventTouchUpInside];
+
 
     //Future gestures stuff
     [self leftSwipeGestureInitialization];
@@ -83,7 +87,16 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    if (self.locationCallAmt == 1) {
     CLLocationCoordinate2D location = [userLocation coordinate];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
+    [self.primaryMapView setRegion:region animated:YES];
+    }
+    self.locationCallAmt++;
+}
+
+-(void)didTapCenterMapButton:(id)sender{
+    CLLocationCoordinate2D location = self.userLocation.coordinate;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
     [self.primaryMapView setRegion:region animated:YES];
 }
@@ -132,12 +145,13 @@
 }
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    //fuckkkkked
-    [mapView deselectAnnotation:view.annotation animated:YES];
-//    NSLog(@"%@", view.description);
-    self.indexPath = [self.annotationArray indexOfObject:view.annotation];
-    NSLog(@"%@",[[view.annotation superclass] superclass]);
-    [self performSegueWithIdentifier:@"RootToDetail" sender:self];
+    if (![view.annotation isEqual:self.primaryMapView.userLocation]) {
+        [mapView deselectAnnotation:view.annotation animated:YES];
+        //    NSLog(@"%@", view.description);
+        self.indexPath = [self.annotationArray indexOfObject:view.annotation];
+        NSLog(@"%@",[[view.annotation superclass] superclass]);
+        [self performSegueWithIdentifier:@"RootToDetail" sender:self];
+    }
 }
 
 #pragma mark - Swipe Gestures
@@ -168,7 +182,18 @@
     button.backgroundColor = color;
     button.layer.borderColor = button.titleLabel.textColor.CGColor;
     [button setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
-    [button setTitle:title forState:UIControlStateNormal];
+
+    [self.view addSubview:button];
+    return button;
+}
+
+-(UIButton *)createCenterMapButton {
+
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(40, 40, 45, 45)];
+    button.layer.cornerRadius = button.bounds.size.width / 2;
+    button.backgroundColor = [UIColor hamlindigoColor];
+    button.layer.borderColor = button.titleLabel.textColor.CGColor;
+    [button setTitle:@"C" forState:UIControlStateNormal];
 
     [self.view addSubview:button];
     return button;
