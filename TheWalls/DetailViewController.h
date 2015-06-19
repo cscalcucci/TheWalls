@@ -12,6 +12,7 @@
 
 @interface DetailViewController : UIViewController
 @property PFImageView *imageView;
+@property UIImageView *imageViewTest;
 @property Object *selectedObject;
 @property NSArray *objectArray;
 @property NSInteger indexPath;

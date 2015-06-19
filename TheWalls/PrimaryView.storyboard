@@ -42,12 +42,36 @@
                     </view>
                     <connections>
                         <segue destination="A03-e6-qfy" kind="unwind" identifier="UnwindToRoot" unwindAction="unwindToRoot:" id="SKx-Ho-6sZ"/>
+                        <segue destination="keQ-eo-2YT" kind="showDetail" identifier="DetailToComment" id="3mh-WG-cGc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUd-BD-slc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="A03-e6-qfy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="462" y="1082"/>
+        </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="PbB-ec-ISK">
+            <objects>
+                <viewController id="keQ-eo-2YT" customClass="CommentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p5l-pe-qxh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wxa-0O-0JY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="euf-PX-3sL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OMI-h3-s41"/>
+                    <connections>
+                        <segue destination="Obv-UJ-ioq" kind="unwind" identifier="unwindToDetail" unwindAction="unwindToDetail:" id="PE2-JM-bWk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VEz-Cp-Wa5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Obv-UJ-ioq" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="462" y="1808"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="j4L-PR-cNi">
