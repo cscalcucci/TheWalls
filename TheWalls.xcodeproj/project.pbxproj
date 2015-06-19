@@ -35,17 +35,14 @@
 		7EC532101B31BFF000CF94BF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */; };
 		7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532121B31D64D00CF94BF /* UsernameViewController.m */; };
 		7EC532161B31DA0200CF94BF /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532151B31DA0200CF94BF /* AddressBookViewController.m */; };
-<<<<<<< HEAD
 		7EC532181B32031700CF94BF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532171B32031700CF94BF /* AddressBook.framework */; };
 		7EC5321A1B32032000CF94BF /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532191B32032000CF94BF /* AddressBookUI.framework */; };
 		7EC5321D1B32322B00CF94BF /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5321C1B32322B00CF94BF /* PhoneViewController.m */; };
 		7EC532201B33572300CF94BF /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5321F1B33572300CF94BF /* Contact.m */; };
-=======
 		7EC532181B32031700CF94BF /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		7EC5321A1B32032000CF94BF /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		7EC5321D1B32322B00CF94BF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		991AA1321B324AA2004F2B2C /* FoursquareAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 991AA1311B324AA2004F2B2C /* FoursquareAPI.m */; };
->>>>>>> 47cd5f4f30f5cfc263c26fbfe100493b7e00563a
 		99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99349E431B31CC95001C47F7 /* DetailViewController.m */; };
 		996D51E81B334A6F002304E5 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 996D51E71B334A6F002304E5 /* SelectLocationViewController.m */; };
 		99894F7E1B2FB64E00367E67 /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F7D1B2FB64E00367E67 /* Object.m */; };
@@ -110,17 +107,14 @@
 		7EC532121B31D64D00CF94BF /* UsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameViewController.m; sourceTree = "<group>"; };
 		7EC532141B31DA0200CF94BF /* AddressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookViewController.h; sourceTree = "<group>"; };
 		7EC532151B31DA0200CF94BF /* AddressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookViewController.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		7EC532171B32031700CF94BF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		7EC532191B32032000CF94BF /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		7EC5321B1B32322B00CF94BF /* PhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
 		7EC5321C1B32322B00CF94BF /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
 		7EC5321E1B33572300CF94BF /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		7EC5321F1B33572300CF94BF /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
-=======
 		991AA1301B324AA2004F2B2C /* FoursquareAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoursquareAPI.h; sourceTree = "<group>"; };
 		991AA1311B324AA2004F2B2C /* FoursquareAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoursquareAPI.m; sourceTree = "<group>"; };
->>>>>>> 47cd5f4f30f5cfc263c26fbfe100493b7e00563a
 		99349E421B31CC95001C47F7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		99349E431B31CC95001C47F7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		996D51E61B334A6F002304E5 /* SelectLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationViewController.h; sourceTree = "<group>"; };
