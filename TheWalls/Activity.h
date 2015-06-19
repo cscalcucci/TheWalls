@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
-
 @interface Activity : PFObject<PFSubclassing>
 
 + (NSString *)parseClassName;
