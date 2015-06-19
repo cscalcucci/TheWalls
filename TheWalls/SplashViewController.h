@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface SplashViewController : UIViewController
+
 @property UIImageView *firstShape;
 @property UIImageView *secondShape;
 @property UIImageView *thirdShape;
-
+@property UIImageView *fourthShape;
 
 
 @end
