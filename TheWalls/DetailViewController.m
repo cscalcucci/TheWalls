@@ -18,11 +18,15 @@
     self.selectedObject = [Object new];
     self.selectedObject = [self.objectArray objectAtIndex:self.indexPath];
 
-    self.imageView.frame = self.view.frame;
+    self.imageView = [[PFImageView alloc]initWithFrame:self.view.frame];
     self.imageView.file = self.selectedObject.file;
+    self.imageView.image = [UIImage imageNamed:@"triad"];
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:self.imageView];
     [self.imageView loadInBackground];
     [self downSwipeGestureInitialization];
+    [self leftSwipeGestureInitialization];
+    [self rightSwipeGestureInitialization];
 
 }
 
@@ -36,10 +40,42 @@
     [self.view addGestureRecognizer:downRecognizer];
 }
 
+- (void)leftSwipeGestureInitialization {
+    UISwipeGestureRecognizer *leftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeHandle:)];
+    leftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [leftRecognizer setNumberOfTouchesRequired:1];
+    [self.view addGestureRecognizer:leftRecognizer];
+}
+
+- (void)rightSwipeGestureInitialization {
+    UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
+    rightRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [rightRecognizer setNumberOfTouchesRequired:1];
+    [self.view addGestureRecognizer:rightRecognizer];
+}
+
 //Methods
+- (void)leftSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer {
+    NSLog(@"leftSwipe");
+    [self performSegueWithIdentifier:@"DetailToComment" sender:self];
+}
+
+- (void)rightSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer {
+    NSLog(@"rightSwipe");
+    [self performSegueWithIdentifier:@"DetailToComment" sender:self];
+}
+
 - (void)downSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer {
     NSLog(@"downSwipe");
     [self performSegueWithIdentifier:@"UnwindToRoot" sender:self];
 }
+
+#pragma mark - Segue
+
+- (IBAction)unwindToDetail:(UIStoryboardSegue *)segue {
+}
+
+
+
 
 @end

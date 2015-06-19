@@ -44,6 +44,7 @@
 		7EC532201B33572300CF94BF /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5321F1B33572300CF94BF /* Contact.m */; };
 		991AA1321B324AA2004F2B2C /* FoursquareAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 991AA1311B324AA2004F2B2C /* FoursquareAPI.m */; };
 		99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99349E431B31CC95001C47F7 /* DetailViewController.m */; };
+		9944F6661B34812E002C7650 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9944F6651B34812E002C7650 /* CommentViewController.m */; };
 		996D51E81B334A6F002304E5 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 996D51E71B334A6F002304E5 /* SelectLocationViewController.m */; };
 		99894F7E1B2FB64E00367E67 /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F7D1B2FB64E00367E67 /* Object.m */; };
 		99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F821B2FBF1700367E67 /* CameraViewController.m */; };
@@ -120,6 +121,8 @@
 		991AA1311B324AA2004F2B2C /* FoursquareAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoursquareAPI.m; sourceTree = "<group>"; };
 		99349E421B31CC95001C47F7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		99349E431B31CC95001C47F7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		9944F6641B34812E002C7650 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		9944F6651B34812E002C7650 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		996D51E61B334A6F002304E5 /* SelectLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationViewController.h; sourceTree = "<group>"; };
 		996D51E71B334A6F002304E5 /* SelectLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationViewController.m; sourceTree = "<group>"; };
 		99894F7C1B2FB64E00367E67 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 		99349E451B31CC9B001C47F7 /* DetailViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9944F6641B34812E002C7650 /* CommentViewController.h */,
+				9944F6651B34812E002C7650 /* CommentViewController.m */,
 				99349E421B31CC95001C47F7 /* DetailViewController.h */,
 				99349E431B31CC95001C47F7 /* DetailViewController.m */,
 			);
@@ -567,6 +572,7 @@
 				999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */,
 				6623822E1B3470C000C5EB6D /* PhoneViewController.m in Sources */,
 				7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */,
+				9944F6661B34812E002C7650 /* CommentViewController.m in Sources */,
 				7EC5320B1B31BED200CF94BF /* SignupViewController.m in Sources */,
 				99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */,
 				996D51E81B334A6F002304E5 /* SelectLocationViewController.m in Sources */,

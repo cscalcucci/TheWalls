@@ -15,11 +15,16 @@
     self.firstShape =  [self createObjectWithImage:[UIImage imageNamed:@"shape1"] andPositions:-85 :0 :65 :65];
     self.secondShape = [self createObjectWithImage:[UIImage imageNamed:@"shape2"] andPositions:0 :0 :65 :65];
     self.thirdShape =  [self createObjectWithImage:[UIImage imageNamed:@"shape3"] andPositions:85 :0 :65 :65];
+//    self.fourthShape =  [self createObjectWithImage:[UIImage imageNamed:@"splat"] andPositions:90 :-5 :160 :160];
+
     [self performSelector:@selector(rotateImageView:) withObject:self.firstShape afterDelay:0];
     [self performSelector:@selector(rotateImageView:) withObject:self.secondShape afterDelay:0.2];
     [self performSelector:@selector(expandImageView:) withObject:self.thirdShape afterDelay:0.4];
+    [self performSelector:@selector(moveImageView:) withObject:self.thirdShape afterDelay:2.0];
+//    [self performSelector:@selector(exitImageView:) withObject:self.firstShape afterDelay:2.0];
 
-    [self performSelector:@selector(showMainMenu) withObject:nil afterDelay:2.0];
+
+    [self performSelector:@selector(showMainMenu) withObject:nil afterDelay:5.0];
 }
 
 - (void)showMainMenu {
@@ -54,6 +59,16 @@
                              shape.transform = CGAffineTransformMakeScale(1, 1);
                          }];
                      }];
+}
+
+- (void)moveImageView:(UIImageView *)shape {
+    CGRect upMovement = shape.frame;
+    upMovement.origin.y -= 150;
+    upMovement.origin.x -= 85;
+
+    [UIView animateWithDuration:0.2 animations:^{
+        shape.frame = upMovement;
+    }];
 }
 
 @end
