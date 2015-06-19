@@ -71,14 +71,4 @@
     }];
 }
 
-- (void)exitImageView:(UIImageView *)shape {
-    CGRect exitMovement = shape.frame;
-    exitMovement.origin.y = -150;
-    exitMovement.origin.x = -85;
-
-    [UIView animateWithDuration:0.2 animations:^{
-        shape.frame = exitMovement;
-    }];
-}
-
 @end
