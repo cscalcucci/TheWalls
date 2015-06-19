@@ -72,18 +72,44 @@
             }
             NSLog(@"members: %lu", self.members.count);
             NSLog(@"nonmember: %lu", self.nonmembers.count);
+            [self.tableView reloadData];
         }];
     }];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2 ;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"SplatChatters";
+    } else {
+        return @"Invite to SplatChat";
+    }
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.members.count;
+    if (section==0) {
+        return self.members.count;
+    } else {
+        return self.nonmembers.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
-    PFUser *user = [self.members objectAtIndex:indexPath.row];
-    cell.textLabel.text = [user objectForKey:@"phone"];
+
+    if (indexPath.section==0) {
+        NSDictionary *user = [self.members objectAtIndex:indexPath.row];
+        cell.textLabel.text = [user objectForKey:@"name"];
+        NSLog(@"table member: %@", user);
+    }
+    else {
+        NSDictionary *user = [self.nonmembers objectAtIndex:indexPath.row];
+        cell.textLabel.text = [user objectForKey:@"name"];
+        NSLog(@"table member: %@", user);
+    }
 
     return cell;
 }
