@@ -34,6 +34,7 @@ static NSString * const currentLocationDidChangeNotification = @"currentLocation
 @property MKMapView *primaryMapView;
 @property MKAnnotationView *splatAnnotationView;
 @property Object *object;
+@property NSInteger locationCallAmt;
 
 
 //Photo properties
@@ -46,6 +47,7 @@ static NSString * const currentLocationDidChangeNotification = @"currentLocation
 @property UIButton *drawButton;
 @property UIButton *mainButton;
 @property UIButton *logoutButton;
+@property UIButton *centerMapButton;
 @property BOOL areButtonsFanned;
 @property int diameter;
 @property int gap;
