@@ -24,9 +24,9 @@
                                          blue:0.345
                                          alpha:1];
     self.signupButton.backgroundColor = [UIColor
-                                         colorWithRed:0.369
-                                         green:0.498
-                                         blue:0.918
+                                         colorWithRed:0.890
+                                         green:0.376
+                                         blue:0.494
                                          alpha:1];
 }
 
