@@ -113,6 +113,11 @@
     return cell;
 }
 
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger) section
+//{
+//    return self.myHeaderView2;
+//}
+
 - (void)requestAddressBookAccess {
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusDenied ||
         ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusRestricted){
@@ -165,24 +170,6 @@
         CFRelease(phoneNumbers);
     }
     completionHandler(contactsArray);
-}
-
-- (void)findProfilesFromNumbers:(NSArray *)numbers withCompletion:(void (^)(NSArray *profiles))completionHandler {
-    // Using PFQuery
-    PFQuery *userQuery = [PFQuery queryWithClassName:@"PFUser"];
-    [userQuery includeKey:@"phone"];
-
-    [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-
-        NSMutableArray *matches = [NSMutableArray new];
-        NSLog(@"%@",objects.firstObject);
-        for (PFUser *profile in objects) {
-            if ([numbers containsObject:profile.username]) {
-                [matches addObject:profile];
-            }
-        }
-        completionHandler(matches);
-    }];
 }
 
 @end
