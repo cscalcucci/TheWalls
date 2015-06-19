@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
-@interface Activity : PFObject
+@interface Activity : PFObject<PFSubclassing>
+
 
 @property PFUser *fromUser;
 @property PFUser *toUser;
