@@ -109,7 +109,12 @@
     else {
         NSDictionary *user = [self.nonmembers objectAtIndex:indexPath.row];
         cell.textLabel.text = [user objectForKey:@"name"];
-        cell.detailTextLabel.text = [user objectForKey:@"numbers"][0];
+        NSMutableString *phoneNumber = [NSMutableString new];
+        phoneNumber = [user objectForKey:@"numbers"][0];
+        NSString *part1 = [phoneNumber substringWithRange:(NSMakeRange(0, 3))];
+        NSString *part2 = [phoneNumber substringWithRange:(NSMakeRange(3, 3))];
+        NSString *part3 = [phoneNumber substringWithRange:(NSMakeRange(6, 4))];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@-%@-%@", part1, part2, part3];
     }
 
     return cell;
