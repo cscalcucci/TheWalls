@@ -20,9 +20,8 @@
 @implementation AddressBookViewController
 
 - (IBAction)onLogoutPressed:(UIButton *)sender {
-    [PFUser logOutInBackground];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Onboarding" bundle:[NSBundle mainBundle]];
-    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
     [self presentViewController:viewController animated:NO completion:NULL];
 }
 

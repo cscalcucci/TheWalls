@@ -20,14 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    if ([PFUser currentUser] == nil) {
-//        [self.currentUserLabel setHidden:YES];
-//        [self.logoutButton setHidden:YES];
-//        [self performSegueWithIdentifier:@"NewSessionSegue" sender:self];
-//    } else {
-//        self.currentUser = [PFUser currentUser];
-//        self.currentUserLabel.text = self.currentUser.email;
-//    }
 
 }
 
@@ -39,7 +31,6 @@
     } else {
         self.currentUser = [PFUser currentUser];
         self.currentUserLabel.text = self.currentUser.email;
-
 //        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Onboarding" bundle:[NSBundle mainBundle]];
         UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"AddressBookViewController"];

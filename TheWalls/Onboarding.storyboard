@@ -518,12 +518,12 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="Ri5-aL-86y">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PT0-XN-Mmd">
-                                                <rect key="frame" x="278" y="112" width="44" height="30"/>
+                                                <rect key="frame" x="540" y="7" width="30" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="7Vm-yO-Lyb"/>
                                                 </constraints>
-                                                <state key="normal" title="logout">
+                                                <state key="normal" title="skip">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
