@@ -21,6 +21,8 @@
     [self performSelector:@selector(rotateImageView:) withObject:self.secondShape afterDelay:0.2];
     [self performSelector:@selector(expandImageView:) withObject:self.thirdShape afterDelay:0.4];
     [self performSelector:@selector(moveImageView:) withObject:self.thirdShape afterDelay:2.0];
+    [self performSelector:@selector(exitImageView:) withObject:self.firstShape afterDelay:2.0];
+
 
     [self performSelector:@selector(showMainMenu) withObject:nil afterDelay:5.0];
 }
@@ -60,26 +62,23 @@
 }
 
 - (void)moveImageView:(UIImageView *)shape {
-    CGRect downMovement = shape.frame;
-    downMovement.origin.y -= -20;
-    downMovement.origin.x -= -20;
+    CGRect upMovement = shape.frame;
+    upMovement.origin.y -= 150;
+    upMovement.origin.x -= 85;
 
     [UIView animateWithDuration:0.2 animations:^{
-        shape.frame = downMovement;
-        CGRect upMovement = shape.frame;
-        upMovement.origin.y -= 170;
-        upMovement.origin.x -= 105;
-
-        [UIView animateWithDuration:0.1 animations:^{
-            shape.frame = upMovement;
-        }];
-
-
-
-
+        shape.frame = upMovement;
     }];
+}
 
+- (void)exitImageView:(UIImageView *)shape {
+    CGRect exitMovement = shape.frame;
+    exitMovement.origin.y = -150;
+    exitMovement.origin.x = -85;
 
+    [UIView animateWithDuration:0.2 animations:^{
+        shape.frame = exitMovement;
+    }];
 }
 
 @end
