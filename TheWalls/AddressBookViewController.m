@@ -15,7 +15,6 @@
 @property NSMutableArray *members;
 @property NSMutableArray *nonmembers;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property NSArray *matchNumbers;
 @end
 
 @implementation AddressBookViewController
@@ -31,61 +30,49 @@
     [super viewDidLoad];
 
     self.members = [NSMutableArray new];
+    self.nonmembers = [NSMutableArray new];
     self.addressBookNav.topItem.title = @"Add Contacts";
+
     [self requestAddressBookAccess];
+
     CFErrorRef error = NULL;
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, &error);
     [AddressBookViewController listPeopleInAddressBook:addressBook withCompletion:^(NSArray *contacts) {
-        NSMutableArray *contactsNumbers = [NSMutableArray new];
+        NSMutableArray *cNumbers = [NSMutableArray new];
         for (NSDictionary *contact in contacts) {
             for (NSString *number in [contact objectForKey:@"numbers"]) {
-                [contactsNumbers addObject:number];
+                [cNumbers addObject:number];
             }
         }
         PFQuery *userQuery = [PFUser query];
-        [userQuery whereKey:@"phone" containedIn:contactsNumbers];
+        [userQuery whereKey:@"phone" containedIn:cNumbers];
+        NSLog(@"total contacts: %lu", contacts.count);
         NSLog(@"query results: %lu", userQuery.countObjects);
         [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            NSArray *matches = [NSArray new];
             if (!error) {
-                self.matchNumbers = [[NSArray alloc] init];
-                self.matchNumbers = objects;
-                NSLog(@"match numbers (inside): %lu", self.matchNumbers.count);
+                matches = objects;
             } else {
-                // Log details of the failure
-                NSLog(@"error");
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-        }];
-//        [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//            NSArray *matchUsers = [NSArray arrayWithArray:objects];
-//            NSLog(@"match users: %lu", matchUsers.count);
-//            for (PFUser *user in matchUsers) {
-//                [matchNumbers addObject:[user objectForKey:@"phone"]];
-//            }
-//        }];
-        NSLog(@"contacts numbers: %@", contactsNumbers);
-        NSLog(@"match numbers: %lu", self.matchNumbers.count);
-        NSLog(@"matches: %lu", contactsNumbers.count);
-        for (NSString *match in contactsNumbers) {
             for (NSDictionary *contact in contacts) {
-                BOOL member = false;
-                NSLog(@"contact: %@", [contact objectForKey:@"name"]);
-                NSLog(@"pre-loop: %s", member ? "true" : "false");
-                for (NSString *number in [contact objectForKey:@"numbers"]) {
-                    if ([match isEqualToString:number]) {
-                        member = true;
+                BOOL memberCheck = false;
+                for (PFUser *match in matches) {
+                    for (NSString *number in [contact objectForKey:@"numbers"]) {
+                        if ([number isEqualToString:[match objectForKey:@"phone"]]) {
+                            memberCheck = true;
+                        }
                     }
                 }
-                NSLog(@"post-loop: %s", member ? "true" : "false");
-                if (member == true) {
+                if (memberCheck) {
                     [self.members addObject:contact];
                 } else {
                     [self.nonmembers addObject:contact];
                 }
             }
-        }
-        NSLog(@"members: %lu", self.members.count);
-        NSLog(@"nonmember: %lu", self.nonmembers.count);
+            NSLog(@"members: %lu", self.members.count);
+            NSLog(@"nonmember: %lu", self.nonmembers.count);
+        }];
     }];
 }
 
@@ -143,7 +130,6 @@
             if ([trimmedNumber hasPrefix:@"1"] && [trimmedNumber length] > 1) {
                 trimmedNumber = [trimmedNumber substringFromIndex:1];
             }
-            NSLog(@"%@", trimmedNumber);
             [numbersArray addObject:trimmedNumber];
         }
         NSDictionary *contact = [[NSDictionary alloc] initWithObjectsAndKeys:
