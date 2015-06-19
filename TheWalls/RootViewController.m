@@ -91,17 +91,24 @@
 #pragma mark - Content location plots
 
 - (void)letThereBeMKAnnotation {
-    PFQuery *query = [Photo query];
-    [query whereKey:@"createdBy" equalTo:[PFUser currentUser]];
-
+    PFQuery *query = [Object query];
+//    [query whereKey:@"caption" equalTo:@"Photo"];
+    [query orderByDescending:@"createdAt"];
     query.limit = 20;
     [query findObjectsInBackgroundWithBlock:^(NSArray *pictures, NSError *error) {
         if (!error) {
+            NSLog(@"%@", error);
         }
-        NSArray *array = [[NSArray alloc]initWithArray:pictures];
-        for (Photo *photo in array) {
-            Splat *annotation = [Splat new];
-            annotation.coordinate = CLLocationCoordinate2DMake(photo.latitude, photo.longitude);
+        self.annotationArray = [[NSMutableArray alloc] init];
+        self.objectArray = [[NSArray alloc]initWithArray:pictures];
+//        for (Object *object in self.objectArray) {
+        for (int i; i < self.objectArray.count; i++) {
+            Object *object = self.objectArray[i];
+            [object setObject:[NSString stringWithFormat:@"%i", i] forKey:@"indexPath" ];
+            MKPointAnnotation *annotation = [MKPointAnnotation new];
+            annotation.coordinate = CLLocationCoordinate2DMake(object.latitude, object.longitude);
+            [self.annotationArray addObject:annotation];
+//            [self.annotationDic setValue:[NSString stringWithFormat:@"%i", i] forKey:[NSString stringWithFormat:<#(NSString *), ...#>]annotation];
             [self.primaryMapView addAnnotation:annotation];
         }
     }];
@@ -112,7 +119,8 @@
         return nil;
     }
     MKAnnotationView *pin = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
-    UIImage *image = [UIImage imageNamed:@"shape2"];
+    UIImage *image = [UIImage imageNamed:@"shape3"];
+
     CGSize scaleSize = CGSizeMake(48.0, 48.0);
     UIGraphicsBeginImageContextWithOptions(scaleSize, NO, 0.0);
     [image drawInRect:CGRectMake(0, 0, scaleSize.width, scaleSize.height)];
@@ -126,11 +134,12 @@
 }
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    //fuckkkkked
     [mapView deselectAnnotation:view.annotation animated:YES];
-    self.splat = [Splat new];
-    self.splat = view.annotation;
+//    NSLog(@"%@", view.description);
+    self.indexPath = [self.annotationArray indexOfObject:view.annotation];
+    NSLog(@"%@",[[view.annotation superclass] superclass]);
     [self performSegueWithIdentifier:@"RootToDetail" sender:self];
-    NSLog(@"%@", self.splat);
 }
 
 #pragma mark - Swipe Gestures
@@ -236,9 +245,6 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Onboarding" bundle:[NSBundle mainBundle]];
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
     [self presentViewController:viewController animated:NO completion:NULL];
-//    [self viewDidLoad];
-//    [self viewWillAppear:YES];
-
 }
 
 #pragma mark - Photo button & segue
@@ -253,8 +259,11 @@
         cameraVC.userLocation = self.userLocation;
         NSLog(@"%@", self.userLocation);
     } else if ([segue.identifier isEqualToString:@"RootToDetail"]) {
+        //fucked
         DetailViewController *detailVC = segue.destinationViewController;
-        detailVC.splat = self.splat;
+        detailVC.objectArray = self.objectArray;
+        detailVC.indexPath = self.indexPath;
+        
     }
 }
 

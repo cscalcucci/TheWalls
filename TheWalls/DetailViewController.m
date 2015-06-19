@@ -12,10 +12,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.splat.debugDescription);
-//    self.imageView.file = self.splat.contentFile;
-
-    [self.imageView loadInBackground];
+    NSLog(@"%@", self.object.description);
+//    self.imageView.file = self.object.contentFile;
+//    [self.imageView loadInBackground];
     [self downSwipeGestureInitialization];
 
 }

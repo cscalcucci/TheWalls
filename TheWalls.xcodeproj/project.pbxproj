@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6623822B1B33643F00C5EB6D /* CustomPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623822A1B33643F00C5EB6D /* CustomPointAnnotation.m */; };
 		7EAAE4451B2F3C1500814E77 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE4441B2F3C1500814E77 /* AudioToolbox.framework */; };
 		7EAAE4471B2F3C1E00814E77 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE4461B2F3C1E00814E77 /* CFNetwork.framework */; };
 		7EAAE4491B2F3C2A00814E77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE4481B2F3C2A00814E77 /* CoreGraphics.framework */; };
@@ -34,13 +35,20 @@
 		7EC532101B31BFF000CF94BF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */; };
 		7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532121B31D64D00CF94BF /* UsernameViewController.m */; };
 		7EC532161B31DA0200CF94BF /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532151B31DA0200CF94BF /* AddressBookViewController.m */; };
+<<<<<<< HEAD
 		7EC532181B32031700CF94BF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532171B32031700CF94BF /* AddressBook.framework */; };
 		7EC5321A1B32032000CF94BF /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532191B32032000CF94BF /* AddressBookUI.framework */; };
 		7EC5321D1B32322B00CF94BF /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5321C1B32322B00CF94BF /* PhoneViewController.m */; };
 		7EC532201B33572300CF94BF /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5321F1B33572300CF94BF /* Contact.m */; };
+=======
+		7EC532181B32031700CF94BF /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		7EC5321A1B32032000CF94BF /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		7EC5321D1B32322B00CF94BF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		991AA1321B324AA2004F2B2C /* FoursquareAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 991AA1311B324AA2004F2B2C /* FoursquareAPI.m */; };
+>>>>>>> 47cd5f4f30f5cfc263c26fbfe100493b7e00563a
 		99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99349E431B31CC95001C47F7 /* DetailViewController.m */; };
-		995E47761B30B5E1008A17FC /* Splat.m in Sources */ = {isa = PBXBuildFile; fileRef = 995E47751B30B5E1008A17FC /* Splat.m */; };
-		99894F7E1B2FB64E00367E67 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F7D1B2FB64E00367E67 /* Photo.m */; };
+		996D51E81B334A6F002304E5 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 996D51E71B334A6F002304E5 /* SelectLocationViewController.m */; };
+		99894F7E1B2FB64E00367E67 /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F7D1B2FB64E00367E67 /* Object.m */; };
 		99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99894F821B2FBF1700367E67 /* CameraViewController.m */; };
 		999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */; };
 		999B3A971B2F4D89002BC1D6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999B3A961B2F4D89002BC1D6 /* MapKit.framework */; };
@@ -68,6 +76,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		662382291B33643F00C5EB6D /* CustomPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPointAnnotation.h; sourceTree = "<group>"; };
+		6623822A1B33643F00C5EB6D /* CustomPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPointAnnotation.m; sourceTree = "<group>"; };
 		7EAAE4441B2F3C1500814E77 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7EAAE4461B2F3C1E00814E77 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7EAAE4481B2F3C2A00814E77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,18 +110,23 @@
 		7EC532121B31D64D00CF94BF /* UsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameViewController.m; sourceTree = "<group>"; };
 		7EC532141B31DA0200CF94BF /* AddressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookViewController.h; sourceTree = "<group>"; };
 		7EC532151B31DA0200CF94BF /* AddressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookViewController.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		7EC532171B32031700CF94BF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		7EC532191B32032000CF94BF /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		7EC5321B1B32322B00CF94BF /* PhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
 		7EC5321C1B32322B00CF94BF /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
 		7EC5321E1B33572300CF94BF /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		7EC5321F1B33572300CF94BF /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+=======
+		991AA1301B324AA2004F2B2C /* FoursquareAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoursquareAPI.h; sourceTree = "<group>"; };
+		991AA1311B324AA2004F2B2C /* FoursquareAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoursquareAPI.m; sourceTree = "<group>"; };
+>>>>>>> 47cd5f4f30f5cfc263c26fbfe100493b7e00563a
 		99349E421B31CC95001C47F7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		99349E431B31CC95001C47F7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		995E47741B30B5E1008A17FC /* Splat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Splat.h; sourceTree = "<group>"; };
-		995E47751B30B5E1008A17FC /* Splat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Splat.m; sourceTree = "<group>"; };
-		99894F7C1B2FB64E00367E67 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
-		99894F7D1B2FB64E00367E67 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		996D51E61B334A6F002304E5 /* SelectLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationViewController.h; sourceTree = "<group>"; };
+		996D51E71B334A6F002304E5 /* SelectLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationViewController.m; sourceTree = "<group>"; };
+		99894F7C1B2FB64E00367E67 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		99894F7D1B2FB64E00367E67 /* Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Object.m; sourceTree = "<group>"; };
 		99894F811B2FBF1700367E67 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		99894F821B2FBF1700367E67 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PrimaryView.storyboard; sourceTree = "<group>"; };
@@ -142,8 +157,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EC5321A1B32032000CF94BF /* AddressBookUI.framework in Frameworks */,
-				7EC532181B32031700CF94BF /* AddressBook.framework in Frameworks */,
+				7EC5321A1B32032000CF94BF /* (null) in Frameworks */,
+				7EC532181B32031700CF94BF /* (null) in Frameworks */,
 				7EAAE4591B2F3C8900814E77 /* libsqlite3.dylib in Frameworks */,
 				7EAAE4571B2F3C7900814E77 /* libz.dylib in Frameworks */,
 				999B3A971B2F4D89002BC1D6 /* MapKit.framework in Frameworks */,
@@ -202,6 +217,15 @@
 			name = Parse;
 			sourceTree = "<group>";
 		};
+		991AA1331B324AA8004F2B2C /* Foursquare */ = {
+			isa = PBXGroup;
+			children = (
+				991AA1301B324AA2004F2B2C /* FoursquareAPI.h */,
+				991AA1311B324AA2004F2B2C /* FoursquareAPI.m */,
+			);
+			name = Foursquare;
+			sourceTree = "<group>";
+		};
 		99349E451B31CC9B001C47F7 /* DetailViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,27 +238,29 @@
 		995E47771B30B5E6008A17FC /* Splat */ = {
 			isa = PBXGroup;
 			children = (
-				995E47741B30B5E1008A17FC /* Splat.h */,
-				995E47751B30B5E1008A17FC /* Splat.m */,
+				99894F7C1B2FB64E00367E67 /* Object.h */,
+				99894F7D1B2FB64E00367E67 /* Object.m */,
+				662382291B33643F00C5EB6D /* CustomPointAnnotation.h */,
+				6623822A1B33643F00C5EB6D /* CustomPointAnnotation.m */,
 			);
 			name = Splat;
 			sourceTree = "<group>";
 		};
-		99894F7F1B2FB65300367E67 /* Photo */ = {
+		996D51E91B334A7B002304E5 /* SelectLocation */ = {
 			isa = PBXGroup;
 			children = (
-				99894F7C1B2FB64E00367E67 /* Photo.h */,
-				99894F7D1B2FB64E00367E67 /* Photo.m */,
+				996D51E61B334A6F002304E5 /* SelectLocationViewController.h */,
+				996D51E71B334A6F002304E5 /* SelectLocationViewController.m */,
 			);
-			name = Photo;
+			name = SelectLocation;
 			sourceTree = "<group>";
 		};
 		99894F801B2FB72400367E67 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				991AA1331B324AA8004F2B2C /* Foursquare */,
 				995E47771B30B5E6008A17FC /* Splat */,
 				999CF7A11B2E05B6006A0324 /* Custom Colors */,
-				99894F7F1B2FB65300367E67 /* Photo */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -270,8 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */,
-				7EC5321B1B32322B00CF94BF /* PhoneViewController.h */,
-				7EC5321C1B32322B00CF94BF /* PhoneViewController.m */,
 				7EC532141B31DA0200CF94BF /* AddressBookViewController.h */,
 				7EC532151B31DA0200CF94BF /* AddressBookViewController.m */,
 				7EC5321E1B33572300CF94BF /* Contact.h */,
@@ -294,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */,
+				996D51E91B334A7B002304E5 /* SelectLocation */,
 				99349E451B31CC9B001C47F7 /* DetailViewController */,
 				999CF7A21B2E05C0006A0324 /* RootViewController */,
 				99894F841B2FBF2000367E67 /* CameraViewController */,
@@ -304,8 +329,6 @@
 		999B3A981B2F5E37002BC1D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7EC532191B32032000CF94BF /* AddressBookUI.framework */,
-				7EC532171B32031700CF94BF /* AddressBook.framework */,
 				7EAAE4581B2F3C8900814E77 /* libsqlite3.dylib */,
 				7EAAE4561B2F3C7900814E77 /* libz.dylib */,
 				999B3A9A1B2F6C2E002BC1D6 /* Fabric.framework */,
@@ -524,20 +547,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EAAE47A1B2F646C00814E77 /* LoginViewController.m in Sources */,
+				991AA1321B324AA2004F2B2C /* FoursquareAPI.m in Sources */,
 				999CF7761B2D19A5006A0324 /* TheWalls.xcdatamodeld in Sources */,
-				7EC5321D1B32322B00CF94BF /* PhoneViewController.m in Sources */,
+				7EC5321D1B32322B00CF94BF /* (null) in Sources */,
 				999CF7731B2D19A5006A0324 /* AppDelegate.m in Sources */,
 				999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */,
 				7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */,
 				7EC5320B1B31BED200CF94BF /* SignupViewController.m in Sources */,
 				99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */,
+				996D51E81B334A6F002304E5 /* SelectLocationViewController.m in Sources */,
 				7EC532161B31DA0200CF94BF /* AddressBookViewController.m in Sources */,
 				7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */,
-				995E47761B30B5E1008A17FC /* Splat.m in Sources */,
 				999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */,
 				999CF7701B2D19A5006A0324 /* main.m in Sources */,
-				99894F7E1B2FB64E00367E67 /* Photo.m in Sources */,
+				99894F7E1B2FB64E00367E67 /* Object.m in Sources */,
 				7EC5320E1B31BEE800CF94BF /* SessionViewController.m in Sources */,
+				6623822B1B33643F00C5EB6D /* CustomPointAnnotation.m in Sources */,
 				999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */,
 				7EC532201B33572300CF94BF /* Contact.m in Sources */,
 				99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */,

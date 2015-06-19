@@ -13,6 +13,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    //Foursquare API
+    self.venueUrlCall = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%f,%f&oauth_token=N5Z3YJNLEWD4KIBIOB1C22YOPTPSJSL3NAEXVUMYGJC35FMP&v=20150617", self.userLocation.coordinate.latitude, self.userLocation.coordinate.longitude]];
+    self.foursquareResults = [NSMutableArray new];
+
     //Setup background and imageview
     self.view.backgroundColor = [UIColor paperColor];
     self.imagePreview = [[UIImageView alloc]initWithFrame:self.view.frame];
@@ -26,6 +30,9 @@
     self.saveButton = [self createButtonWithTitle:@"S" chooseColor:[UIColor peonyColor] andPosition:100];
     [self.saveButton addTarget:self action:@selector(savePhoto:) forControlEvents:UIControlEventTouchUpInside];
 
+    self.locationButton = [self createButtonWithTitle:@"L" chooseColor:[UIColor hamlindigoColor] andPosition:300];
+    [self.locationButton addTarget:self action:@selector(segueToLocationTable) forControlEvents:UIControlEventTouchUpInside];
+
     //Track if a picture has been taken, automatically call camera first time
     self.photoTaken = NO;
     [self takePhoto];
@@ -33,6 +40,26 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
+}
+
+#pragma mark - Foursquare API call
+
+- (void)segueToLocationTable {
+    [self performSegueWithIdentifier:@"CameraToSelectLocation" sender:self];
+}
+
+
+- (void)retrieveFoursquareResults {
+    [FoursquareAPI retrieveFoursquareResults:self.venueUrlCall completion:^(NSArray *array) {
+        self.foursquareResults = array;
+        //reload tableview
+        NSLog(@"%@", array);
+    }];
+}
+
+- (void)setFoursquareResults:(NSArray *)foursquareResults {
+    _foursquareResults = foursquareResults;
+    //reload tableview;
 }
 
 #pragma mark - Take photo, save photo, unwind
@@ -57,13 +84,15 @@
     if (self.photoTaken == YES) {
     //Render and save image
         NSData *imageData = UIImagePNGRepresentation(self.imageDidSelected);
-        Photo *newPhoto = [Photo new];
-        newPhoto.imagePhoto = [PFFile fileWithName:@"image.png" data:imageData];
-        newPhoto.caption = @"Photo";
-        newPhoto.latitude = self.userLocation.coordinate.latitude;
-        newPhoto.longitude = self.userLocation.coordinate.longitude;
-        [newPhoto setObject:[PFUser currentUser] forKey:@"createdBy"];
-        [newPhoto saveInBackground];
+        Object *object = [Object new];
+        object.file = [PFFile fileWithName:@"image.png" data:imageData];
+        object.caption = @"Photo";
+        object.latitude = self.userLocation.coordinate.latitude;
+        object.longitude = self.userLocation.coordinate.longitude;
+        [object setObject:[PFUser currentUser] forKey:@"createdBy"];
+
+
+        [object saveInBackground];
     }
     //Perform segue back to RootViewController
     [self performSegueWithIdentifier:@"UnwindToRoot" sender:self];
@@ -86,6 +115,9 @@
 
     [self.view addSubview:button];
     return button;
+}
+
+- (IBAction)unwindToCamera:(UIStoryboardSegue *)segue {
 }
 
 

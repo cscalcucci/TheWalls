@@ -11,22 +11,29 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "UIColor+CustomColors.h"
-#import "Photo.h"
-#import "Splat.h"
+#import "Object.h"
 #import "CameraViewController.h"
 #import "DetailViewController.h"
+
+#import "CustomPointAnnotation.h"
 
 //Notification center - will probably have to refactor instead of passing location throughout the application
 static NSString * const currentLocationDidChangeNotification = @"currentLocationDidChangeNotification";
 
 @interface RootViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
+//Chris Properties
+@property NSArray *objectArray;
+@property NSInteger indexPath;
+@property NSMutableArray *annotationArray;
+
+
 //Location properties
 @property CLLocationManager *locationManager;
 @property CLLocation *userLocation;
 @property MKMapView *primaryMapView;
 @property MKAnnotationView *splatAnnotationView;
-@property Splat *splat;
+@property Object *object;
 
 
 //Photo properties
