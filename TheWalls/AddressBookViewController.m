@@ -39,7 +39,7 @@
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, &error);
     [AddressBookViewController listPeopleInAddressBook:addressBook withCompletion:^(NSArray *contacts) {
         NSMutableArray *cNumbers = [NSMutableArray new];
-        for (NSDictionary *contact in contacts) {
+        for (NSMutableDictionary *contact in contacts) {
             for (NSString *number in [contact objectForKey:@"numbers"]) {
                 [cNumbers addObject:number];
             }
@@ -55,12 +55,13 @@
             } else {
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-            for (NSDictionary *contact in contacts) {
+            for (NSMutableDictionary *contact in contacts) {
                 BOOL memberCheck = false;
                 for (PFUser *match in matches) {
                     for (NSString *number in [contact objectForKey:@"numbers"]) {
                         if ([number isEqualToString:[match objectForKey:@"phone"]]) {
                             memberCheck = true;
+                            [contact setObject:[match objectForKey:@"username"] forKey:@"username"];
                         }
                     }
                 }
@@ -103,15 +104,23 @@
     if (indexPath.section==0) {
         NSDictionary *user = [self.members objectAtIndex:indexPath.row];
         cell.textLabel.text = [user objectForKey:@"name"];
-        NSLog(@"table member: %@", user);
+        cell.detailTextLabel.text = [user objectForKey:@"username"];
     }
     else {
         NSDictionary *user = [self.nonmembers objectAtIndex:indexPath.row];
         cell.textLabel.text = [user objectForKey:@"name"];
-        NSLog(@"table member: %@", user);
+        cell.detailTextLabel.text = [user objectForKey:@"numbers"][0];
     }
 
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark) {
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    }
 }
 
 - (void)requestAddressBookAccess {
@@ -158,9 +167,10 @@
             }
             [numbersArray addObject:trimmedNumber];
         }
-        NSDictionary *contact = [[NSDictionary alloc] initWithObjectsAndKeys:
+        NSMutableDictionary *contact = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                name ?: [NSNull null], @"name",
                                numbersArray ?: [NSNull null], @"numbers",
+                               nil ?: [NSNull null], @"username",
                                nil];
         [contactsArray addObject:contact];
         CFRelease(phoneNumbers);
