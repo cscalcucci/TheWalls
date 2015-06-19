@@ -92,7 +92,6 @@
 
 - (void)letThereBeMKAnnotation {
     PFQuery *query = [Object query];
-//    [query whereKey:@"caption" equalTo:@"Photo"];
     [query orderByDescending:@"createdAt"];
     query.limit = 20;
     [query findObjectsInBackgroundWithBlock:^(NSArray *pictures, NSError *error) {
@@ -101,16 +100,15 @@
         }
         self.annotationArray = [[NSMutableArray alloc] init];
         self.objectArray = [[NSArray alloc]initWithArray:pictures];
-//        for (Object *object in self.objectArray) {
         for (int i; i < self.objectArray.count; i++) {
             Object *object = self.objectArray[i];
             [object setObject:[NSString stringWithFormat:@"%i", i] forKey:@"indexPath" ];
             MKPointAnnotation *annotation = [MKPointAnnotation new];
             annotation.coordinate = CLLocationCoordinate2DMake(object.latitude, object.longitude);
             [self.annotationArray addObject:annotation];
-//            [self.annotationDic setValue:[NSString stringWithFormat:@"%i", i] forKey:[NSString stringWithFormat:<#(NSString *), ...#>]annotation];
             [self.primaryMapView addAnnotation:annotation];
         }
+        NSLog(@"%@",self.objectArray);
     }];
 }
 

@@ -11,7 +11,6 @@
 
 @implementation Object
 
-@dynamic objectID;
 @dynamic caption;
 @dynamic file;
 @dynamic createdBy;
