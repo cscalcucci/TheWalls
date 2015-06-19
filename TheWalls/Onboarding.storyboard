@@ -186,9 +186,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yq4-qK-5vO">
-                                <rect key="frame" x="0.0" y="202" width="600" height="30"/>
+                                <rect key="frame" x="0.0" y="532" width="600" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="Lg3-jD-7IC"/>
+                                    <constraint firstAttribute="height" constant="65" id="tSO-rf-pKl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="Log In">
@@ -200,9 +200,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0M-BV-GGR">
-                                <rect key="frame" x="0.0" y="240" width="600" height="30"/>
+                                <rect key="frame" x="0.0" y="570" width="600" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="Niu-30-PBn"/>
+                                    <constraint firstAttribute="height" constant="65" id="ZmH-51-me5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="Sign Up">
@@ -213,15 +213,24 @@
                                     <segue destination="ry3-BX-7J2" kind="show" id="eT8-cz-wxx"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="splat" translatesAutoresizingMaskIntoConstraints="NO" id="JkB-VB-U8B">
+                                <rect key="frame" x="197" y="105" width="190" height="186"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="CXk-ag-4TJ"/>
+                                    <constraint firstAttribute="height" constant="186" id="bKR-ad-s1J"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="yq4-qK-5vO" secondAttribute="trailing" constant="-16" id="Dje-M3-Cig"/>
-                            <constraint firstItem="yq4-qK-5vO" firstAttribute="leading" secondItem="BqN-NP-pDK" secondAttribute="leadingMargin" constant="-16" id="Ejd-zY-UWd"/>
-                            <constraint firstItem="y0M-BV-GGR" firstAttribute="leading" secondItem="BqN-NP-pDK" secondAttribute="leadingMargin" constant="-16" id="eEZ-bW-EzE"/>
-                            <constraint firstItem="y0M-BV-GGR" firstAttribute="top" secondItem="yq4-qK-5vO" secondAttribute="bottom" id="fm4-jc-krd"/>
-                            <constraint firstItem="yq4-qK-5vO" firstAttribute="top" secondItem="cyK-hb-xTU" secondAttribute="bottom" constant="182" id="gWi-8w-BDg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="y0M-BV-GGR" secondAttribute="trailing" constant="-16" id="tvf-Oa-e16"/>
+                            <constraint firstAttribute="centerX" secondItem="JkB-VB-U8B" secondAttribute="centerX" id="7sP-Sq-fDq"/>
+                            <constraint firstItem="y0M-BV-GGR" firstAttribute="leading" secondItem="BqN-NP-pDK" secondAttribute="leadingMargin" constant="-16" id="DyE-km-qjD"/>
+                            <constraint firstItem="JkB-VB-U8B" firstAttribute="top" secondItem="cyK-hb-xTU" secondAttribute="bottom" constant="85" id="FtQ-P8-y0Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y0M-BV-GGR" secondAttribute="trailing" constant="-16" id="Jeo-z5-iuZ"/>
+                            <constraint firstItem="y0M-BV-GGR" firstAttribute="top" secondItem="yq4-qK-5vO" secondAttribute="bottom" id="a12-fc-hrH"/>
+                            <constraint firstItem="nj1-Ac-MjE" firstAttribute="top" secondItem="y0M-BV-GGR" secondAttribute="bottom" id="a7Y-nI-eVi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yq4-qK-5vO" secondAttribute="trailing" constant="-16" id="end-I9-RL2"/>
+                            <constraint firstItem="yq4-qK-5vO" firstAttribute="leading" secondItem="BqN-NP-pDK" secondAttribute="leadingMargin" constant="-16" id="wqI-RG-LFa"/>
                         </constraints>
                     </view>
                     <connections>
@@ -566,4 +575,7 @@
             <point key="canvasLocation" x="3903" y="627"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splat" width="1150" height="1105"/>
+    </resources>
 </document>
