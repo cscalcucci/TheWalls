@@ -65,7 +65,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSError *jsonError = nil;
-        NSMutableArray *storedObjects;
+        NSMutableArray *storedObjects = [NSMutableArray new];
         NSDictionary *parsedResults = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
         NSDictionary *parsedResults2 = [parsedResults valueForKey:@"response"];
         NSArray *results = [parsedResults2 valueForKey:@"venues"];

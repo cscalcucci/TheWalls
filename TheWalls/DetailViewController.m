@@ -12,8 +12,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%li", self.indexPath);
-    NSLog(@"%@",self.objectArray);
 
     self.selectedObject = [Object new];
     self.selectedObject = [self.objectArray objectAtIndex:self.indexPath];

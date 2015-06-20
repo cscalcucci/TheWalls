@@ -109,7 +109,6 @@
     query.limit = 20;
     [query findObjectsInBackgroundWithBlock:^(NSArray *pictures, NSError *error) {
         if (!error) {
-            NSLog(@"%@", error);
         }
         self.annotationArray = [[NSMutableArray alloc] init];
         self.objectArray = [[NSArray alloc]initWithArray:pictures];
@@ -121,7 +120,6 @@
             [self.annotationArray addObject:annotation];
             [self.primaryMapView addAnnotation:annotation];
         }
-        NSLog(@"%@",self.objectArray);
     }];
 }
 
@@ -140,16 +138,13 @@
     pin.image = resizedImage;
     pin.canShowCallout =  NO;
     pin.userInteractionEnabled = YES;
-//    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     return pin;
 }
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     if (![view.annotation isEqual:self.primaryMapView.userLocation]) {
         [mapView deselectAnnotation:view.annotation animated:YES];
-        //    NSLog(@"%@", view.description);
         self.indexPath = [self.annotationArray indexOfObject:view.annotation];
-        NSLog(@"%@",[[view.annotation superclass] superclass]);
         [self performSegueWithIdentifier:@"RootToDetail" sender:self];
     }
 }

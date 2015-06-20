@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "Object.h"
+#import "SelectLocationViewController.h"
 #import "FoursquareAPI.h"
 #import "UIColor+CustomColors.h"
 

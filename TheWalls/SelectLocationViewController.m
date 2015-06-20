@@ -12,7 +12,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    NSLog(@"%@", self.foursquareLocations);
     [self rightSwipeGestureInitialization];
 }
 
@@ -39,7 +39,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell.textLabel.text = @"works";
+    FoursquareAPI *item = [self.foursquareLocations objectAtIndex:indexPath.row];
+    cell.textLabel.text = item.venueName;
     return cell;
 }
 
