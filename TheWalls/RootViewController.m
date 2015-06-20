@@ -184,7 +184,7 @@
 
 -(UIButton *)createCenterMapButton {
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 45, 45)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 87, self.view.frame.size.height - 137, 45, 45)];
     button.layer.cornerRadius = button.bounds.size.width / 2;
     button.backgroundColor = [UIColor hamlindigoColor];
     button.layer.borderColor = button.titleLabel.textColor.CGColor;
