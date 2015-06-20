@@ -12,9 +12,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.foursquareLocations);
     [self rightSwipeGestureInitialization];
+
+    //Foursquare API
+    self.venueUrlCall = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%f,%f&oauth_token=N5Z3YJNLEWD4KIBIOB1C22YOPTPSJSL3NAEXVUMYGJC35FMP&v=20150617", self.userLocation.coordinate.latitude, self.userLocation.coordinate.longitude]];
+    self.foursquareResults = [NSMutableArray new];
+    [self retrieveFoursquareResults];
 }
+
+- (void)retrieveFoursquareResults {
+    [FoursquareAPI retrieveFoursquareResults:self.venueUrlCall completion:^(NSArray *array) {
+        self.foursquareResults = array;
+        NSLog(@"%@", array);
+        for (FoursquareAPI *item in self.foursquareResults) {
+            NSLog(@"%@", item.venueName);
+        }
+    }];
+}
+
+- (void)setFoursquareResults:(NSArray *)foursquareResults {
+    _foursquareResults = foursquareResults;
+}
+
+
 
 #pragma mark - Swipe Gestures
 
@@ -33,14 +53,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.foursquareResults.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    FoursquareAPI *item = [self.foursquareLocations objectAtIndex:indexPath.row];
-    cell.textLabel.text = item.venueName;
+    FoursquareAPI *item = [self.foursquareResults objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", item.venueName];
     return cell;
 }
 

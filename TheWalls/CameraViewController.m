@@ -13,11 +13,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    //Foursquare API
-    self.venueUrlCall = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%f,%f&oauth_token=N5Z3YJNLEWD4KIBIOB1C22YOPTPSJSL3NAEXVUMYGJC35FMP&v=20150617", self.userLocation.coordinate.latitude, self.userLocation.coordinate.longitude]];
-    self.foursquareResults = [NSMutableArray new];
-    [self retrieveFoursquareResults];
-
     //Setup background and imageview
     self.view.backgroundColor = [UIColor paperColor];
     self.imagePreview = [[UIImageView alloc]initWithFrame:self.view.frame];
@@ -50,24 +45,13 @@
 }
 
 
-- (void)retrieveFoursquareResults {
-    [FoursquareAPI retrieveFoursquareResults:self.venueUrlCall completion:^(NSArray *array) {
-        self.foursquareResults = array;
-        NSLog(@"%@", array);
-        for (FoursquareAPI *item in self.foursquareResults) {
-            NSLog(@"%@", item.venueName);
-        }
-    }];
-}
 
-- (void)setFoursquareResults:(NSArray *)foursquareResults {
-    _foursquareResults = foursquareResults;
-}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"CameraToLocation"]) {
+    if ([segue.identifier isEqualToString:@"CameraToSelectLocation"]) {
         SelectLocationViewController *selectedLocationVC = segue.destinationViewController;
-        selectedLocationVC.foursquareLocations = self.foursquareResults;
+        CLLocation *location = self.userLocation;
+        selectedLocationVC.userLocation = location;
     }
 }
 

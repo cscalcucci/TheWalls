@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "FoursquareAPI.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface SelectLocationViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property NSArray *foursquareLocations;
+@property NSURL *venueUrlCall;
+@property (nonatomic) NSArray *foursquareResults;
+@property CLLocation *userLocation;
 
 @end

@@ -275,7 +275,6 @@
     if ([segue.identifier isEqualToString:@"RootToCamera"]) {
         CameraViewController *cameraVC = segue.destinationViewController;
         cameraVC.userLocation = self.userLocation;
-        NSLog(@"%@", self.userLocation);
     } else if ([segue.identifier isEqualToString:@"RootToDetail"]) {
         //fucked
         DetailViewController *detailVC = segue.destinationViewController;

@@ -23,8 +23,6 @@
 @property UIButton *importButton;
 @property UIButton *saveButton;
 @property UIButton *locationButton;
-@property (nonatomic) NSArray *foursquareResults;
-@property NSURL *venueUrlCall;
 @property BOOL photoTaken;
 
 @end
