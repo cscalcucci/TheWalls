@@ -7,7 +7,6 @@
 //
 
 #import "AddressBookViewController.h"
-#import "Contact.h"
 
 @interface AddressBookViewController () <UITableViewDataSource, UITableViewDelegate>
 @property PFUser *currentUser;
