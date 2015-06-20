@@ -30,9 +30,6 @@
 		7EAAE4651B2F4F2300814E77 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE45F1B2F4F2200814E77 /* ParseUI.framework */; };
 		7EAAE47A1B2F646C00814E77 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE4791B2F646C00814E77 /* LoginViewController.m */; };
 		7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */; };
-		7EC532051B30A44800CF94BF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532031B30A44800CF94BF /* FBSDKCoreKit.framework */; };
-		7EC532061B30A44800CF94BF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532041B30A44800CF94BF /* FBSDKLoginKit.framework */; };
-		7EC532081B30A45600CF94BF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532071B30A45600CF94BF /* FBSDKShareKit.framework */; };
 		7EC5320B1B31BED200CF94BF /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5320A1B31BED200CF94BF /* SignupViewController.m */; };
 		7EC5320E1B31BEE800CF94BF /* SessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5320D1B31BEE800CF94BF /* SessionViewController.m */; };
 		7EC532101B31BFF000CF94BF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */; };
@@ -103,9 +100,6 @@
 		7EAAE4791B2F646C00814E77 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7EAAE47B1B2F6D3700814E77 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		7EC532031B30A44800CF94BF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		7EC532041B30A44800CF94BF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		7EC532071B30A45600CF94BF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		7EC5320A1B31BED200CF94BF /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		7EC5320C1B31BEE800CF94BF /* SessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionViewController.h; sourceTree = "<group>"; };
 		7EC5320D1B31BEE800CF94BF /* SessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionViewController.m; sourceTree = "<group>"; };
@@ -160,12 +154,9 @@
 				7EAAE4571B2F3C7900814E77 /* libz.dylib in Frameworks */,
 				999B3A971B2F4D89002BC1D6 /* MapKit.framework in Frameworks */,
 				999B3A9C1B2F6C2E002BC1D6 /* Fabric.framework in Frameworks */,
-				7EC532051B30A44800CF94BF /* FBSDKCoreKit.framework in Frameworks */,
 				7EAAE4551B2F3C6A00814E77 /* SystemConfiguration.framework in Frameworks */,
 				7EAAE4601B2F4F2200814E77 /* Bolts.framework in Frameworks */,
-				7EC532081B30A45600CF94BF /* FBSDKShareKit.framework in Frameworks */,
 				999B3A9D1B2F6C2E002BC1D6 /* Crashlytics.framework in Frameworks */,
-				7EC532061B30A44800CF94BF /* FBSDKLoginKit.framework in Frameworks */,
 				7EAAE4531B2F3C5E00814E77 /* StoreKit.framework in Frameworks */,
 				7EAAE4621B2F4F2300814E77 /* ParseCrashReporting.framework in Frameworks */,
 				7EAAE4511B2F3C5400814E77 /* Security.framework in Frameworks */,
@@ -199,16 +190,6 @@
 				662382311B34775700C5EB6D /* ChatViewController.m */,
 			);
 			name = ChatViewController;
-			sourceTree = "<group>";
-		};
-		7EAAE4761B2F5BB300814E77 /* Facebook */ = {
-			isa = PBXGroup;
-			children = (
-				7EC532071B30A45600CF94BF /* FBSDKShareKit.framework */,
-				7EC532031B30A44800CF94BF /* FBSDKCoreKit.framework */,
-				7EC532041B30A44800CF94BF /* FBSDKLoginKit.framework */,
-			);
-			name = Facebook;
 			sourceTree = "<group>";
 		};
 		7EAAE4771B2F5BCD00814E77 /* Parse */ = {
@@ -346,7 +327,6 @@
 				999B3A9A1B2F6C2E002BC1D6 /* Fabric.framework */,
 				999B3A9B1B2F6C2E002BC1D6 /* Crashlytics.framework */,
 				7EAAE4771B2F5BCD00814E77 /* Parse */,
-				7EAAE4761B2F5BB300814E77 /* Facebook */,
 				999B3A961B2F4D89002BC1D6 /* MapKit.framework */,
 				7EAAE4541B2F3C6A00814E77 /* SystemConfiguration.framework */,
 				7EAAE4521B2F3C5E00814E77 /* StoreKit.framework */,
