@@ -27,6 +27,8 @@
         for (FoursquareAPI *item in self.foursquareResults) {
             NSLog(@"%@", item.venueName);
         }
+
+        [self.tableView reloadData];
     }];
 }
 
@@ -62,6 +64,10 @@
     FoursquareAPI *item = [self.foursquareResults objectAtIndex:indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@", item.venueName];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedLocation" object:[self.foursquareResults objectAtIndex:indexPath.row]];
 }
 
 

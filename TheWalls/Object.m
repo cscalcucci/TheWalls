@@ -18,6 +18,7 @@
 @dynamic annotation;
 @dynamic latitude;
 @dynamic longitude;
+@dynamic venueName;
 
 + (void)load {
     [self registerSubclass];

@@ -84,11 +84,26 @@
                     <view key="view" contentMode="scaleToFill" id="1dF-M5-hPG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1PS-tu-N63">
+                                <rect key="frame" x="0.0" y="400" width="600" height="200"/>
+                                <connections>
+                                    <segue destination="4My-SL-GZT" kind="embed" identifier="CameraToSelectLocation" id="Ed2-Tv-dTR"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9b-CA-lI5">
+                                <rect key="frame" x="49" y="93" width="487" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="1PS-tu-N63" id="x6n-aD-CAi"/>
+                        <outlet property="venueLabel" destination="i9b-CA-lI5" id="bNL-f5-s1L"/>
                         <segue destination="aNq-7W-GRM" kind="unwind" identifier="UnwindToRoot" unwindAction="unwindToRoot:" id="TFZ-q7-Kh7"/>
-                        <segue destination="4My-SL-GZT" kind="presentation" identifier="CameraToSelectLocation" id="NIo-zF-1Y9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBp-5X-VbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -105,11 +120,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Gd6-6P-vZd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZVy-P4-YT6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yb4-5e-k3n">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="58" id="jaI-X7-aOV">
@@ -142,7 +157,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJP-TB-Zry" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="CV4-Jd-X5n" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1215" y="1082"/>
+            <point key="canvasLocation" x="1953" y="562"/>
         </scene>
     </scenes>
 </document>

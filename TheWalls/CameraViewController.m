@@ -13,6 +13,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [[NSNotificationCenter defaultCenter]
+                                    addObserver:self
+                                       selector:@selector(updateLocation:) name:@"selectedLocation"
+                                         object:nil];
+
+    self.tableIsHidden = YES;
+    self.containerView.hidden = YES;
+
     //Setup background and imageview
     self.view.backgroundColor = [UIColor paperColor];
     self.imagePreview = [[UIImageView alloc]initWithFrame:self.view.frame];
@@ -34,14 +42,35 @@
     [self takePhoto];
 }
 
+-(void)updateLocation:(NSNotification *)notification {
+    if ([notification.object isKindOfClass:[FoursquareAPI class]]) {
+        FoursquareAPI *item = [notification object];
+        self.venueLabel.text = item.venueName;
+        self.object.latitude = item.latitude;
+        self.object.longitude = item.longitude;
+        self.object.venueName = item.venueName;
+        [self.object saveInBackground];
+
+        [self segueToLocationTable];
+    } else {
+        NSLog(@"Error Transferring Location Data");
+    }
+    
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocation:) name:@"Sent Location" object:nil];
+
 }
 
 #pragma mark - Foursquare API call & segue
 
 - (void)segueToLocationTable {
-    [self performSegueWithIdentifier:@"CameraToSelectLocation" sender:self];
+    self.tableIsHidden = !self.tableIsHidden;
+    self.containerView.hidden = self.tableIsHidden;
+//    [self performSegueWithIdentifier:@"CameraToSelectLocation" sender:self];
 }
 
 
@@ -84,9 +113,9 @@
         object.latitude = self.userLocation.coordinate.latitude;
         object.longitude = self.userLocation.coordinate.longitude;
         [object setObject:[PFUser currentUser] forKey:@"createdBy"];
+        self.object = object;
 
-
-        [object saveInBackground];
+        [self.object saveInBackground];
     }
     //Perform segue back to RootViewController
     [self performSegueWithIdentifier:@"UnwindToRoot" sender:self];

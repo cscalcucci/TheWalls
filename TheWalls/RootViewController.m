@@ -287,12 +287,15 @@
 #pragma mark - Photo button & segue
 
 - (void)onCameraButtonPressed {
+
     [self performSegueWithIdentifier:@"RootToCamera" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"RootToCamera"]) {
         CameraViewController *cameraVC = segue.destinationViewController;
+//        NSString *pressed = @"hello";
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"Sent Location" object:nil userInfo:pressed];
         cameraVC.userLocation = self.userLocation;
     } else if ([segue.identifier isEqualToString:@"RootToDetail"]) {
         DetailViewController *detailVC = segue.destinationViewController;

@@ -23,6 +23,11 @@
 @property UIButton *importButton;
 @property UIButton *saveButton;
 @property UIButton *locationButton;
+
+@property Object *object;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property BOOL tableIsHidden;
 @property BOOL photoTaken;
+@property (weak, nonatomic) IBOutlet UILabel *venueLabel;
 
 @end
