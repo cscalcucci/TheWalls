@@ -24,8 +24,6 @@
 		7EAAE4601B2F4F2200814E77 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE45A1B2F4F2200814E77 /* Bolts.framework */; };
 		7EAAE4611B2F4F2300814E77 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE45B1B2F4F2200814E77 /* Parse.framework */; };
 		7EAAE4621B2F4F2300814E77 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE45C1B2F4F2200814E77 /* ParseCrashReporting.framework */; };
-		7EAAE4631B2F4F2300814E77 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE45D1B2F4F2200814E77 /* ParseFacebookUtils.framework */; };
-		7EAAE4641B2F4F2300814E77 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE45E1B2F4F2200814E77 /* ParseFacebookUtilsV4.framework */; };
 		7EAAE4651B2F4F2300814E77 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE45F1B2F4F2200814E77 /* ParseUI.framework */; };
 		7EAAE47A1B2F646C00814E77 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE4791B2F646C00814E77 /* LoginViewController.m */; };
 		7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */; };
@@ -89,8 +87,6 @@
 		7EAAE45A1B2F4F2200814E77 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		7EAAE45B1B2F4F2200814E77 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		7EAAE45C1B2F4F2200814E77 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		7EAAE45D1B2F4F2200814E77 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		7EAAE45E1B2F4F2200814E77 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		7EAAE45F1B2F4F2200814E77 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		7EAAE4781B2F646C00814E77 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7EAAE4791B2F646C00814E77 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -155,10 +151,8 @@
 				7EAAE4621B2F4F2300814E77 /* ParseCrashReporting.framework in Frameworks */,
 				7EAAE4511B2F3C5400814E77 /* Security.framework in Frameworks */,
 				7EAAE4611B2F4F2300814E77 /* Parse.framework in Frameworks */,
-				7EAAE4631B2F4F2300814E77 /* ParseFacebookUtils.framework in Frameworks */,
 				7EAAE4651B2F4F2300814E77 /* ParseUI.framework in Frameworks */,
 				7EAAE44F1B2F3C4C00814E77 /* QuartzCore.framework in Frameworks */,
-				7EAAE4641B2F4F2300814E77 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				7EAAE44D1B2F3C4100814E77 /* MobileCoreServices.framework in Frameworks */,
 				7EAAE44B1B2F3C3500814E77 /* CoreLocation.framework in Frameworks */,
 				7EAAE4491B2F3C2A00814E77 /* CoreGraphics.framework in Frameworks */,
@@ -191,8 +185,6 @@
 			children = (
 				7EAAE45B1B2F4F2200814E77 /* Parse.framework */,
 				7EAAE45C1B2F4F2200814E77 /* ParseCrashReporting.framework */,
-				7EAAE45D1B2F4F2200814E77 /* ParseFacebookUtils.framework */,
-				7EAAE45E1B2F4F2200814E77 /* ParseFacebookUtilsV4.framework */,
 				7EAAE45F1B2F4F2200814E77 /* ParseUI.framework */,
 			);
 			name = Parse;
