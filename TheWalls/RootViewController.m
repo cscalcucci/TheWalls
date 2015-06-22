@@ -24,9 +24,9 @@
     //Buttons - to subclass
     self.areButtonsFanned = NO;
     self.dynamicAnimator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
-    self.soundButton =  [self createButtonWithTitle:@"S" chooseColor:[UIColor hamlindigoColor]];
-    self.photoButton =  [self createButtonWithTitle:@"P" chooseColor:[UIColor limeColor]];
-    self.drawButton =   [self createButtonWithTitle:@"D" chooseColor:[UIColor peonyColor]];
+    self.soundButton =  [self createButtonWithTitle:@"blank" chooseColor:[UIColor hamlindigoColor]];
+    self.photoButton =  [self createButtonWithTitle:@"photo" chooseColor:[UIColor limeColor]];
+    self.drawButton =   [self createButtonWithTitle:@"blank" chooseColor:[UIColor peonyColor]];
     self.mainButton =   [self createButtonWithTitle:@"M" chooseColor:[UIColor peonyColor]];
     self.centerMapButton = [self createCenterMapButton];
 
@@ -176,7 +176,7 @@
     button.layer.cornerRadius = button.bounds.size.width / 2;
     button.backgroundColor = color;
     button.layer.borderColor = button.titleLabel.textColor.CGColor;
-    [button setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 
     [self.view addSubview:button];
     return button;
@@ -184,7 +184,7 @@
 
 -(UIButton *)createCenterMapButton {
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(40, 40, 45, 45)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 87, self.view.frame.size.height - 137, 45, 45)];
     button.layer.cornerRadius = button.bounds.size.width / 2;
     button.backgroundColor = [UIColor hamlindigoColor];
     button.layer.borderColor = button.titleLabel.textColor.CGColor;
@@ -195,12 +195,13 @@
 }
 
 - (UIButton *)createLogoutButton {
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 100, 50, 100, 25)];
-    button.backgroundColor = [UIColor redColor];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width, 20, 65, 65)];
+    button.layer.cornerRadius = button.bounds.size.width / 2;
+    button.backgroundColor = [UIColor peonyColor];
     button.tintColor = [UIColor whiteColor];
     button.userInteractionEnabled = YES;
-    button.hidden = YES;
-    [button setTitle:@"Logout" forState:UIControlStateNormal];
+//    button.hidden = YES;
+    [button setTitle:@"logout" forState:UIControlStateNormal];
     [self.view addSubview:button];
     return button;
 }
@@ -237,7 +238,25 @@
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.drawButton snapToPoint:point];
     [self.dynamicAnimator addBehavior:snapBehavior];
 
-    self.logoutButton.hidden = NO;
+    [self loginButtonFlyIn:self.logoutButton];
+}
+
+- (void)loginButtonFlyIn:(UIButton *)button {
+    CGRect movement = button.frame;
+    movement.origin.x = self.view.frame.size.width - 97;
+
+    [UIView animateWithDuration:0.2 animations:^{
+        button.frame = movement;
+    }];
+}
+
+- (void)loginButtonFlyOut:(UIButton *)button {
+    CGRect movement = button.frame;
+    movement.origin.x = self.view.frame.size.width;
+
+    [UIView animateWithDuration:0.2 animations:^{
+        button.frame = movement;
+    }];
 }
 
 - (void)fanIn {
@@ -249,7 +268,7 @@
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.drawButton snapToPoint:self.mainButton.center];
     [self.dynamicAnimator addBehavior:snapBehavior];
 
-    self.logoutButton.hidden = YES;
+    [self loginButtonFlyOut:self.logoutButton];
 }
 
 #pragma mark - Logout;
@@ -268,19 +287,20 @@
 #pragma mark - Photo button & segue
 
 - (void)onCameraButtonPressed {
+
     [self performSegueWithIdentifier:@"RootToCamera" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"RootToCamera"]) {
         CameraViewController *cameraVC = segue.destinationViewController;
+//        NSString *pressed = @"hello";
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"Sent Location" object:nil userInfo:pressed];
         cameraVC.userLocation = self.userLocation;
     } else if ([segue.identifier isEqualToString:@"RootToDetail"]) {
-        //fucked
         DetailViewController *detailVC = segue.destinationViewController;
         detailVC.objectArray = self.objectArray;
         detailVC.indexPath = self.indexPath;
-        
     }
 }
 
@@ -299,9 +319,5 @@ UIGraphicsEndImageContext();
 self.photoButton.backgroundColor = [UIColor colorWithPatternImage:newImage];
 //
 */
-
-
-
-
 
 @end

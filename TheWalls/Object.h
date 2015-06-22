@@ -20,6 +20,7 @@
 @property PFUser *createdBy;
 @property PFGeoPoint *location; //fucked
 @property MKPointAnnotation *annotation; //fucked
+@property NSString *venueName;
 @property double latitude; //fucked
 @property double longitude; //fucked
 
