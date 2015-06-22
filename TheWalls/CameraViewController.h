@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <AVFoundation/AVFoundation.h>
 
 #import "Object.h"
 #import "SelectLocationViewController.h"
 #import "FoursquareAPI.h"
 #import "UIColor+CustomColors.h"
 
-@interface CameraViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface CameraViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCaptureFileOutputRecordingDelegate>
 
 @property CLLocation *userLocation;
 @property UIImage *imageDidSelected;
@@ -25,9 +26,12 @@
 @property UIButton *locationButton;
 
 @property Object *object;
-@property (weak, nonatomic) IBOutlet UIView *containerView;
 @property BOOL tableIsHidden;
-@property BOOL photoTaken;
+//@property BOOL photoTaken;
+
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UILabel *venueLabel;
+
+#define VIDEO_FILE @"test.mov"
 
 @end

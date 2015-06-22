@@ -9,6 +9,10 @@
 #import "CameraViewController.h"
 
 @implementation CameraViewController
+AVCaptureSession *session;
+AVCaptureStillImageOutput *imageOutput;
+AVCaptureMovieFileOutput *movieOutput;
+AVCaptureConnection *videoConnection;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -18,28 +22,40 @@
                                        selector:@selector(updateLocation:) name:@"selectedLocation"
                                          object:nil];
 
-    self.tableIsHidden = YES;
-    self.containerView.hidden = YES;
+
 
     //Setup background and imageview
+    self.view.backgroundColor = [UIColor blackColor];
     self.view.backgroundColor = [UIColor paperColor];
     self.imagePreview = [[UIImageView alloc]initWithFrame:self.view.frame];
     self.imagePreview.contentMode = UIViewContentModeScaleAspectFill;
+    self.imagePreview.hidden = YES;
     [self.view addSubview:self.imagePreview];
+
+    //Setup container and table
+    self.tableIsHidden = YES;
+    self.containerView.hidden = YES;
+
+    //Initialize preview layer and AV functions
+    [self initializeAVItems];
+    [self testDevices];
 
     //Setup UI buttons;
     self.cameraButton = [self createButtonWithTitle:@"photo" chooseColor:[UIColor limeColor] andPosition:200];
-    [self.cameraButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
+        UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPressGesture:)];
+    [self.cameraButton addGestureRecognizer:longPressRecognizer];
+    [self.cameraButton addTarget:self action:@selector(captureImage) forControlEvents:UIControlEventTouchUpInside];
 
-    self.saveButton = [self createButtonWithTitle:@"save" chooseColor:[UIColor peonyColor] andPosition:100];
-    [self.saveButton addTarget:self action:@selector(savePhoto:) forControlEvents:UIControlEventTouchUpInside];
+    self.saveButton = [self createButtonWithTitle:@"save" chooseColor:[UIColor peonyColor] andPosition:0];
+    [self.saveButton addTarget:self action:@selector(saveActions) forControlEvents:UIControlEventTouchUpInside];
 
     self.locationButton = [self createButtonWithTitle:@"loc" chooseColor:[UIColor hamlindigoColor] andPosition:300];
+    self.locationButton.userInteractionEnabled = YES;
     [self.locationButton addTarget:self action:@selector(segueToLocationTable) forControlEvents:UIControlEventTouchUpInside];
 
     //Track if a picture has been taken, automatically call camera first time
-    self.photoTaken = NO;
-    [self takePhoto];
+//    self.photoTaken = NO;
+//    [self takePhoto];
 }
 
 -(void)updateLocation:(NSNotification *)notification {
@@ -55,14 +71,11 @@
     } else {
         NSLog(@"Error Transferring Location Data");
     }
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocation:) name:@"Sent Location" object:nil];
-
 }
 
 #pragma mark - Foursquare API call & segue
@@ -70,11 +83,13 @@
 - (void)segueToLocationTable {
     self.tableIsHidden = !self.tableIsHidden;
     self.containerView.hidden = self.tableIsHidden;
+    [self.view bringSubviewToFront:self.containerView];
+    [self.view bringSubviewToFront:self.cameraButton];
+    [self.view bringSubviewToFront:self.locationButton];
+    [self.view bringSubviewToFront:self.saveButton];
+
 //    [self performSegueWithIdentifier:@"CameraToSelectLocation" sender:self];
 }
-
-
-
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"CameraToSelectLocation"]) {
@@ -84,7 +99,159 @@
     }
 }
 
+#pragma mark - AV initialization
 
+- (void)initializeAVItems {
+    //Start session, input
+    session = [AVCaptureSession new];
+    if ([session canSetSessionPreset:AVCaptureSessionPresetHigh]) {
+        session.sessionPreset = AVCaptureSessionPresetHigh;
+    }
+    AVCaptureDevice *inputDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+
+    NSError *error;
+    AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:inputDevice error:&error];
+    if ([session canAddInput:deviceInput]) {
+        [session addInput:deviceInput];
+    } else {
+        NSLog(@"%@", error);
+    }
+
+    AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc]initWithSession:session];
+    [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+
+    //Layer preview
+    CALayer *viewLayer = [[self view] layer];
+    [viewLayer setMasksToBounds:YES];
+
+    CGRect frame = self.view.frame;
+    [previewLayer setFrame:frame];
+    [viewLayer insertSublayer:previewLayer atIndex:0];
+
+    //Image Output
+    imageOutput = [AVCaptureStillImageOutput new];
+    NSDictionary *imageOutputSettings = [[NSDictionary alloc]initWithObjectsAndKeys:AVVideoCodecJPEG, AVVideoCodecKey, nil];
+    imageOutput.outputSettings = imageOutputSettings;
+
+    //Video Output
+    movieOutput = [AVCaptureMovieFileOutput new];
+
+    [session addOutput:movieOutput];
+    [session addOutput:imageOutput];
+    [session startRunning];
+}
+
+- (void)testDevices {
+    NSArray *devices = [AVCaptureDevice devices];
+    for (AVCaptureDevice *device in devices) {
+        NSLog(@"Device name: %@", [device localizedName]);
+        if ([device hasMediaType:AVMediaTypeVideo]) {
+            if ([device position] == AVCaptureDevicePositionBack) {
+                NSLog(@"Device position : back");
+            }
+            else {
+                NSLog(@"Device position : front");
+            }
+        }
+    }
+}
+
+#pragma mark - Image capture
+
+- (void)captureImage {
+    AVCaptureConnection *videoConnection = nil;
+    for (AVCaptureConnection *connection in imageOutput.connections) {
+        for (AVCaptureInputPort *port in [connection inputPorts]) {
+            if ([[port mediaType] isEqual:AVMediaTypeVideo]) {
+                videoConnection = connection;
+                break;
+            }
+        }
+        if (videoConnection) {
+            break;
+        }
+    }
+    NSLog(@"Requesting capture from: %@", imageOutput);
+    [imageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
+        if (imageDataSampleBuffer != NULL) {
+            NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+            UIImage *image = [UIImage imageWithData:imageData];
+            self.imagePreview.image = image;
+            self.imagePreview.hidden = NO;
+        }
+    }];
+    [self saveButtonFlyIn:self.saveButton];
+    [self.view bringSubviewToFront:self.venueLabel];
+}
+
+#pragma mark - Video capture
+
+- (void)captureVideo {
+    NSLog(@"%@", movieOutput.connections);
+    [[NSFileManager defaultManager] removeItemAtURL:[self outputURL] error:nil];
+
+    videoConnection = [self connectionWithMediaType:AVMediaTypeVideo fromConnections:movieOutput.connections];
+
+    /* This is where I'm having issues, I think... */
+    [movieOutput startRecordingToOutputFileURL:[self outputURL] recordingDelegate:self];
+}
+
+- (AVCaptureConnection *)connectionWithMediaType:(NSString *)mediaType fromConnections:(NSArray *)connections {
+    for (AVCaptureConnection *connection in connections) {
+        for (AVCaptureInputPort *port in [connection inputPorts]) {
+            if ([[port mediaType] isEqual:mediaType]) {
+                return connection;
+            }
+        }
+    }
+    return nil;
+}
+
+#pragma mark - AVCaptureFileOutputRecordingDelegate
+
+- (void)captureOutput:(AVCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray *)connections error:(NSError *)error {
+    if (!error) {
+        //Do something
+    } else {
+        NSLog(@"Error: %@", [error localizedDescription]);
+    }
+}
+
+#pragma mark - Recoding Destination URL
+
+- (NSURL *)outputURL {
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:VIDEO_FILE];
+    return [NSURL fileURLWithPath:filePath];
+}
+
+- (void)saveButtonFlyIn:(UIButton *)button {
+    CGRect movement = button.frame;
+    movement.origin.x = self.view.frame.size.width - 100;
+
+    [UIView animateWithDuration:0.2 animations:^{
+        button.frame = movement;
+    }];
+}
+
+- (void)saveButtonFlyOut:(UIButton *)button {
+    CGRect movement = button.frame;
+    movement.origin.x = self.view.frame.size.width;
+
+    [UIView animateWithDuration:0.2 animations:^{
+        button.frame = movement;
+    }];
+}
+
+#pragma mark - Save actions
+
+- (void)saveActions {
+    [self saveButtonFlyOut:self.saveButton];
+    self.imagePreview.image = nil;
+    self.imagePreview.hidden = YES;
+}
+
+/*
 #pragma mark - Take photo, save photo, unwind
 
 - (void)takePhoto {
@@ -100,7 +267,6 @@
     self.imagePreview.image = self.imageDidSelected;
     self.photoTaken = YES;
     [picker dismissViewControllerAnimated:YES completion:NULL];
-
 }
 
 - (IBAction)savePhoto:(id)sender {
@@ -119,6 +285,21 @@
     }
     //Perform segue back to RootViewController
     [self performSegueWithIdentifier:@"UnwindToRoot" sender:self];
+}
+*/
+#pragma mark - Gesture recognizer
+
+- (void)handleLongPressGesture:(UILongPressGestureRecognizer *)recognizer {
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"Press");
+        self.cameraButton.backgroundColor = [UIColor greenColor];
+//        [self captureVideo];
+    }
+    if (recognizer.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"Unpress");
+        self.cameraButton.backgroundColor = [UIColor redColor];
+//        [movieOutput stopRecording];
+    }
 }
 
 #pragma mark - Create buttons
@@ -142,9 +323,5 @@
 
 - (IBAction)unwindToCamera:(UIStoryboardSegue *)segue {
 }
-
-
-
-
 
 @end
