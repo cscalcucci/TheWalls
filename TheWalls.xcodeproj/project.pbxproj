@@ -333,11 +333,12 @@
 			isa = PBXGroup;
 			children = (
 				999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */,
-				996D51E91B334A7B002304E5 /* SelectLocation */,
-				99349E451B31CC9B001C47F7 /* DetailViewController */,
-				999CF7A21B2E05C0006A0324 /* RootViewController */,
 				99894F841B2FBF2000367E67 /* CameraViewController */,
 				662382331B34776400C5EB6D /* ChatViewController */,
+				99349E451B31CC9B001C47F7 /* DetailViewController */,
+				7E5905811B385BA20068BFE4 /* Feed */,
+				999CF7A21B2E05C0006A0324 /* RootViewController */,
+				996D51E91B334A7B002304E5 /* SelectLocation */,
 			);
 			name = Primary;
 			sourceTree = "<group>";
@@ -390,7 +391,6 @@
 				99894F801B2FB72400367E67 /* Models */,
 				999B3A871B2F31EF002BC1D6 /* AppDelegate */,
 				999B3A881B2F3211002BC1D6 /* Onboarding */,
-				7E5905811B385BA20068BFE4 /* Feed */,
 				999B3A8B1B2F3252002BC1D6 /* Primary */,
 				999CF77D1B2D19A5006A0324 /* Images.xcassets */,
 				999CF77F1B2D19A5006A0324 /* LaunchScreen.xib */,
