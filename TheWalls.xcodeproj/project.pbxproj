@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6623822B1B33643F00C5EB6D /* CustomPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623822A1B33643F00C5EB6D /* CustomPointAnnotation.m */; };
-		6623822E1B3470C000C5EB6D /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623822D1B3470C000C5EB6D /* PhoneViewController.m */; };
 		662382321B34775700C5EB6D /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 662382311B34775700C5EB6D /* ChatViewController.m */; };
 		662382361B34826600C5EB6D /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 662382351B34826600C5EB6D /* Activity.m */; };
 		7EAAE4451B2F3C1500814E77 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE4441B2F3C1500814E77 /* AudioToolbox.framework */; };
@@ -30,14 +29,10 @@
 		7EAAE4651B2F4F2300814E77 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE45F1B2F4F2200814E77 /* ParseUI.framework */; };
 		7EAAE47A1B2F646C00814E77 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE4791B2F646C00814E77 /* LoginViewController.m */; };
 		7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */; };
-		7EC532051B30A44800CF94BF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532031B30A44800CF94BF /* FBSDKCoreKit.framework */; };
-		7EC532061B30A44800CF94BF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532041B30A44800CF94BF /* FBSDKLoginKit.framework */; };
-		7EC532081B30A45600CF94BF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC532071B30A45600CF94BF /* FBSDKShareKit.framework */; };
 		7EC5320B1B31BED200CF94BF /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5320A1B31BED200CF94BF /* SignupViewController.m */; };
 		7EC5320E1B31BEE800CF94BF /* SessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5320D1B31BEE800CF94BF /* SessionViewController.m */; };
 		7EC532101B31BFF000CF94BF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */; };
 		7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532121B31D64D00CF94BF /* UsernameViewController.m */; };
-		7EC532161B31DA0200CF94BF /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC532151B31DA0200CF94BF /* AddressBookViewController.m */; };
 		7EC532181B32031700CF94BF /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		7EC5321A1B32032000CF94BF /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		7EC5321D1B32322B00CF94BF /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -75,8 +70,6 @@
 /* Begin PBXFileReference section */
 		662382291B33643F00C5EB6D /* CustomPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPointAnnotation.h; sourceTree = "<group>"; };
 		6623822A1B33643F00C5EB6D /* CustomPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPointAnnotation.m; sourceTree = "<group>"; };
-		6623822C1B3470C000C5EB6D /* PhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
-		6623822D1B3470C000C5EB6D /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
 		6623822F1B34711900C5EB6D /* SignupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		662382301B34775700C5EB6D /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		662382311B34775700C5EB6D /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
@@ -103,17 +96,12 @@
 		7EAAE4791B2F646C00814E77 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7EAAE47B1B2F6D3700814E77 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		7EC532031B30A44800CF94BF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		7EC532041B30A44800CF94BF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		7EC532071B30A45600CF94BF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		7EC5320A1B31BED200CF94BF /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		7EC5320C1B31BEE800CF94BF /* SessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionViewController.h; sourceTree = "<group>"; };
 		7EC5320D1B31BEE800CF94BF /* SessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionViewController.m; sourceTree = "<group>"; };
 		7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		7EC532111B31D64D00CF94BF /* UsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsernameViewController.h; sourceTree = "<group>"; };
 		7EC532121B31D64D00CF94BF /* UsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameViewController.m; sourceTree = "<group>"; };
-		7EC532141B31DA0200CF94BF /* AddressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookViewController.h; sourceTree = "<group>"; };
-		7EC532151B31DA0200CF94BF /* AddressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookViewController.m; sourceTree = "<group>"; };
 		991AA1301B324AA2004F2B2C /* FoursquareAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoursquareAPI.h; sourceTree = "<group>"; };
 		991AA1311B324AA2004F2B2C /* FoursquareAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoursquareAPI.m; sourceTree = "<group>"; };
 		99349E421B31CC95001C47F7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -160,12 +148,9 @@
 				7EAAE4571B2F3C7900814E77 /* libz.dylib in Frameworks */,
 				999B3A971B2F4D89002BC1D6 /* MapKit.framework in Frameworks */,
 				999B3A9C1B2F6C2E002BC1D6 /* Fabric.framework in Frameworks */,
-				7EC532051B30A44800CF94BF /* FBSDKCoreKit.framework in Frameworks */,
 				7EAAE4551B2F3C6A00814E77 /* SystemConfiguration.framework in Frameworks */,
 				7EAAE4601B2F4F2200814E77 /* Bolts.framework in Frameworks */,
-				7EC532081B30A45600CF94BF /* FBSDKShareKit.framework in Frameworks */,
 				999B3A9D1B2F6C2E002BC1D6 /* Crashlytics.framework in Frameworks */,
-				7EC532061B30A44800CF94BF /* FBSDKLoginKit.framework in Frameworks */,
 				7EAAE4531B2F3C5E00814E77 /* StoreKit.framework in Frameworks */,
 				7EAAE4621B2F4F2300814E77 /* ParseCrashReporting.framework in Frameworks */,
 				7EAAE4511B2F3C5400814E77 /* Security.framework in Frameworks */,
@@ -199,16 +184,6 @@
 				662382311B34775700C5EB6D /* ChatViewController.m */,
 			);
 			name = ChatViewController;
-			sourceTree = "<group>";
-		};
-		7EAAE4761B2F5BB300814E77 /* Facebook */ = {
-			isa = PBXGroup;
-			children = (
-				7EC532071B30A45600CF94BF /* FBSDKShareKit.framework */,
-				7EC532031B30A44800CF94BF /* FBSDKCoreKit.framework */,
-				7EC532041B30A44800CF94BF /* FBSDKLoginKit.framework */,
-			);
-			name = Facebook;
 			sourceTree = "<group>";
 		};
 		7EAAE4771B2F5BCD00814E77 /* Parse */ = {
@@ -306,8 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */,
-				7EC532141B31DA0200CF94BF /* AddressBookViewController.h */,
-				7EC532151B31DA0200CF94BF /* AddressBookViewController.m */,
 				7EAAE47B1B2F6D3700814E77 /* HomeViewController.h */,
 				7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */,
 				7EAAE4781B2F646C00814E77 /* LoginViewController.h */,
@@ -318,8 +291,6 @@
 				7EC5320D1B31BEE800CF94BF /* SessionViewController.m */,
 				7EC532111B31D64D00CF94BF /* UsernameViewController.h */,
 				7EC532121B31D64D00CF94BF /* UsernameViewController.m */,
-				6623822C1B3470C000C5EB6D /* PhoneViewController.h */,
-				6623822D1B3470C000C5EB6D /* PhoneViewController.m */,
 				999B3A861B2F31D8002BC1D6 /* SplashViewController */,
 			);
 			name = Onboarding;
@@ -346,7 +317,6 @@
 				999B3A9A1B2F6C2E002BC1D6 /* Fabric.framework */,
 				999B3A9B1B2F6C2E002BC1D6 /* Crashlytics.framework */,
 				7EAAE4771B2F5BCD00814E77 /* Parse */,
-				7EAAE4761B2F5BB300814E77 /* Facebook */,
 				999B3A961B2F4D89002BC1D6 /* MapKit.framework */,
 				7EAAE4541B2F3C6A00814E77 /* SystemConfiguration.framework */,
 				7EAAE4521B2F3C5E00814E77 /* StoreKit.framework */,
@@ -565,13 +535,11 @@
 				662382321B34775700C5EB6D /* ChatViewController.m in Sources */,
 				999CF7731B2D19A5006A0324 /* AppDelegate.m in Sources */,
 				999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */,
-				6623822E1B3470C000C5EB6D /* PhoneViewController.m in Sources */,
 				7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */,
 				9944F6661B34812E002C7650 /* CommentViewController.m in Sources */,
 				7EC5320B1B31BED200CF94BF /* SignupViewController.m in Sources */,
 				99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */,
 				996D51E81B334A6F002304E5 /* SelectLocationViewController.m in Sources */,
-				7EC532161B31DA0200CF94BF /* AddressBookViewController.m in Sources */,
 				662382361B34826600C5EB6D /* Activity.m in Sources */,
 				7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */,
 				999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */,
