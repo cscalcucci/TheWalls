@@ -128,9 +128,10 @@
         return nil;
     }
     MKAnnotationView *pin = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
-    UIImage *image = [UIImage imageNamed:@"shape3"];
+    int randomNumber = arc4random_uniform(3)+1;
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"shape%i",randomNumber]];
 
-    CGSize scaleSize = CGSizeMake(48.0, 48.0);
+    CGSize scaleSize = CGSizeMake(24.0, 24.0);
     UIGraphicsBeginImageContextWithOptions(scaleSize, NO, 0.0);
     [image drawInRect:CGRectMake(0, 0, scaleSize.width, scaleSize.height)];
     UIImage * resizedImage = UIGraphicsGetImageFromCurrentImageContext();
