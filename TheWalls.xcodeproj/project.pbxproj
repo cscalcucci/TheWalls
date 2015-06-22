@@ -10,6 +10,7 @@
 		6623822B1B33643F00C5EB6D /* CustomPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623822A1B33643F00C5EB6D /* CustomPointAnnotation.m */; };
 		662382321B34775700C5EB6D /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 662382311B34775700C5EB6D /* ChatViewController.m */; };
 		662382361B34826600C5EB6D /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 662382351B34826600C5EB6D /* Activity.m */; };
+		7E59057D1B3857230068BFE4 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E59057C1B3857230068BFE4 /* Feed.storyboard */; };
 		7EAAE4451B2F3C1500814E77 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE4441B2F3C1500814E77 /* AudioToolbox.framework */; };
 		7EAAE4471B2F3C1E00814E77 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE4461B2F3C1E00814E77 /* CFNetwork.framework */; };
 		7EAAE4491B2F3C2A00814E77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE4481B2F3C2A00814E77 /* CoreGraphics.framework */; };
@@ -75,6 +76,7 @@
 		662382311B34775700C5EB6D /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		662382341B34826600C5EB6D /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		662382351B34826600C5EB6D /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		7E59057C1B3857230068BFE4 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		7EAAE4441B2F3C1500814E77 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7EAAE4461B2F3C1E00814E77 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7EAAE4481B2F3C2A00814E77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -292,6 +294,7 @@
 				7EC532111B31D64D00CF94BF /* UsernameViewController.h */,
 				7EC532121B31D64D00CF94BF /* UsernameViewController.m */,
 				999B3A861B2F31D8002BC1D6 /* SplashViewController */,
+				7E59057C1B3857230068BFE4 /* Feed.storyboard */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E59057D1B3857230068BFE4 /* Feed.storyboard in Resources */,
 				999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */,
 				7EC532101B31BFF000CF94BF /* Onboarding.storyboard in Resources */,
 				999CF7811B2D19A5006A0324 /* LaunchScreen.xib in Resources */,
