@@ -27,7 +27,6 @@
         for (FoursquareAPI *item in self.foursquareResults) {
             NSLog(@"%@", item.venueName);
         }
-
         [self.tableView reloadData];
     }];
 }
@@ -35,7 +34,6 @@
 - (void)setFoursquareResults:(NSArray *)foursquareResults {
     _foursquareResults = foursquareResults;
 }
-
 
 
 #pragma mark - Swipe Gestures

@@ -15,7 +15,7 @@
 #import "FoursquareAPI.h"
 #import "UIColor+CustomColors.h"
 
-@interface CameraViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface CameraViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCaptureFileOutputRecordingDelegate>
 
 @property CLLocation *userLocation;
 @property UIImage *imageDidSelected;
@@ -27,7 +27,7 @@
 
 @property Object *object;
 @property BOOL tableIsHidden;
-@property BOOL photoTaken;
+//@property BOOL photoTaken;
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UILabel *venueLabel;

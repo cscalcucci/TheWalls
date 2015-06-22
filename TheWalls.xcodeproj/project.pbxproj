@@ -53,7 +53,19 @@
 		999CF78D1B2D19A5006A0324 /* TheWallsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF78C1B2D19A5006A0324 /* TheWallsTests.m */; };
 		999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF7991B2D2AAC006A0324 /* UIColor+CustomColors.m */; };
 		999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF79F1B2E05AB006A0324 /* SplashViewController.m */; };
-		99B95AD01B385E9100F82A97 /* HybridCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B95ACF1B385E9100F82A97 /* HybridCameraViewController.m */; };
+		99B95ADF1B3866B700F82A97 /* Brandon Grotesque Black Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B95AD21B3866B700F82A97 /* Brandon Grotesque Black Italic.ttf */; };
+		99B95AE01B3866B700F82A97 /* Brandon Grotesque Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B95AD31B3866B700F82A97 /* Brandon Grotesque Black.ttf */; };
+		99B95AE11B3866B700F82A97 /* Brandon Grotesque Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B95AD41B3866B700F82A97 /* Brandon Grotesque Bold Italic.ttf */; };
+		99B95AE21B3866B700F82A97 /* Brandon Grotesque Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B95AD51B3866B700F82A97 /* Brandon Grotesque Bold.ttf */; };
+		99B95AE31B3866B700F82A97 /* Brandon Grotesque Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B95AD61B3866B700F82A97 /* Brandon Grotesque Italic.ttf */; };
+		99B95AE41B3866B700F82A97 /* Brandon Grotesque Light Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B95AD71B3866B700F82A97 /* Brandon Grotesque Light Italic.ttf */; };
+		99B95AE51B3866B700F82A97 /* Brandon Grotesque Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B95AD81B3866B700F82A97 /* Brandon Grotesque Light.ttf */; };
+		99B95AE61B3866B700F82A97 /* Brandon Grotesque Medium Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B95AD91B3866B700F82A97 /* Brandon Grotesque Medium Italic.ttf */; };
+		99B95AE71B3866B700F82A97 /* Brandon Grotesque Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B95ADA1B3866B700F82A97 /* Brandon Grotesque Medium.ttf */; };
+		99B95AE81B3866B700F82A97 /* Brandon Grotesque Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B95ADB1B3866B700F82A97 /* Brandon Grotesque Regular.ttf */; };
+		99B95AE91B3866B700F82A97 /* Brandon Grotesque Thin Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B95ADC1B3866B700F82A97 /* Brandon Grotesque Thin Italic.ttf */; };
+		99B95AEA1B3866B700F82A97 /* Brandon Grotesque Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99B95ADD1B3866B700F82A97 /* Brandon Grotesque Thin.ttf */; };
+		99B95AEB1B3866B700F82A97 /* Icon in Resources */ = {isa = PBXBuildFile; fileRef = 99B95ADE1B3866B700F82A97 /* Icon */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,8 +144,19 @@
 		999CF7991B2D2AAC006A0324 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 		999CF79E1B2E05AB006A0324 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		999CF79F1B2E05AB006A0324 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
-		99B95ACE1B385E9100F82A97 /* HybridCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HybridCameraViewController.h; sourceTree = "<group>"; };
-		99B95ACF1B385E9100F82A97 /* HybridCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HybridCameraViewController.m; sourceTree = "<group>"; };
+		99B95AD21B3866B700F82A97 /* Brandon Grotesque Black Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brandon Grotesque Black Italic.ttf"; sourceTree = "<group>"; };
+		99B95AD31B3866B700F82A97 /* Brandon Grotesque Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brandon Grotesque Black.ttf"; sourceTree = "<group>"; };
+		99B95AD41B3866B700F82A97 /* Brandon Grotesque Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brandon Grotesque Bold Italic.ttf"; sourceTree = "<group>"; };
+		99B95AD51B3866B700F82A97 /* Brandon Grotesque Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brandon Grotesque Bold.ttf"; sourceTree = "<group>"; };
+		99B95AD61B3866B700F82A97 /* Brandon Grotesque Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brandon Grotesque Italic.ttf"; sourceTree = "<group>"; };
+		99B95AD71B3866B700F82A97 /* Brandon Grotesque Light Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brandon Grotesque Light Italic.ttf"; sourceTree = "<group>"; };
+		99B95AD81B3866B700F82A97 /* Brandon Grotesque Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brandon Grotesque Light.ttf"; sourceTree = "<group>"; };
+		99B95AD91B3866B700F82A97 /* Brandon Grotesque Medium Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brandon Grotesque Medium Italic.ttf"; sourceTree = "<group>"; };
+		99B95ADA1B3866B700F82A97 /* Brandon Grotesque Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brandon Grotesque Medium.ttf"; sourceTree = "<group>"; };
+		99B95ADB1B3866B700F82A97 /* Brandon Grotesque Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brandon Grotesque Regular.ttf"; sourceTree = "<group>"; };
+		99B95ADC1B3866B700F82A97 /* Brandon Grotesque Thin Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brandon Grotesque Thin Italic.ttf"; sourceTree = "<group>"; };
+		99B95ADD1B3866B700F82A97 /* Brandon Grotesque Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brandon Grotesque Thin.ttf"; sourceTree = "<group>"; };
+		99B95ADE1B3866B700F82A97 /* Icon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Icon"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,8 +273,6 @@
 			children = (
 				99894F811B2FBF1700367E67 /* CameraViewController.h */,
 				99894F821B2FBF1700367E67 /* CameraViewController.m */,
-				99B95ACE1B385E9100F82A97 /* HybridCameraViewController.h */,
-				99B95ACF1B385E9100F82A97 /* HybridCameraViewController.m */,
 			);
 			name = CameraViewController;
 			sourceTree = "<group>";
@@ -366,6 +387,7 @@
 		999CF76D1B2D19A5006A0324 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				99B95AD11B3866B700F82A97 /* Brandon Grotesque */,
 				999CF76E1B2D19A5006A0324 /* Info.plist */,
 				999CF76F1B2D19A5006A0324 /* main.m */,
 			);
@@ -405,6 +427,26 @@
 				999CF7781B2D19A5006A0324 /* RootViewController.m */,
 			);
 			name = RootViewController;
+			sourceTree = "<group>";
+		};
+		99B95AD11B3866B700F82A97 /* Brandon Grotesque */ = {
+			isa = PBXGroup;
+			children = (
+				99B95AD21B3866B700F82A97 /* Brandon Grotesque Black Italic.ttf */,
+				99B95AD31B3866B700F82A97 /* Brandon Grotesque Black.ttf */,
+				99B95AD41B3866B700F82A97 /* Brandon Grotesque Bold Italic.ttf */,
+				99B95AD51B3866B700F82A97 /* Brandon Grotesque Bold.ttf */,
+				99B95AD61B3866B700F82A97 /* Brandon Grotesque Italic.ttf */,
+				99B95AD71B3866B700F82A97 /* Brandon Grotesque Light Italic.ttf */,
+				99B95AD81B3866B700F82A97 /* Brandon Grotesque Light.ttf */,
+				99B95AD91B3866B700F82A97 /* Brandon Grotesque Medium Italic.ttf */,
+				99B95ADA1B3866B700F82A97 /* Brandon Grotesque Medium.ttf */,
+				99B95ADB1B3866B700F82A97 /* Brandon Grotesque Regular.ttf */,
+				99B95ADC1B3866B700F82A97 /* Brandon Grotesque Thin Italic.ttf */,
+				99B95ADD1B3866B700F82A97 /* Brandon Grotesque Thin.ttf */,
+				99B95ADE1B3866B700F82A97 /* Icon */,
+			);
+			path = "Brandon Grotesque";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,9 +531,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				999B3A8A1B2F323C002BC1D6 /* PrimaryView.storyboard in Resources */,
+				99B95AEB1B3866B700F82A97 /* Icon in Resources */,
+				99B95AE71B3866B700F82A97 /* Brandon Grotesque Medium.ttf in Resources */,
+				99B95ADF1B3866B700F82A97 /* Brandon Grotesque Black Italic.ttf in Resources */,
+				99B95AE21B3866B700F82A97 /* Brandon Grotesque Bold.ttf in Resources */,
+				99B95AE41B3866B700F82A97 /* Brandon Grotesque Light Italic.ttf in Resources */,
+				99B95AE91B3866B700F82A97 /* Brandon Grotesque Thin Italic.ttf in Resources */,
+				99B95AE31B3866B700F82A97 /* Brandon Grotesque Italic.ttf in Resources */,
+				99B95AE61B3866B700F82A97 /* Brandon Grotesque Medium Italic.ttf in Resources */,
 				7EC532101B31BFF000CF94BF /* Onboarding.storyboard in Resources */,
 				999CF7811B2D19A5006A0324 /* LaunchScreen.xib in Resources */,
+				99B95AE51B3866B700F82A97 /* Brandon Grotesque Light.ttf in Resources */,
+				99B95AE81B3866B700F82A97 /* Brandon Grotesque Regular.ttf in Resources */,
+				99B95AEA1B3866B700F82A97 /* Brandon Grotesque Thin.ttf in Resources */,
 				999CF77E1B2D19A5006A0324 /* Images.xcassets in Resources */,
+				99B95AE01B3866B700F82A97 /* Brandon Grotesque Black.ttf in Resources */,
+				99B95AE11B3866B700F82A97 /* Brandon Grotesque Bold Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +601,6 @@
 				6623822B1B33643F00C5EB6D /* CustomPointAnnotation.m in Sources */,
 				999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */,
 				99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */,
-				99B95AD01B385E9100F82A97 /* HybridCameraViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

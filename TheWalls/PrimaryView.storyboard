@@ -4,6 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Brandon Grotesque Bold.ttf">
+            <string>BrandonGrotesque-Bold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Root View Controller-->
         <scene sceneID="Hmx-8G-zBc">
@@ -85,20 +90,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1PS-tu-N63">
-                                <rect key="frame" x="0.0" y="400" width="600" height="200"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1PS-tu-N63">
+                                <rect key="frame" x="0.0" y="106" width="600" height="500"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="hsg-ww-KYW"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="4My-SL-GZT" kind="embed" identifier="CameraToSelectLocation" id="Ed2-Tv-dTR"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9b-CA-lI5">
-                                <rect key="frame" x="49" y="93" width="487" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9b-CA-lI5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="hb9-co-25I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="BrandonGrotesque-Bold" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="i9b-CA-lI5" firstAttribute="leading" secondItem="1dF-M5-hPG" secondAttribute="leadingMargin" constant="-16" id="A5Z-Fa-kX0"/>
+                            <constraint firstItem="1PS-tu-N63" firstAttribute="leading" secondItem="1dF-M5-hPG" secondAttribute="leadingMargin" constant="-16" id="Mqj-2j-yGq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1PS-tu-N63" secondAttribute="trailing" constant="-16" id="Vbe-n7-fv4"/>
+                            <constraint firstItem="i9b-CA-lI5" firstAttribute="top" secondItem="1dF-M5-hPG" secondAttribute="topMargin" id="o0B-re-VBH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="i9b-CA-lI5" secondAttribute="trailing" constant="-16" id="vPc-Vu-QDw"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="1PS-tu-N63" secondAttribute="bottom" constant="-6" id="yiS-gr-RkF"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="1PS-tu-N63" id="x6n-aD-CAi"/>
@@ -120,18 +141,19 @@
                         <viewControllerLayoutGuide type="bottom" id="Gd6-6P-vZd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZVy-P4-YT6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yb4-5e-k3n">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yb4-5e-k3n">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="58" id="jaI-X7-aOV">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="jaI-X7-aOV">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jaI-X7-aOV" id="LgF-dV-K2b">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
