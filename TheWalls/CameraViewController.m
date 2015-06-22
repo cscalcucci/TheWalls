@@ -18,18 +18,28 @@
                                        selector:@selector(updateLocation:) name:@"selectedLocation"
                                          object:nil];
 
-    self.tableIsHidden = YES;
-    self.containerView.hidden = YES;
+
 
     //Setup background and imageview
+    self.view.backgroundColor = [UIColor blackColor];
     self.view.backgroundColor = [UIColor paperColor];
     self.imagePreview = [[UIImageView alloc]initWithFrame:self.view.frame];
     self.imagePreview.contentMode = UIViewContentModeScaleAspectFill;
+    self.imagePreview.hidden = YES;
     [self.view addSubview:self.imagePreview];
+
+    //Setup container and table
+    self.tableIsHidden = YES;
+    self.containerView.hidden = YES;
 
     //Setup UI buttons;
     self.cameraButton = [self createButtonWithTitle:@"photo" chooseColor:[UIColor limeColor] andPosition:200];
+        UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPressGesture:)];
+//    [self.cameraButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
+    [self.cameraButton addGestureRecognizer:longPressRecognizer];
     [self.cameraButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
+
+
 
     self.saveButton = [self createButtonWithTitle:@"save" chooseColor:[UIColor peonyColor] andPosition:100];
     [self.saveButton addTarget:self action:@selector(savePhoto:) forControlEvents:UIControlEventTouchUpInside];
@@ -55,14 +65,11 @@
     } else {
         NSLog(@"Error Transferring Location Data");
     }
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocation:) name:@"Sent Location" object:nil];
-
 }
 
 #pragma mark - Foursquare API call & segue
@@ -73,9 +80,6 @@
 //    [self performSegueWithIdentifier:@"CameraToSelectLocation" sender:self];
 }
 
-
-
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"CameraToSelectLocation"]) {
         SelectLocationViewController *selectedLocationVC = segue.destinationViewController;
@@ -83,7 +87,6 @@
         selectedLocationVC.userLocation = location;
     }
 }
-
 
 #pragma mark - Take photo, save photo, unwind
 
@@ -100,7 +103,6 @@
     self.imagePreview.image = self.imageDidSelected;
     self.photoTaken = YES;
     [picker dismissViewControllerAnimated:YES completion:NULL];
-
 }
 
 - (IBAction)savePhoto:(id)sender {
@@ -119,6 +121,21 @@
     }
     //Perform segue back to RootViewController
     [self performSegueWithIdentifier:@"UnwindToRoot" sender:self];
+}
+
+#pragma mark - Gesture recognizer
+
+- (void)handleLongPressGesture:(UILongPressGestureRecognizer *)recognizer {
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"Press");
+        self.cameraButton.backgroundColor = [UIColor greenColor];
+//        [self captureVideo];
+    }
+    if (recognizer.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"Unpress");
+        self.cameraButton.backgroundColor = [UIColor redColor];
+//        [movieOutput stopRecording];
+    }
 }
 
 #pragma mark - Create buttons
@@ -142,9 +159,5 @@
 
 - (IBAction)unwindToCamera:(UIStoryboardSegue *)segue {
 }
-
-
-
-
 
 @end

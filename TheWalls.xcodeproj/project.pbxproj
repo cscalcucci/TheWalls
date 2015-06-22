@@ -53,6 +53,7 @@
 		999CF78D1B2D19A5006A0324 /* TheWallsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF78C1B2D19A5006A0324 /* TheWallsTests.m */; };
 		999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF7991B2D2AAC006A0324 /* UIColor+CustomColors.m */; };
 		999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CF79F1B2E05AB006A0324 /* SplashViewController.m */; };
+		99B95AD01B385E9100F82A97 /* HybridCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B95ACF1B385E9100F82A97 /* HybridCameraViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,8 @@
 		999CF7991B2D2AAC006A0324 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 		999CF79E1B2E05AB006A0324 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		999CF79F1B2E05AB006A0324 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		99B95ACE1B385E9100F82A97 /* HybridCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HybridCameraViewController.h; sourceTree = "<group>"; };
+		99B95ACF1B385E9100F82A97 /* HybridCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HybridCameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +250,8 @@
 			children = (
 				99894F811B2FBF1700367E67 /* CameraViewController.h */,
 				99894F821B2FBF1700367E67 /* CameraViewController.m */,
+				99B95ACE1B385E9100F82A97 /* HybridCameraViewController.h */,
+				99B95ACF1B385E9100F82A97 /* HybridCameraViewController.m */,
 			);
 			name = CameraViewController;
 			sourceTree = "<group>";
@@ -541,6 +546,7 @@
 				6623822B1B33643F00C5EB6D /* CustomPointAnnotation.m in Sources */,
 				999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */,
 				99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */,
+				99B95AD01B385E9100F82A97 /* HybridCameraViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
