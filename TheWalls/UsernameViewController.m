@@ -50,7 +50,10 @@
 -(void)updateUsername {
     self.currentUser.username = self.usernameTextField.text;
     [self.currentUser saveInBackground];
-    [self performSegueWithIdentifier:@"usernameSegue" sender:self];
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
+    [self presentViewController:viewController animated:NO completion:NULL];
 }
 
 -(IBAction)unwindUsername:(UIStoryboardSegue *)segue {
