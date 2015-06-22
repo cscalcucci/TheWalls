@@ -24,6 +24,4 @@
 @property double latitude; //fucked
 @property double longitude; //fucked
 
-
-
 @end
