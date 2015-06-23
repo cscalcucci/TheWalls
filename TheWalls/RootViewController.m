@@ -24,10 +24,10 @@
     //Buttons - to subclass
     self.areButtonsFanned = NO;
     self.dynamicAnimator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
-    self.soundButton =  [self createButtonWithTitle:@"blank" chooseColor:[UIColor hamlindigoColor]];
+    self.soundButton =  [self createButtonWithTitle:@"" chooseColor:[UIColor hamlindigoColor]];
     self.photoButton =  [self createButtonWithTitle:@"photo" chooseColor:[UIColor limeColor]];
-    self.drawButton =   [self createButtonWithTitle:@"blank" chooseColor:[UIColor peonyColor]];
-    self.mainButton =   [self createButtonWithTitle:@"M" chooseColor:[UIColor peonyColor]];
+    self.feedButton =   [self createButtonWithTitle:@"feed" chooseColor:[UIColor peonyColor]];
+    self.mainButton =   [self createButtonWithTitle:@"main" chooseColor:[UIColor peonyColor]];
     self.centerMapButton = [self createCenterMapButton];
 
     self.logoutButton = [self createLogoutButton];
@@ -35,14 +35,14 @@
     [self.photoButton addTarget:self action:@selector(onCameraButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.logoutButton addTarget:self action:@selector(userLogout) forControlEvents:UIControlEventTouchUpInside];
     [self.centerMapButton addTarget:self action:@selector(didTapCenterMapButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.drawButton addTarget:self action:@selector(onLeftButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.feedButton addTarget:self action:@selector(onLeftButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+
+    //Adding tab bar
+//    TabBarController *tab = [TabBarController new];
+//    [self presentViewController:tab animated:YES completion:nil];
 
     //Future gestures stuff
     [self leftSwipeGestureInitialization];
-}
-
-- (void) viewDidAppear:(BOOL)animated {
-
 }
 
 #pragma mark - Map & user location
@@ -106,7 +106,7 @@
 - (void)letThereBeMKAnnotation {
     PFQuery *query = [Object query];
     [query orderByDescending:@"createdAt"];
-    query.limit = 20;
+    query.limit = 50;
     [query findObjectsInBackgroundWithBlock:^(NSArray *pictures, NSError *error) {
         if (!error) {
         }
@@ -176,8 +176,8 @@
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - (_diameter + (_gap * 1.6)),frame.size.height - (_diameter + _gap), _diameter, _diameter)];
     button.layer.cornerRadius = button.bounds.size.width / 2;
     button.backgroundColor = color;
-    button.layer.borderColor = button.titleLabel.textColor.CGColor;
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    button.tintColor = [UIColor paperColor];
+    [button setTitle:title forState:UIControlStateNormal];
 
     [self.view addSubview:button];
     return button;
@@ -189,7 +189,8 @@
     button.layer.cornerRadius = button.bounds.size.width / 2;
     button.backgroundColor = [UIColor hamlindigoColor];
     button.layer.borderColor = button.titleLabel.textColor.CGColor;
-    [button setTitle:@"C" forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"icon-location"] forState:UIControlStateNormal];
+
 
     [self.view addSubview:button];
     return button;
@@ -199,7 +200,7 @@
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width, 20, 65, 65)];
     button.layer.cornerRadius = button.bounds.size.width / 2;
     button.backgroundColor = [UIColor peonyColor];
-    button.tintColor = [UIColor whiteColor];
+    button.tintColor = [UIColor paperColor];
     button.userInteractionEnabled = YES;
 //    button.hidden = YES;
     [button setTitle:@"logout" forState:UIControlStateNormal];
@@ -236,7 +237,7 @@
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.photoButton snapToPoint:point];
     [self.dynamicAnimator addBehavior:snapBehavior];
     point = CGPointMake(self.mainButton.frame.origin.x - (_diameter * 3.25), self.mainButton.frame.origin.y + (_diameter/2));
-    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.drawButton snapToPoint:point];
+    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.feedButton snapToPoint:point];
     [self.dynamicAnimator addBehavior:snapBehavior];
 
     [self loginButtonFlyIn:self.logoutButton];
@@ -266,7 +267,7 @@
     [self.dynamicAnimator addBehavior:snapBehavior];
     snapBehavior = [[UISnapBehavior alloc]initWithItem:self.photoButton snapToPoint:self.mainButton.center];
     [self.dynamicAnimator addBehavior:snapBehavior];
-    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.drawButton snapToPoint:self.mainButton.center];
+    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.feedButton snapToPoint:self.mainButton.center];
     [self.dynamicAnimator addBehavior:snapBehavior];
 
     [self loginButtonFlyOut:self.logoutButton];
@@ -276,14 +277,14 @@
 
 - (void)userLogout {
     NSLog(@"pressed");
+    [self refreshView];
     [PFUser logOutInBackground];
     [self performSegueWithIdentifier:@"UnwindToSelection" sender:self];
-//    [self refreshView];
 }
 
 -(void)refreshView {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Onboarding" bundle:[NSBundle mainBundle]];
-    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"SplashViewController"];
     [self presentViewController:viewController animated:NO completion:NULL];
 }
 
@@ -317,16 +318,5 @@
 
 -(IBAction)unwindToRoot:(UIStoryboardSegue *)segue {
 }
-
-/*
-//Size image with button
-CGSize size = self.photoButton.frame.size;
-UIGraphicsBeginImageContext(size);
-[self.imageDidSelected drawInRect:CGRectMake(0, 0, size.width, size.height)];
-UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-UIGraphicsEndImageContext();
-self.photoButton.backgroundColor = [UIColor colorWithPatternImage:newImage];
-//
-*/
 
 @end
