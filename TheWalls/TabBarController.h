@@ -12,9 +12,11 @@
 #import "FeedViewController.h"
 #import "RootViewController.h"
 #import "CameraViewController.h"
-//#import "ActivityViewController.h"
-//#import "ProfileSettingViewController.h"
+#import "ActivityFeedViewController.h"
+#import "ProfileSettingViewController.h"
 
 @interface TabBarController : UITabBarController
+
+@property NSMutableArray *tabViewControllers;
 
 @end

@@ -37,6 +37,10 @@
     [self.centerMapButton addTarget:self action:@selector(didTapCenterMapButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.feedButton addTarget:self action:@selector(onLeftButtonPressed) forControlEvents:UIControlEventTouchUpInside];
 
+    //Adding tab bar
+//    TabBarController *tab = [TabBarController new];
+//    [self presentViewController:tab animated:YES completion:nil];
+
     //Future gestures stuff
     [self leftSwipeGestureInitialization];
 }
