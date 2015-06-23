@@ -12,6 +12,7 @@
 
 @interface FeedViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *header;
 @property NSArray *splats;
 @end
 
@@ -19,6 +20,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.header.backgroundColor = [UIColor
+                                         colorWithRed:0.369
+                                         green:0.498
+                                         blue:0.918
+                                         alpha:1];
 
     PFQuery *splatsQuery = [Object query];
     [splatsQuery orderByDescending:@"createdAt"];
@@ -40,7 +47,6 @@
     cell.imageView.image = [UIImage imageNamed:@"triad"];
     [cell.imageView loadInBackground];
     cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    cell.backgroundColor = [UIColor blueColor];
     return cell;
 }
 
