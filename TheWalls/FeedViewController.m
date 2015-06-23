@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *header;
 @property NSArray *splats;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 @end
 
 @implementation FeedViewController
@@ -22,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.header.backgroundColor = [UIColor
+    self.headerView.backgroundColor = [UIColor
                                          colorWithRed:0.369
                                          green:0.498
                                          blue:0.918
