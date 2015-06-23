@@ -119,10 +119,8 @@ AVCaptureConnection *videoConnection;
     NSLog(@"rightSwipe");
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Feed" bundle:[NSBundle mainBundle]];
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
-    [self presentViewController:viewController animated:NO completion:NULL];
+    [self presentViewController:viewController animated:YES completion:NULL];
 }
-
-
 
 #pragma mark - AV initialization
 

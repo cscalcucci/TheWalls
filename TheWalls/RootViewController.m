@@ -35,7 +35,7 @@
     [self.photoButton addTarget:self action:@selector(onCameraButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.logoutButton addTarget:self action:@selector(userLogout) forControlEvents:UIControlEventTouchUpInside];
     [self.centerMapButton addTarget:self action:@selector(didTapCenterMapButton:) forControlEvents:UIControlEventTouchUpInside];
-
+    [self.drawButton addTarget:self action:@selector(onLeftButtonPressed) forControlEvents:UIControlEventTouchUpInside];
 
     //Future gestures stuff
     [self leftSwipeGestureInitialization];
@@ -275,6 +275,7 @@
 #pragma mark - Logout;
 
 - (void)userLogout {
+    NSLog(@"pressed");
     [PFUser logOutInBackground];
     [self performSegueWithIdentifier:@"UnwindToSelection" sender:self];
 //    [self refreshView];
@@ -286,7 +287,7 @@
     [self presentViewController:viewController animated:NO completion:NULL];
 }
 
-#pragma mark - Photo button & segue
+#pragma mark - Photo button & segues
 
 - (void)onCameraButtonPressed {
 
@@ -304,6 +305,12 @@
         detailVC.objectArray = self.objectArray;
         detailVC.indexPath = self.indexPath;
     }
+}
+
+- (void)onLeftButtonPressed {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Feed" bundle:[NSBundle mainBundle]];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
+    [self presentViewController:viewController animated:YES completion:NULL];
 }
 
 #pragma mark - Unwind methods

@@ -29,7 +29,6 @@
 		7EAAE4621B2F4F2300814E77 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE45C1B2F4F2200814E77 /* ParseCrashReporting.framework */; };
 		7EAAE4651B2F4F2300814E77 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE45F1B2F4F2200814E77 /* ParseUI.framework */; };
 		7EAAE47A1B2F646C00814E77 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE4791B2F646C00814E77 /* LoginViewController.m */; };
-		7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */; };
 		7EC5320B1B31BED200CF94BF /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5320A1B31BED200CF94BF /* SignupViewController.m */; };
 		7EC5320E1B31BEE800CF94BF /* SessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5320D1B31BEE800CF94BF /* SessionViewController.m */; };
 		7EC532101B31BFF000CF94BF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */; };
@@ -111,8 +110,6 @@
 		7EAAE45F1B2F4F2200814E77 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		7EAAE4781B2F646C00814E77 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7EAAE4791B2F646C00814E77 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		7EAAE47B1B2F6D3700814E77 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		7EC5320A1B31BED200CF94BF /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		7EC5320C1B31BEE800CF94BF /* SessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionViewController.h; sourceTree = "<group>"; };
 		7EC5320D1B31BEE800CF94BF /* SessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionViewController.m; sourceTree = "<group>"; };
@@ -319,8 +316,6 @@
 			isa = PBXGroup;
 			children = (
 				7EC5320F1B31BFF000CF94BF /* Onboarding.storyboard */,
-				7EAAE47B1B2F6D3700814E77 /* HomeViewController.h */,
-				7EAAE47C1B2F6D3700814E77 /* HomeViewController.m */,
 				7EAAE4781B2F646C00814E77 /* LoginViewController.h */,
 				7EAAE4791B2F646C00814E77 /* LoginViewController.m */,
 				6623822F1B34711900C5EB6D /* SignupViewController.h */,
@@ -609,7 +604,6 @@
 				662382321B34775700C5EB6D /* ChatViewController.m in Sources */,
 				999CF7731B2D19A5006A0324 /* AppDelegate.m in Sources */,
 				999CF79A1B2D2AAC006A0324 /* UIColor+CustomColors.m in Sources */,
-				7EAAE47D1B2F6D3700814E77 /* HomeViewController.m in Sources */,
 				9944F6661B34812E002C7650 /* CommentViewController.m in Sources */,
 				7EC5320B1B31BED200CF94BF /* SignupViewController.m in Sources */,
 				99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */,

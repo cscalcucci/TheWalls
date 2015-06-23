@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+
+#import "LoginViewController.h"
+#import "SessionViewController.h"
 
 @interface SplashViewController : UIViewController
 
@@ -14,6 +18,6 @@
 @property UIImageView *secondShape;
 @property UIImageView *thirdShape;
 @property UIImageView *fourthShape;
-
+@property PFUser *currentUser;
 
 @end
