@@ -295,7 +295,7 @@ AVCaptureConnection *videoConnection;
                 [self uploadAlertWithTitle:@"Error" andMessage:@"Error Uploading Splat"];
             } else {
                 [self uploadAlertWithTitle:@"Success" andMessage:@"Uploaded Splat"];
-                [self dismissViewControllerAnimated:YES completion:nil];
+//                [self dismissViewControllerAnimated:YES completion:nil];
                 [self performSegueWithIdentifier:@"CameraToRoot" sender:self];
             }
         }];
@@ -323,6 +323,8 @@ AVCaptureConnection *videoConnection;
                                    }];
     [alertVC addAction:cancelAction];
     [self presentViewController:alertVC animated:YES completion:nil];
+    [self performSegueWithIdentifier:@"CameraToRoot" sender:self];
+
 }
 
 -(void)reset {

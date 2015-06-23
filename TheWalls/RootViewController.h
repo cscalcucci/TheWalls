@@ -41,7 +41,7 @@ static NSString * const currentLocationDidChangeNotification = @"currentLocation
 @property UIDynamicAnimator *dynamicAnimator;
 @property UIButton *soundButton;
 @property UIButton *photoButton;
-@property UIButton *drawButton;
+@property UIButton *feedButton;
 @property UIButton *mainButton;
 @property UIButton *logoutButton;
 @property UIButton *centerMapButton;
