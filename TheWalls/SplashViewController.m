@@ -29,7 +29,7 @@
     } else {
         self.currentUser = [PFUser currentUser];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
-        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
+        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"CameraViewController"];
         [self presentViewController:viewController animated:NO completion:NULL];
     }
 }
@@ -63,13 +63,6 @@
                          }];
                      }];
 }
-
-
-
-
-
-
-
 
 //- (void)moveImageView:(UIImageView *)shape {
 //    CGRect upMovement = shape.frame;
