@@ -295,12 +295,10 @@ AVCaptureConnection *videoConnection;
                 [self uploadAlertWithTitle:@"Error" andMessage:@"Error Uploading Splat"];
             } else {
                 [self uploadAlertWithTitle:@"Success" andMessage:@"Uploaded Splat"];
-//                [self dismissViewControllerAnimated:YES completion:nil];
                 [self performSegueWithIdentifier:@"CameraToRoot" sender:self];
             }
         }];
     } else {
-//        [self dismissViewControllerAnimated:self completion:nil];
         [self performSegueWithIdentifier:@"CameraToRoot" sender:self];
     }
 
