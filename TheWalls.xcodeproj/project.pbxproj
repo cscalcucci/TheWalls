@@ -41,7 +41,6 @@
 		7EC5321A1B32032000CF94BF /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		7EC5321D1B32322B00CF94BF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		991AA1321B324AA2004F2B2C /* FoursquareAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 991AA1311B324AA2004F2B2C /* FoursquareAPI.m */; };
-		991CE4C31B39B4B6004E6E05 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991CE4C21B39B4B6004E6E05 /* TabBarController.m */; };
 		991CE4C61B39BADE004E6E05 /* ProfileSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991CE4C51B39BADE004E6E05 /* ProfileSettingViewController.m */; };
 		99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99349E431B31CC95001C47F7 /* DetailViewController.m */; };
 		9944F6661B34812E002C7650 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9944F6651B34812E002C7650 /* CommentViewController.m */; };
@@ -131,8 +130,6 @@
 		7EC532121B31D64D00CF94BF /* UsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameViewController.m; sourceTree = "<group>"; };
 		991AA1301B324AA2004F2B2C /* FoursquareAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoursquareAPI.h; sourceTree = "<group>"; };
 		991AA1311B324AA2004F2B2C /* FoursquareAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoursquareAPI.m; sourceTree = "<group>"; };
-		991CE4C11B39B4B6004E6E05 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
-		991CE4C21B39B4B6004E6E05 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		991CE4C41B39BADE004E6E05 /* ProfileSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileSettingViewController.h; sourceTree = "<group>"; };
 		991CE4C51B39BADE004E6E05 /* ProfileSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileSettingViewController.m; sourceTree = "<group>"; };
 		99349E421B31CC95001C47F7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -273,15 +270,6 @@
 			name = Foursquare;
 			sourceTree = "<group>";
 		};
-		991CE4C01B39B44B004E6E05 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				991CE4C11B39B4B6004E6E05 /* TabBarController.h */,
-				991CE4C21B39B4B6004E6E05 /* TabBarController.m */,
-			);
-			name = TabBar;
-			sourceTree = "<group>";
-		};
 		991CE4C71B39BAE5004E6E05 /* ProfileSettingsViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,7 +374,6 @@
 				66D69A3C1B38F6C3009625A9 /* ActivityFeedViewController */,
 				99349E451B31CC9B001C47F7 /* DetailViewController */,
 				996D51E91B334A7B002304E5 /* SelectLocation */,
-				991CE4C01B39B44B004E6E05 /* TabBar */,
 				7E5905811B385BA20068BFE4 /* Feed */,
 				999CF7A21B2E05C0006A0324 /* RootViewController */,
 				99894F841B2FBF2000367E67 /* CameraViewController */,
@@ -651,7 +638,6 @@
 				7EAAE47A1B2F646C00814E77 /* LoginViewController.m in Sources */,
 				991AA1321B324AA2004F2B2C /* FoursquareAPI.m in Sources */,
 				999CF7761B2D19A5006A0324 /* TheWalls.xcdatamodeld in Sources */,
-				991CE4C31B39B4B6004E6E05 /* TabBarController.m in Sources */,
 				7EC5321D1B32322B00CF94BF /* (null) in Sources */,
 				662382321B34775700C5EB6D /* ChatViewController.m in Sources */,
 				999CF7731B2D19A5006A0324 /* AppDelegate.m in Sources */,
