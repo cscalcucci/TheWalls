@@ -10,6 +10,5 @@
 #import <ParseUI/ParseUI.h>
 
 @interface SplatTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet PFImageView *imageView;
-
+@property (weak, nonatomic) IBOutlet PFImageView *splatImageView;
 @end

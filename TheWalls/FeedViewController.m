@@ -42,23 +42,24 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SplatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
-
-    Object *splat = [[Object alloc]init];
-    splat = [self.splats objectAtIndex:indexPath.row];
-    cell.imageView.file = splat.file;
-    cell.imageView.image = [UIImage imageNamed:@"triad"];
-    [cell.imageView loadInBackground];
 //    cell.upButton.backgroundColor = [UIColor
-//                                       colorWithRed:0.518
-//                                       green:0.894
-//                                       blue:0.345
-//                                       alpha:1];
+//                                     colorWithRed:0.518
+//                                     green:0.894
+//                                     blue:0.345
+//                                     alpha:1];
 //    cell.downButton.backgroundColor = [UIColor
 //                                       colorWithRed:0.890
 //                                       green:0.376
 //                                       blue:0.494
 //                                       alpha:1];
-    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+
+    Object *splat = [[Object alloc]init];
+    splat = [self.splats objectAtIndex:indexPath.row];
+    cell.splatImageView.file = splat.file;
+    cell.splatImageView.image = [UIImage imageNamed:@"triad"];
+    [cell.splatImageView loadInBackground];
+    cell.splatImageView.contentMode = UIViewContentModeScaleAspectFit;
+    cell.splatImageView.clipsToBounds = YES;
     return cell;
 }
 
