@@ -12,7 +12,7 @@
 		662382361B34826600C5EB6D /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 662382351B34826600C5EB6D /* Activity.m */; };
 		7E59057D1B3857230068BFE4 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E59057C1B3857230068BFE4 /* Feed.storyboard */; };
 		7E5905801B385B8D0068BFE4 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E59057F1B385B8D0068BFE4 /* FeedViewController.m */; };
-		7E5905C21B3893540068BFE4 /* SplatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5905C11B3893540068BFE4 /* SplatCollectionViewCell.m */; };
+		7E5905C51B38F76E0068BFE4 /* SplatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5905C41B38F76D0068BFE4 /* SplatTableViewCell.m */; };
 		7EAAE4451B2F3C1500814E77 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE4441B2F3C1500814E77 /* AudioToolbox.framework */; };
 		7EAAE4471B2F3C1E00814E77 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE4461B2F3C1E00814E77 /* CFNetwork.framework */; };
 		7EAAE4491B2F3C2A00814E77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAAE4481B2F3C2A00814E77 /* CoreGraphics.framework */; };
@@ -91,8 +91,8 @@
 		7E59057C1B3857230068BFE4 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		7E59057E1B385B8C0068BFE4 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		7E59057F1B385B8D0068BFE4 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
-		7E5905C01B3893540068BFE4 /* SplatCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplatCollectionViewCell.h; sourceTree = "<group>"; };
-		7E5905C11B3893540068BFE4 /* SplatCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplatCollectionViewCell.m; sourceTree = "<group>"; };
+		7E5905C31B38F76D0068BFE4 /* SplatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplatTableViewCell.h; sourceTree = "<group>"; };
+		7E5905C41B38F76D0068BFE4 /* SplatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplatTableViewCell.m; sourceTree = "<group>"; };
 		7EAAE4441B2F3C1500814E77 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7EAAE4461B2F3C1E00814E77 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7EAAE4481B2F3C2A00814E77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -217,8 +217,8 @@
 				7E59057C1B3857230068BFE4 /* Feed.storyboard */,
 				7E59057E1B385B8C0068BFE4 /* FeedViewController.h */,
 				7E59057F1B385B8D0068BFE4 /* FeedViewController.m */,
-				7E5905C01B3893540068BFE4 /* SplatCollectionViewCell.h */,
-				7E5905C11B3893540068BFE4 /* SplatCollectionViewCell.m */,
+				7E5905C31B38F76D0068BFE4 /* SplatTableViewCell.h */,
+				7E5905C41B38F76D0068BFE4 /* SplatTableViewCell.m */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -610,13 +610,13 @@
 				996D51E81B334A6F002304E5 /* SelectLocationViewController.m in Sources */,
 				662382361B34826600C5EB6D /* Activity.m in Sources */,
 				7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */,
+				7E5905C51B38F76E0068BFE4 /* SplatTableViewCell.m in Sources */,
 				999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */,
 				999CF7701B2D19A5006A0324 /* main.m in Sources */,
 				99894F7E1B2FB64E00367E67 /* Object.m in Sources */,
 				7EC5320E1B31BEE800CF94BF /* SessionViewController.m in Sources */,
 				7E5905801B385B8D0068BFE4 /* FeedViewController.m in Sources */,
 				6623822B1B33643F00C5EB6D /* CustomPointAnnotation.m in Sources */,
-				7E5905C21B3893540068BFE4 /* SplatCollectionViewCell.m in Sources */,
 				999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */,
 				99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */,
 			);
