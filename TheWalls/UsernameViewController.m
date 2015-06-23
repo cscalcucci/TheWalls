@@ -53,7 +53,7 @@
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
-    [self presentViewController:viewController animated:NO completion:NULL];
+    [self presentViewController:viewController animated:YES completion:NULL];
 }
 
 -(IBAction)unwindUsername:(UIStoryboardSegue *)segue {

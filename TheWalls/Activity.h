@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "Object.h"
 
 @interface Activity : PFObject<PFSubclassing>
 
@@ -17,6 +18,8 @@
 @property PFUser *toUser;
 @property NSString *type;
 @property PFObject *content;
+
+-(instancetype)initWithType:(NSString *)type andContent:(Object *)object;
 
 @end
 
