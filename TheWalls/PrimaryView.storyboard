@@ -26,9 +26,11 @@
                     <connections>
                         <segue destination="wRu-Hl-bDO" kind="presentation" identifier="RootToCamera" id="Szt-Ba-Q8q"/>
                         <segue destination="28h-ye-sAi" kind="presentation" identifier="RootToDetail" id="uK8-RY-cPE"/>
+                        <segue destination="3Ca-ep-zjs" kind="unwind" identifier="UnwindToSelection" unwindAction="unwindSelection:" id="mIN-Nw-sX9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kow-ta-eO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3Ca-ep-zjs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="462" y="362"/>
         </scene>

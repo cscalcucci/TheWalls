@@ -56,6 +56,9 @@ AVCaptureConnection *videoConnection;
     //Track if a picture has been taken, automatically call camera first time
 //    self.photoTaken = NO;
 //    [self takePhoto];
+
+    //Swipe gesture initialization
+    [self rightSwipeGestureInitialization];
 }
 
 -(void)updateLocation:(NSNotification *)notification {
@@ -98,6 +101,28 @@ AVCaptureConnection *videoConnection;
         selectedLocationVC.userLocation = location;
     }
 }
+
+#pragma mark - Swipe Gesture and segue
+
+//Initializations
+- (void)rightSwipeGestureInitialization {
+    UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
+    rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [rightRecognizer setNumberOfTouchesRequired:1];
+    [self.imagePreview addGestureRecognizer:rightRecognizer];
+    [self.view addGestureRecognizer:rightRecognizer];
+
+}
+
+//Methods
+- (void)rightSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer {
+    NSLog(@"rightSwipe");
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Feed" bundle:[NSBundle mainBundle]];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
+    [self presentViewController:viewController animated:NO completion:NULL];
+}
+
+
 
 #pragma mark - AV initialization
 
@@ -192,7 +217,6 @@ AVCaptureConnection *videoConnection;
 
     videoConnection = [self connectionWithMediaType:AVMediaTypeVideo fromConnections:movieOutput.connections];
 
-    /* This is where I'm having issues, I think... */
     [movieOutput startRecordingToOutputFileURL:[self outputURL] recordingDelegate:self];
 }
 

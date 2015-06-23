@@ -276,7 +276,8 @@
 
 - (void)userLogout {
     [PFUser logOutInBackground];
-    [self refreshView];
+    [self performSegueWithIdentifier:@"UnwindToSelection" sender:self];
+//    [self refreshView];
 }
 
 -(void)refreshView {
