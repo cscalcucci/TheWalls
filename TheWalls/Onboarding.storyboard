@@ -19,67 +19,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="wRe-9J-1Hb" kind="show" identifier="SplashSegue" id="SvW-qS-xSD"/>
+                        <segue destination="JoR-CD-a44" kind="presentation" identifier="NewSessionSegue" id="gB8-Al-lGQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUG-zT-cUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-267" y="315"/>
-        </scene>
-        <!--Home View Controller-->
-        <scene sceneID="HlI-Sy-mWL">
-            <objects>
-                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wRe-9J-1Hb" customClass="HomeViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3HF-wM-ci2"/>
-                        <viewControllerLayoutGuide type="bottom" id="CjO-TO-oiQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Tpd-24-mn2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(MapView)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9h-Cb-bCh">
-                                <rect key="frame" x="260" y="289" width="80" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbk-Ax-aGL">
-                                <rect key="frame" x="279" y="92" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poU-ev-yDW">
-                                <rect key="frame" x="278" y="143" width="44" height="30"/>
-                                <state key="normal" title="logout">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onLogoutButtonPressed:" destination="wRe-9J-1Hb" eventType="touchUpInside" id="1sT-Bt-etw"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="cbk-Ax-aGL" firstAttribute="centerX" secondItem="H9h-Cb-bCh" secondAttribute="centerX" id="CF7-7g-9Zb"/>
-                            <constraint firstItem="poU-ev-yDW" firstAttribute="top" secondItem="cbk-Ax-aGL" secondAttribute="bottom" constant="30" id="Cgk-Wa-qwG"/>
-                            <constraint firstItem="cbk-Ax-aGL" firstAttribute="top" secondItem="3HF-wM-ci2" secondAttribute="bottom" constant="72" id="G76-ab-phh"/>
-                            <constraint firstAttribute="centerY" secondItem="H9h-Cb-bCh" secondAttribute="centerY" id="OOs-hY-CMY"/>
-                            <constraint firstItem="poU-ev-yDW" firstAttribute="centerX" secondItem="cbk-Ax-aGL" secondAttribute="centerX" id="SG6-TE-tVp"/>
-                            <constraint firstAttribute="centerX" secondItem="H9h-Cb-bCh" secondAttribute="centerX" id="rVI-yN-ixz"/>
-                            <constraint firstItem="poU-ev-yDW" firstAttribute="top" secondItem="Tpd-24-mn2" secondAttribute="top" constant="143" id="wTN-zj-raU"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="currentUserLabel" destination="cbk-Ax-aGL" id="Y0L-ry-bKE"/>
-                        <outlet property="logoutButton" destination="poU-ev-yDW" id="sUu-Wn-Nn3"/>
-                        <segue destination="JoR-CD-a44" kind="presentation" identifier="NewSessionSegue" id="ln9-Ce-Lqq"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8aX-zo-4xU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="424" y="315"/>
+            <point key="canvasLocation" x="329" y="323"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="vFT-dT-Vsm">

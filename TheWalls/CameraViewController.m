@@ -46,7 +46,7 @@ AVCaptureConnection *videoConnection;
     [self.cameraButton addGestureRecognizer:longPressRecognizer];
     [self.cameraButton addTarget:self action:@selector(captureImage) forControlEvents:UIControlEventTouchUpInside];
 
-    self.saveButton = [self createButtonWithTitle:@"save" chooseColor:[UIColor peonyColor] andPosition:0];
+    self.saveButton = [self createButtonWithTitle:@"cancel" chooseColor:[UIColor peonyColor] andPosition:100];
     [self.saveButton addTarget:self action:@selector(saveActions) forControlEvents:UIControlEventTouchUpInside];
 
     self.locationButton = [self createButtonWithTitle:@"loc" chooseColor:[UIColor hamlindigoColor] andPosition:300];
@@ -54,19 +54,22 @@ AVCaptureConnection *videoConnection;
     [self.locationButton addTarget:self action:@selector(segueToLocationTable) forControlEvents:UIControlEventTouchUpInside];
 
     //Track if a picture has been taken, automatically call camera first time
-//    self.photoTaken = NO;
-//    [self takePhoto];
+    self.photoTaken = NO;
+
+    //Swipe gesture initialization
+    [self rightSwipeGestureInitialization];
+    if (!self.object) {
+        self.object = [Object new];
+
+    }
 }
 
 -(void)updateLocation:(NSNotification *)notification {
     if ([notification.object isKindOfClass:[FoursquareAPI class]]) {
         FoursquareAPI *item = [notification object];
+        self.selectedVenue = [FoursquareAPI new];
+        self.selectedVenue = item;
         self.venueLabel.text = item.venueName;
-        self.object.latitude = item.latitude;
-        self.object.longitude = item.longitude;
-        self.object.venueName = item.venueName;
-        [self.object saveInBackground];
-
         [self segueToLocationTable];
     } else {
         NSLog(@"Error Transferring Location Data");
@@ -87,8 +90,6 @@ AVCaptureConnection *videoConnection;
     [self.view bringSubviewToFront:self.cameraButton];
     [self.view bringSubviewToFront:self.locationButton];
     [self.view bringSubviewToFront:self.saveButton];
-
-//    [self performSegueWithIdentifier:@"CameraToSelectLocation" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -97,6 +98,26 @@ AVCaptureConnection *videoConnection;
         CLLocation *location = self.userLocation;
         selectedLocationVC.userLocation = location;
     }
+}
+
+#pragma mark - Swipe Gesture and segue
+
+//Initializations
+- (void)rightSwipeGestureInitialization {
+    UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
+    rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [rightRecognizer setNumberOfTouchesRequired:1];
+    [self.imagePreview addGestureRecognizer:rightRecognizer];
+    [self.view addGestureRecognizer:rightRecognizer];
+
+}
+
+//Methods
+- (void)rightSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer {
+    NSLog(@"rightSwipe");
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Feed" bundle:[NSBundle mainBundle]];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
+    [self presentViewController:viewController animated:YES completion:NULL];
 }
 
 #pragma mark - AV initialization
@@ -176,11 +197,14 @@ AVCaptureConnection *videoConnection;
         if (imageDataSampleBuffer != NULL) {
             NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
             UIImage *image = [UIImage imageWithData:imageData];
+            self.imageDidSelected = image;
             self.imagePreview.image = image;
             self.imagePreview.hidden = NO;
         }
     }];
-    [self saveButtonFlyIn:self.saveButton];
+    self.photoTaken = YES;
+    [self.saveButton setTitle:@"Save" forState:UIControlStateNormal];
+//    [self saveButtonFlyIn:self.saveButton];
     [self.view bringSubviewToFront:self.venueLabel];
 }
 
@@ -192,7 +216,6 @@ AVCaptureConnection *videoConnection;
 
     videoConnection = [self connectionWithMediaType:AVMediaTypeVideo fromConnections:movieOutput.connections];
 
-    /* This is where I'm having issues, I think... */
     [movieOutput startRecordingToOutputFileURL:[self outputURL] recordingDelegate:self];
 }
 
@@ -246,47 +269,53 @@ AVCaptureConnection *videoConnection;
 #pragma mark - Save actions
 
 - (void)saveActions {
-    [self saveButtonFlyOut:self.saveButton];
+    if (self.photoTaken) {
+
+        NSData *imageData = UIImagePNGRepresentation(self.imageDidSelected);
+        self.object.file = [PFFile fileWithName:@"image.png" data:imageData];
+        self.object.latitude = self.selectedVenue.latitude;
+        self.object.longitude = self.selectedVenue.longitude;
+        self.object.venueName = self.selectedVenue.venueName;
+        self.object.createdBy = [PFUser currentUser];
+
+        [self.object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!succeeded) {
+                [self uploadAlertWithTitle:@"Error" andMessage:@"Error Uploading Splat"];
+            } else {
+                [self uploadAlertWithTitle:@"Success" andMessage:@"Uploaded Splat"];
+
+            }
+        }];
+    } else {
+        [self dismissViewControllerAnimated:self completion:nil];
+    }
+
+}
+
+-(void)uploadAlertWithTitle:(NSString *)title andMessage:(NSString *)message {
+
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"OK", @"Cancel action")
+                                   style:UIAlertActionStyleCancel
+                                   handler:^(UIAlertAction *action)
+                                   {
+//                                       if ([message isEqualToString:@"Uploaded Splat"]) {
+//                                           [self reset];
+//                                       }
+                                       [self reset];
+                                       NSLog(@"Cancel action");
+                                   }];
+    [alertVC addAction:cancelAction];
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
+
+-(void)reset {
     self.imagePreview.image = nil;
     self.imagePreview.hidden = YES;
 }
 
-/*
-#pragma mark - Take photo, save photo, unwind
-
-- (void)takePhoto {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    [self presentViewController:picker animated:YES completion:NULL];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    self.imageDidSelected = info[UIImagePickerControllerEditedImage];
-    self.imagePreview.image = self.imageDidSelected;
-    self.photoTaken = YES;
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (IBAction)savePhoto:(id)sender {
-    if (self.photoTaken == YES) {
-    //Render and save image
-        NSData *imageData = UIImagePNGRepresentation(self.imageDidSelected);
-        Object *object = [Object new];
-        object.file = [PFFile fileWithName:@"image.png" data:imageData];
-        object.caption = @"Photo";
-        object.latitude = self.userLocation.coordinate.latitude;
-        object.longitude = self.userLocation.coordinate.longitude;
-        [object setObject:[PFUser currentUser] forKey:@"createdBy"];
-        self.object = object;
-
-        [self.object saveInBackground];
-    }
-    //Perform segue back to RootViewController
-    [self performSegueWithIdentifier:@"UnwindToRoot" sender:self];
-}
-*/
 #pragma mark - Gesture recognizer
 
 - (void)handleLongPressGesture:(UILongPressGestureRecognizer *)recognizer {
