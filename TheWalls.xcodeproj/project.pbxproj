@@ -10,6 +10,10 @@
 		6623822B1B33643F00C5EB6D /* CustomPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623822A1B33643F00C5EB6D /* CustomPointAnnotation.m */; };
 		662382321B34775700C5EB6D /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 662382311B34775700C5EB6D /* ChatViewController.m */; };
 		662382361B34826600C5EB6D /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 662382351B34826600C5EB6D /* Activity.m */; };
+		66D69A3B1B38F3C7009625A9 /* ActivityFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D69A3A1B38F3C7009625A9 /* ActivityFeedViewController.m */; };
+		66D69A3F1B38F6DC009625A9 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D69A3E1B38F6DC009625A9 /* ActivityCell.m */; };
+		66D69A421B38FE6F009625A9 /* CommentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D69A411B38FE6F009625A9 /* CommentTableViewController.m */; };
+		66D69A481B38FF73009625A9 /* SelectedSplatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D69A471B38FF73009625A9 /* SelectedSplatViewController.m */; };
 		7E59057D1B3857230068BFE4 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E59057C1B3857230068BFE4 /* Feed.storyboard */; };
 		7E5905801B385B8D0068BFE4 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E59057F1B385B8D0068BFE4 /* FeedViewController.m */; };
 		7E5905C21B3893540068BFE4 /* SplatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5905C11B3893540068BFE4 /* SplatCollectionViewCell.m */; };
@@ -88,6 +92,14 @@
 		662382311B34775700C5EB6D /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		662382341B34826600C5EB6D /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		662382351B34826600C5EB6D /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		66D69A391B38F3C7009625A9 /* ActivityFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityFeedViewController.h; sourceTree = "<group>"; };
+		66D69A3A1B38F3C7009625A9 /* ActivityFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityFeedViewController.m; sourceTree = "<group>"; };
+		66D69A3D1B38F6DC009625A9 /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCell.h; sourceTree = "<group>"; };
+		66D69A3E1B38F6DC009625A9 /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCell.m; sourceTree = "<group>"; };
+		66D69A401B38FE6F009625A9 /* CommentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewController.h; sourceTree = "<group>"; };
+		66D69A411B38FE6F009625A9 /* CommentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewController.m; sourceTree = "<group>"; };
+		66D69A461B38FF73009625A9 /* SelectedSplatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedSplatViewController.h; sourceTree = "<group>"; };
+		66D69A471B38FF73009625A9 /* SelectedSplatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedSplatViewController.m; sourceTree = "<group>"; };
 		7E59057C1B3857230068BFE4 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		7E59057E1B385B8C0068BFE4 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		7E59057F1B385B8D0068BFE4 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
@@ -211,6 +223,21 @@
 			name = ChatViewController;
 			sourceTree = "<group>";
 		};
+		66D69A3C1B38F6C3009625A9 /* ActivityFeedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				66D69A391B38F3C7009625A9 /* ActivityFeedViewController.h */,
+				66D69A3A1B38F3C7009625A9 /* ActivityFeedViewController.m */,
+				66D69A3D1B38F6DC009625A9 /* ActivityCell.h */,
+				66D69A3E1B38F6DC009625A9 /* ActivityCell.m */,
+				66D69A401B38FE6F009625A9 /* CommentTableViewController.h */,
+				66D69A411B38FE6F009625A9 /* CommentTableViewController.m */,
+				66D69A461B38FF73009625A9 /* SelectedSplatViewController.h */,
+				66D69A471B38FF73009625A9 /* SelectedSplatViewController.m */,
+			);
+			name = ActivityFeedViewController;
+			sourceTree = "<group>";
+		};
 		7E5905811B385BA20068BFE4 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				99894F811B2FBF1700367E67 /* CameraViewController.h */,
+				99349E451B31CC9B001C47F7 /* DetailViewController */,
 				99894F821B2FBF1700367E67 /* CameraViewController.m */,
 			);
 			name = CameraViewController;
@@ -335,10 +363,10 @@
 				999B3A891B2F323C002BC1D6 /* PrimaryView.storyboard */,
 				99894F841B2FBF2000367E67 /* CameraViewController */,
 				662382331B34776400C5EB6D /* ChatViewController */,
-				99349E451B31CC9B001C47F7 /* DetailViewController */,
 				7E5905811B385BA20068BFE4 /* Feed */,
 				999CF7A21B2E05C0006A0324 /* RootViewController */,
 				996D51E91B334A7B002304E5 /* SelectLocation */,
+				66D69A3C1B38F6C3009625A9 /* ActivityFeedViewController */,
 			);
 			name = Primary;
 			sourceTree = "<group>";
@@ -608,9 +636,12 @@
 				7EC5320B1B31BED200CF94BF /* SignupViewController.m in Sources */,
 				99894F831B2FBF1700367E67 /* CameraViewController.m in Sources */,
 				996D51E81B334A6F002304E5 /* SelectLocationViewController.m in Sources */,
+				66D69A3B1B38F3C7009625A9 /* ActivityFeedViewController.m in Sources */,
 				662382361B34826600C5EB6D /* Activity.m in Sources */,
 				7EC532131B31D64D00CF94BF /* UsernameViewController.m in Sources */,
+				66D69A3F1B38F6DC009625A9 /* ActivityCell.m in Sources */,
 				999CF7791B2D19A5006A0324 /* RootViewController.m in Sources */,
+				66D69A481B38FF73009625A9 /* SelectedSplatViewController.m in Sources */,
 				999CF7701B2D19A5006A0324 /* main.m in Sources */,
 				99894F7E1B2FB64E00367E67 /* Object.m in Sources */,
 				7EC5320E1B31BEE800CF94BF /* SessionViewController.m in Sources */,
@@ -619,6 +650,7 @@
 				7E5905C21B3893540068BFE4 /* SplatCollectionViewCell.m in Sources */,
 				999CF7A01B2E05AB006A0324 /* SplashViewController.m in Sources */,
 				99349E441B31CC95001C47F7 /* DetailViewController.m in Sources */,
+				66D69A421B38FE6F009625A9 /* CommentTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
