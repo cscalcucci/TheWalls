@@ -41,17 +41,7 @@ AVCaptureConnection *videoConnection;
     [self testDevices];
 
     //Setup UI buttons;
-    self.cameraButton = [self createButtonWithTitle:@"photo" chooseColor:[UIColor limeColor] andPosition:200];
-        UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPressGesture:)];
-    [self.cameraButton addGestureRecognizer:longPressRecognizer];
-    [self.cameraButton addTarget:self action:@selector(captureImage) forControlEvents:UIControlEventTouchUpInside];
-
-    self.saveButton = [self createButtonWithTitle:@"cancel" chooseColor:[UIColor peonyColor] andPosition:100];
-    [self.saveButton addTarget:self action:@selector(saveActions) forControlEvents:UIControlEventTouchUpInside];
-
-    self.locationButton = [self createButtonWithTitle:@"loc" chooseColor:[UIColor hamlindigoColor] andPosition:300];
-    self.locationButton.userInteractionEnabled = YES;
-    [self.locationButton addTarget:self action:@selector(segueToLocationTable) forControlEvents:UIControlEventTouchUpInside];
+    [self setupUIButtons];
 
     //Track if a picture has been taken, automatically call camera first time
     self.photoTaken = NO;
@@ -62,6 +52,24 @@ AVCaptureConnection *videoConnection;
         self.object = [Object new];
 
     }
+}
+
+- (void)setupUIButtons {
+    self.cameraButton = [self createButtonWithTitle:@"" chooseColor:[UIColor limeColor] andPosition:200];
+    [self.cameraButton setImage:[UIImage imageNamed:@"icon-shutter"] forState:UIControlStateNormal];
+    UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPressGesture:)];
+    [self.cameraButton addGestureRecognizer:longPressRecognizer];
+    [self.cameraButton addTarget:self action:@selector(captureImage) forControlEvents:UIControlEventTouchUpInside];
+
+    self.saveButton = [self createButtonWithTitle:@"" chooseColor:[UIColor peonyColor] andPosition:100];
+    [self.saveButton setImage:[UIImage imageNamed:@"icon-exit"] forState:UIControlStateNormal];
+    [self.saveButton addTarget:self action:@selector(saveActions) forControlEvents:UIControlEventTouchUpInside];
+
+    self.locationButton = [self createButtonWithTitle:@"" chooseColor:[UIColor hamlindigoColor] andPosition:300];
+    [self.locationButton setImage:[UIImage imageNamed:@"icon-world"] forState:UIControlStateNormal];
+    self.locationButton.userInteractionEnabled = YES;
+    [self.locationButton addTarget:self action:@selector(segueToLocationTable) forControlEvents:UIControlEventTouchUpInside];
+
 }
 
 -(void)updateLocation:(NSNotification *)notification {
@@ -97,6 +105,8 @@ AVCaptureConnection *videoConnection;
         SelectLocationViewController *selectedLocationVC = segue.destinationViewController;
         CLLocation *location = self.userLocation;
         selectedLocationVC.userLocation = location;
+    }
+    if ([segue.identifier isEqualToString:@"CameraToRoot"]) {
     }
 }
 
@@ -203,7 +213,9 @@ AVCaptureConnection *videoConnection;
         }
     }];
     self.photoTaken = YES;
-    [self.saveButton setTitle:@"Save" forState:UIControlStateNormal];
+    [self.saveButton setTitle:@"" forState:UIControlStateNormal];
+    [self.saveButton setImage:[UIImage imageNamed:@"icon-save"] forState:UIControlStateNormal];
+
 //    [self saveButtonFlyIn:self.saveButton];
     [self.view bringSubviewToFront:self.venueLabel];
 }
@@ -283,11 +295,13 @@ AVCaptureConnection *videoConnection;
                 [self uploadAlertWithTitle:@"Error" andMessage:@"Error Uploading Splat"];
             } else {
                 [self uploadAlertWithTitle:@"Success" andMessage:@"Uploaded Splat"];
-
+                [self dismissViewControllerAnimated:YES completion:nil];
+                [self performSegueWithIdentifier:@"CameraToRoot" sender:self];
             }
         }];
     } else {
-        [self dismissViewControllerAnimated:self completion:nil];
+//        [self dismissViewControllerAnimated:self completion:nil];
+        [self performSegueWithIdentifier:@"CameraToRoot" sender:self];
     }
 
 }

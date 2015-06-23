@@ -127,6 +127,7 @@
                         <outlet property="containerView" destination="1PS-tu-N63" id="x6n-aD-CAi"/>
                         <outlet property="venueLabel" destination="i9b-CA-lI5" id="bNL-f5-s1L"/>
                         <segue destination="aNq-7W-GRM" kind="unwind" identifier="UnwindToRoot" unwindAction="unwindToRoot:" id="TFZ-q7-Kh7"/>
+                        <segue destination="ioJ-O0-tGR" kind="show" identifier="CameraToRoot" id="vYC-M4-yMe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBp-5X-VbR" userLabel="First Responder" sceneMemberID="firstResponder"/>

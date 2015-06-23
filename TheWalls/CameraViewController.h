@@ -12,6 +12,7 @@
 
 #import "Object.h"
 #import "SelectLocationViewController.h"
+#import "RootViewController.h"
 #import "FoursquareAPI.h"
 #import "UIColor+CustomColors.h"
 
