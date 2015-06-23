@@ -1,5 +1,5 @@
 //
-//  SplatCollectionViewCell.h
+//  SplatTableViewCell.h
 //  TheWalls
 //
 //  Created by Bryon Finke on 6/22/15.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <ParseUI/ParseUI.h>
 
-@interface SplatCollectionViewCell : UICollectionViewCell
+@interface SplatTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
 @end

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
-@interface FeedViewController : UIViewController
+@interface FeedViewController : UIViewController <UICollectionViewDelegateFlowLayout>
 
 @end
