@@ -9,6 +9,7 @@
 #import "FeedViewController.h"
 #import "Object.h"
 #import "SplatTableViewCell.h"
+#import "Activity.h"
 
 @interface FeedViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -42,17 +43,20 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SplatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
-//    cell.upButton.backgroundColor = [UIColor
-//                                     colorWithRed:0.518
-//                                     green:0.894
-//                                     blue:0.345
-//                                     alpha:1];
-//    cell.downButton.backgroundColor = [UIColor
-//                                       colorWithRed:0.890
-//                                       green:0.376
-//                                       blue:0.494
-//                                       alpha:1];
-
+    cell.upButton.backgroundColor = [UIColor
+                                     colorWithRed:0.518
+                                     green:0.894
+                                     blue:0.345
+                                     alpha:1];
+    cell.downButton.backgroundColor = [UIColor
+                                       colorWithRed:0.890
+                                       green:0.376
+                                       blue:0.494
+                                       alpha:1];
+    cell.upButton.tag = indexPath.row;
+    [cell.upButton addTarget:self action:@selector(onUpButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    cell.downButton.tag = indexPath.row;
+    [cell.downButton addTarget:self action:@selector(onDownButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     Object *splat = [[Object alloc]init];
     splat = [self.splats objectAtIndex:indexPath.row];
     cell.splatImageView.file = splat.file;
@@ -67,9 +71,16 @@
     return self.splats.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 450;
+}
+
+- (IBAction)onDownButtonTapped:(id)sender {
+    NSLog(@"DOWN button tapped");
+}
+
+-(void)onUpButtonTapped:(UIButton*)sender {
+    NSLog(@"UP button tapped");
 }
 
 @end

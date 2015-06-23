@@ -10,7 +10,6 @@
 #import <Parse/Parse.h>
 #import "Activity.h"
 
-
 @interface ActivityFeedViewController ()
 
 @end

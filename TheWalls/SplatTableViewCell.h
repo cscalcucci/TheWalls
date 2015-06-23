@@ -11,4 +11,6 @@
 
 @interface SplatTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet PFImageView *splatImageView;
+@property (weak, nonatomic) IBOutlet UIButton *downButton;
+@property (weak, nonatomic) IBOutlet UIButton *upButton;
 @end

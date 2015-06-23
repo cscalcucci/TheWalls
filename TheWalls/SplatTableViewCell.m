@@ -8,6 +8,7 @@
 
 #import "SplatTableViewCell.h"
 #import "Object.h"
+#import "Activity.h"
 
 @implementation SplatTableViewCell
 
@@ -19,6 +20,14 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)upvotePhoto:(Object *)photo {
+    [photo incrementKey:@"upvotes" byAmount:[NSNumber numberWithInt:1]];
+    [photo saveInBackground];
+    Activity *activity = [[Activity alloc] initWithType:@"upvote" andContent:photo];
+    [activity saveInBackground];
+    NSLog(@"Splat Upvoted");
 }
 
 @end
