@@ -8,10 +8,10 @@
 
 #import "FeedViewController.h"
 #import "Object.h"
-#import "SplatCollectionViewCell.h"
+#import "SplatTableViewCell.h"
 
 @interface FeedViewController ()
-@property (weak, nonatomic) IBOutlet UICollectionView *splatsCollectionView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *splats;
 @end
 
@@ -27,12 +27,12 @@
             NSLog(@"Successfully retrieved %lu posts.", splatsResponse.count);
             self.splats = [[NSArray alloc] initWithArray:splatsResponse];
         }
-        [self.splatsCollectionView reloadData];
+        [self.tableView reloadData];
     }];
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    SplatCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SplatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
 
     Object *splat = [[Object alloc]init];
     splat = [self.splats objectAtIndex:indexPath.row];
@@ -40,12 +40,16 @@
     cell.imageView.image = [UIImage imageNamed:@"triad"];
     [cell.imageView loadInBackground];
     cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    cell.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor blueColor];
     return cell;
 }
 
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.splats.count;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(598, 598);
 }
 
 @end

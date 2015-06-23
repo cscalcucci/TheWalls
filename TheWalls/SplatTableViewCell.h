@@ -1,5 +1,5 @@
 //
-//  FeedViewController.h
+//  SplatTableViewCell.h
 //  TheWalls
 //
 //  Created by Bryon Finke on 6/22/15.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
 
-@interface FeedViewController : UIViewController <UICollectionViewDelegateFlowLayout>
+@interface SplatTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
