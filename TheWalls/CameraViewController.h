@@ -27,10 +27,12 @@
 
 @property Object *object;
 @property BOOL tableIsHidden;
-//@property BOOL photoTaken;
+@property BOOL photoTaken;
+@property FoursquareAPI *selectedVenue;
+
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (weak, nonatomic) IBOutlet UILabel *venueLabel;
+@property (strong, nonatomic) IBOutlet UILabel *venueLabel;
 
 #define VIDEO_FILE @"test.mov"
 
