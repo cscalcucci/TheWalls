@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "UIColor+CustomColors.h"
-#import "TabBarController.h"
+//#import "TabBarController.h"
 #import "Object.h"
 #import "CameraViewController.h"
 #import "DetailViewController.h"

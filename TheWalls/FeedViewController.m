@@ -62,7 +62,11 @@
     cell.splatImageView.file = splat.file;
     cell.splatImageView.image = [UIImage imageNamed:@"triad"];
     [cell.splatImageView loadInBackground];
-    cell.splatImageView.contentMode = UIViewContentModeScaleAspectFit;
+//    cell.splatImageView.contentMode = UIViewContentModeScaleAspectFill;
+    NSLog(@"cell width: %f", cell.frame.size.width);
+    cell.splatImageView.frame = CGRectMake(
+                                 cell.frame.origin.x,
+                                 cell.frame.origin.y, cell.frame.size.width, cell.frame.size.width);
     cell.splatImageView.clipsToBounds = YES;
     return cell;
 }
@@ -75,8 +79,8 @@
     return 450;
 }
 
-- (IBAction)onDownButtonTapped:(id)sender {
-    NSLog(@"DOWN button tapped");
+-(void)onDownButtonTapped:(UIButton*)sender {
+    NSLog(@"DOWN button tapped: %lu", sender.tag);
 }
 
 -(void)onUpButtonTapped:(UIButton*)sender {
