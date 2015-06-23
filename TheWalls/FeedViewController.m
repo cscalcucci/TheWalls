@@ -12,6 +12,7 @@
 
 @interface FeedViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *header;
 @property NSArray *splats;
 @end
 
@@ -19,6 +20,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.header.backgroundColor = [UIColor
+                                         colorWithRed:0.369
+                                         green:0.498
+                                         blue:0.918
+                                         alpha:1];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 450.0;
 
     PFQuery *splatsQuery = [Object query];
     [splatsQuery orderByDescending:@"createdAt"];
@@ -39,8 +48,17 @@
     cell.imageView.file = splat.file;
     cell.imageView.image = [UIImage imageNamed:@"triad"];
     [cell.imageView loadInBackground];
+//    cell.upButton.backgroundColor = [UIColor
+//                                       colorWithRed:0.518
+//                                       green:0.894
+//                                       blue:0.345
+//                                       alpha:1];
+//    cell.downButton.backgroundColor = [UIColor
+//                                       colorWithRed:0.890
+//                                       green:0.376
+//                                       blue:0.494
+//                                       alpha:1];
     cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    cell.backgroundColor = [UIColor blueColor];
     return cell;
 }
 
@@ -48,8 +66,9 @@
     return self.splats.count;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(598, 598);
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 450;
 }
 
 @end

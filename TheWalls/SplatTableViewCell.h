@@ -11,4 +11,5 @@
 
 @interface SplatTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
+
 @end

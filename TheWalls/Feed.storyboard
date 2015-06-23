@@ -17,27 +17,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="695" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="swI-qU-Y1U">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="610" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="swI-qU-Y1U">
+                                <rect key="frame" x="0.0" y="55" width="600" height="945"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="695" id="KEq-MI-prb" customClass="SplatTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="610" id="KEq-MI-prb" customClass="SplatTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KEq-MI-prb" id="SGi-TX-BQs">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="loy-O1-Nh1" customClass="PFImageView">
-                                                    <rect key="frame" x="0.0" y="52" width="600" height="590"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Testing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqQ-Sl-eLA">
+                                                    <rect key="frame" x="8" y="8" width="204" height="37"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCS-9c-lJZ">
+                                                    <rect key="frame" x="156" y="12" width="56" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <state key="normal" title="DOWN">
+                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Me-Js-i2O">
+                                                    <rect key="frame" x="77" y="12" width="56" height="30"/>
+                                                    <state key="normal" title="UP">
+                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="loy-O1-Nh1" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="53" width="600" height="475"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="475" id="rvo-fz-Rcr"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="loy-O1-Nh1" secondAttribute="trailing" id="IEu-04-LgI"/>
-                                                <constraint firstItem="loy-O1-Nh1" firstAttribute="top" secondItem="SGi-TX-BQs" secondAttribute="topMargin" constant="44" id="VXs-8h-Kbd"/>
-                                                <constraint firstItem="loy-O1-Nh1" firstAttribute="centerY" secondItem="SGi-TX-BQs" secondAttribute="centerY" id="cmb-Ak-aPA"/>
-                                                <constraint firstItem="loy-O1-Nh1" firstAttribute="leading" secondItem="SGi-TX-BQs" secondAttribute="leading" id="zFP-uQ-S8Y"/>
+                                                <constraint firstItem="loy-O1-Nh1" firstAttribute="leading" secondItem="SGi-TX-BQs" secondAttribute="leadingMargin" id="StS-iu-6jh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="loy-O1-Nh1" secondAttribute="bottom" id="f2Q-Do-f1B"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="loy-O1-Nh1" secondAttribute="trailing" id="yuW-2J-dkZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="imageView" destination="loy-O1-Nh1" id="OO3-xF-S3T"/>
                                         </connections>
@@ -48,18 +74,33 @@
                                     <outlet property="delegate" destination="5DB-Cs-Rx5" id="dEj-FO-upM"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SplatChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sz-76-RiS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="aLo-fk-jXV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4sz-76-RiS" firstAttribute="top" secondItem="0n0-SB-MKP" secondAttribute="topMargin" id="OhA-fX-58L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4sz-76-RiS" secondAttribute="trailing" constant="-16" id="n6f-ZT-gVe"/>
+                            <constraint firstItem="4sz-76-RiS" firstAttribute="leading" secondItem="0n0-SB-MKP" secondAttribute="leadingMargin" constant="-16" id="tha-Mb-sKs"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1000"/>
                     <connections>
+                        <outlet property="header" destination="4sz-76-RiS" id="9ZM-DI-lj1"/>
                         <outlet property="tableView" destination="swI-qU-Y1U" id="WHs-et-d0Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2c-ZM-P1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="659" y="348"/>
+            <point key="canvasLocation" x="617" y="351"/>
         </scene>
     </scenes>
 </document>
