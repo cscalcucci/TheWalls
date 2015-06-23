@@ -22,24 +22,7 @@
     [self letThereBeMKAnnotation];
 
     //Buttons - to subclass
-    self.areButtonsFanned = NO;
-    self.dynamicAnimator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
-    self.soundButton =  [self createButtonWithTitle:@"" chooseColor:[UIColor hamlindigoColor]];
-    self.photoButton =  [self createButtonWithTitle:@"photo" chooseColor:[UIColor limeColor]];
-    self.feedButton =   [self createButtonWithTitle:@"feed" chooseColor:[UIColor peonyColor]];
-    self.mainButton =   [self createButtonWithTitle:@"main" chooseColor:[UIColor peonyColor]];
-    self.centerMapButton = [self createCenterMapButton];
-
-    self.logoutButton = [self createLogoutButton];
-    [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
-    [self.photoButton addTarget:self action:@selector(onCameraButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.logoutButton addTarget:self action:@selector(userLogout) forControlEvents:UIControlEventTouchUpInside];
-    [self.centerMapButton addTarget:self action:@selector(didTapCenterMapButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.feedButton addTarget:self action:@selector(onLeftButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-
-    //Adding tab bar
-//    TabBarController *tab = [TabBarController new];
-//    [self presentViewController:tab animated:YES completion:nil];
+    [self initializeButtons];
 
     //Future gestures stuff
     [self leftSwipeGestureInitialization];
@@ -165,23 +148,7 @@
     NSLog(@"leftSwipe");
 }
 
-#pragma mark - Create buttons
-//Need to subclass each button - draw, photo, audio
-
-- (UIButton *)createButtonWithTitle:(NSString *)title chooseColor:(UIColor *)color {
-    CGRect frame = self.view.frame;
-    self.diameter = 65;
-    self.gap = 20;
-
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - (_diameter + (_gap * 1.6)),frame.size.height - (_diameter + _gap), _diameter, _diameter)];
-    button.layer.cornerRadius = button.bounds.size.width / 2;
-    button.backgroundColor = color;
-    button.tintColor = [UIColor paperColor];
-    [button setTitle:title forState:UIControlStateNormal];
-
-    [self.view addSubview:button];
-    return button;
-}
+#pragma mark - Buttons to remain with Root
 
 -(UIButton *)createCenterMapButton {
 
@@ -202,13 +169,45 @@
     button.backgroundColor = [UIColor peonyColor];
     button.tintColor = [UIColor paperColor];
     button.userInteractionEnabled = YES;
-//    button.hidden = YES;
     [button setTitle:@"logout" forState:UIControlStateNormal];
     [self.view addSubview:button];
     return button;
 }
 
-#pragma mark - Main button
+#pragma mark - Buttons and methods to subclass
+//Need to subclass each button - draw, photo, audio
+
+- (void)initializeButtons {
+    self.areButtonsFanned = NO;
+    self.dynamicAnimator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
+    self.soundButton =  [self createButtonWithTitle:@"" chooseColor:[UIColor hamlindigoColor]];
+    self.photoButton =  [self createButtonWithTitle:@"photo" chooseColor:[UIColor limeColor]];
+    self.feedButton =   [self createButtonWithTitle:@"feed" chooseColor:[UIColor peonyColor]];
+    self.mainButton =   [self createButtonWithTitle:@"main" chooseColor:[UIColor peonyColor]];
+    self.centerMapButton = [self createCenterMapButton];
+
+    self.logoutButton = [self createLogoutButton];
+    [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
+    [self.photoButton addTarget:self action:@selector(onCameraButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.logoutButton addTarget:self action:@selector(userLogout) forControlEvents:UIControlEventTouchUpInside];
+    [self.centerMapButton addTarget:self action:@selector(didTapCenterMapButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.feedButton addTarget:self action:@selector(onLeftButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (UIButton *)createButtonWithTitle:(NSString *)title chooseColor:(UIColor *)color {
+    CGRect frame = self.view.frame;
+    self.diameter = 65;
+    self.gap = 20;
+
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - (_diameter + (_gap * 1.6)),frame.size.height - (_diameter + _gap), _diameter, _diameter)];
+    button.layer.cornerRadius = button.bounds.size.width / 2;
+    button.backgroundColor = color;
+    button.tintColor = [UIColor paperColor];
+    [button setTitle:title forState:UIControlStateNormal];
+
+    [self.view addSubview:button];
+    return button;
+}
 
 - (void)fanButtons:(id)sender{
     [self.dynamicAnimator removeAllBehaviors];
@@ -273,6 +272,17 @@
     [self loginButtonFlyOut:self.logoutButton];
 }
 
+- (void)onCameraButtonPressed {
+
+    [self performSegueWithIdentifier:@"RootToCamera" sender:self];
+}
+
+- (void)onLeftButtonPressed {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Feed" bundle:[NSBundle mainBundle]];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
+    [self presentViewController:viewController animated:YES completion:NULL];
+}
+
 #pragma mark - Logout;
 
 - (void)userLogout {
@@ -290,11 +300,6 @@
 
 #pragma mark - Photo button & segues
 
-- (void)onCameraButtonPressed {
-
-    [self performSegueWithIdentifier:@"RootToCamera" sender:self];
-}
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"RootToCamera"]) {
         CameraViewController *cameraVC = segue.destinationViewController;
@@ -308,11 +313,7 @@
     }
 }
 
-- (void)onLeftButtonPressed {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Feed" bundle:[NSBundle mainBundle]];
-    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
-    [self presentViewController:viewController animated:YES completion:NULL];
-}
+
 
 #pragma mark - Unwind methods
 
