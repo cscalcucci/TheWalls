@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
+#import "UIColor+CustomColors.h"
+
 @interface UsernameViewController : UIViewController
 
 @end

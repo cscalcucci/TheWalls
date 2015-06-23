@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.view.backgroundColor = [UIColor paperColor];
     self.loginNav.topItem.title = @"Log In";
     self.passwordTextField.secureTextEntry = YES;
     self.usernameTextField.placeholder = @"username";

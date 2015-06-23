@@ -181,8 +181,8 @@
 //Need to subclass each button - draw, photo, audio
 
 - (void)initializeButtons {
-    self.areButtonsFanned = NO;
-    self.dynamicAnimator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
+//    self.areButtonsFanned = NO;
+//    self.dynamicAnimator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
 
     self.feedButton = [self createButtonWithTitle:@"feed" chooseColor:[UIColor peonyColor] andSize:45 andPositionX:-2];
     self.mapButton = [self createButtonWithTitle:@"map" chooseColor:[UIColor marigoldColor] andSize:45 andPositionX:-1];
@@ -211,7 +211,6 @@
     button.backgroundColor = color;
     button.tintColor = [UIColor paperColor];
     [button setTitle:title forState:UIControlStateNormal];
-
     [self.view addSubview:button];
     return button;
 }
@@ -310,8 +309,6 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"RootToCamera"]) {
         CameraViewController *cameraVC = segue.destinationViewController;
-//        NSString *pressed = @"hello";
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"Sent Location" object:nil userInfo:pressed];
         cameraVC.userLocation = self.userLocation;
     } else if ([segue.identifier isEqualToString:@"RootToDetail"]) {
         DetailViewController *detailVC = segue.destinationViewController;

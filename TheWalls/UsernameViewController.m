@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.view.backgroundColor = [UIColor paperColor];
     self.usernameNav.topItem.title = @"Username";
     self.usernameTextField.placeholder = @"create a username";
     [self.usernameTextField becomeFirstResponder];
@@ -52,7 +53,7 @@
     [self.currentUser saveInBackground];
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
-    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
     [self presentViewController:viewController animated:YES completion:NULL];
 }
 

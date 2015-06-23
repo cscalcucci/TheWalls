@@ -29,7 +29,7 @@
     } else {
         self.currentUser = [PFUser currentUser];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
-        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"CameraViewController"];
+        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
         [self presentViewController:viewController animated:NO completion:NULL];
     }
 }
