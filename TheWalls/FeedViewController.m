@@ -60,14 +60,17 @@
     Object *splat = [[Object alloc]init];
     splat = [self.splats objectAtIndex:indexPath.row];
     cell.splatImageView.file = splat.file;
-    cell.splatImageView.image = [UIImage imageNamed:@"triad"];
-    [cell.splatImageView loadInBackground];
-//    cell.splatImageView.contentMode = UIViewContentModeScaleAspectFill;
+//    cell.splatImageView.image = [UIImage imageNamed:@"triad"];
+    NSLog(@"cell tag: %lu", cell.tag);
     NSLog(@"cell width: %f", cell.frame.size.width);
+    NSLog(@"cell height: %f", cell.frame.size.height);
+    NSLog(@"image width: %f", cell.splatImageView.frame.size.width);
+    NSLog(@"image height: %f", cell.splatImageView.frame.size.height);
     cell.splatImageView.frame = CGRectMake(
                                  cell.frame.origin.x,
                                  cell.frame.origin.y, cell.frame.size.width, cell.frame.size.width);
     cell.splatImageView.clipsToBounds = YES;
+    [cell.splatImageView loadInBackground];
     return cell;
 }
 
