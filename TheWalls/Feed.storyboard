@@ -39,7 +39,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imageView" destination="loy-O1-Nh1" id="MB5-iL-StJ"/>
+                                            <outlet property="imageView" destination="loy-O1-Nh1" id="OO3-xF-S3T"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
