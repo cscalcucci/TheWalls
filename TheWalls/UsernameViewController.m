@@ -21,6 +21,7 @@
     [super viewDidLoad];
 
     self.currentUser = [PFUser currentUser];
+    self.view.backgroundColor = [UIColor paperColor];
     self.usernameNav.topItem.title = @"Username";
     self.usernameTextField.placeholder = @"create a username";
     [self.usernameTextField becomeFirstResponder];
@@ -56,7 +57,6 @@
     if (splatsQuery.countObjects == 0) {
         self.currentUser[@"username"] = self.usernameTextField.text;
         [self.currentUser saveInBackground];
-
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
         UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
         [self presentViewController:viewController animated:YES completion:NULL];
@@ -73,6 +73,9 @@
     [alert addButtonWithTitle:@"Dismiss"];
     alert.delegate = self;
     [alert show];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+    [self presentViewController:viewController animated:YES completion:NULL];
 }
 
 -(IBAction)unwindUsername:(UIStoryboardSegue *)segue {

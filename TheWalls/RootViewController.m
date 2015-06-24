@@ -16,16 +16,24 @@
     //UI setup
     self.view.backgroundColor = [UIColor paperColor];
 
+    //Tab bar item setup
+    self.tabBarItem.image = [[UIImage imageNamed:@"shape1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.tabBarItem.selectedImage = [[UIImage imageNamed:@"shape2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.tabBarItem.imageInsets = UIEdgeInsetsMake(-6, 0, 6, 0);
+
     //Map
     [self locationManagerInit];
     [self initializeMap];
     [self letThereBeMKAnnotation];
 
-    //Buttons - to subclass
-    [self initializeButtons];
 
     //Future gestures stuff
     [self leftSwipeGestureInitialization];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    //Buttons - to subclass
+    [self initializeButtons];
 }
 
 #pragma mark - Map & user location
@@ -48,7 +56,7 @@
     [self.view addSubview:self.primaryMapView];
 }
 
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"%@",error);
 }
 
@@ -66,6 +74,8 @@
     [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         CLPlacemark *placemark = placemarks.firstObject;
         self.userLocation = placemark.location;
+        //Setting shared location variable
+        [[SharedLocation sharedLocation] setLocation:self.userLocation];
     }];
 }
 
@@ -158,19 +168,18 @@
     button.layer.borderColor = button.titleLabel.textColor.CGColor;
     [button setImage:[UIImage imageNamed:@"icon-location"] forState:UIControlStateNormal];
 
-
     [self.view addSubview:button];
     return button;
 }
 
 - (UIButton *)createLogoutButton {
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width, 20, 65, 65)];
-    button.layer.cornerRadius = button.bounds.size.width / 2;
-    button.backgroundColor = [UIColor peonyColor];
-    button.tintColor = [UIColor paperColor];
-    button.userInteractionEnabled = YES;
-    [button setTitle:@"logout" forState:UIControlStateNormal];
-    [self.view addSubview:button];
+//    button.layer.cornerRadius = button.bounds.size.width / 2;
+//    button.backgroundColor = [UIColor peonyColor];
+//    button.tintColor = [UIColor paperColor];
+//    button.userInteractionEnabled = YES;
+//    [button setTitle:@"logout" forState:UIControlStateNormal];
+//    [self.view addSubview:button];
     return button;
 }
 
@@ -178,98 +187,101 @@
 //Need to subclass each button - draw, photo, audio
 
 - (void)initializeButtons {
-    self.areButtonsFanned = NO;
-    self.dynamicAnimator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
-    self.soundButton =  [self createButtonWithTitle:@"" chooseColor:[UIColor hamlindigoColor]];
-    self.photoButton =  [self createButtonWithTitle:@"photo" chooseColor:[UIColor limeColor]];
-    self.feedButton =   [self createButtonWithTitle:@"feed" chooseColor:[UIColor peonyColor]];
-    self.mainButton =   [self createButtonWithTitle:@"main" chooseColor:[UIColor peonyColor]];
-    self.centerMapButton = [self createCenterMapButton];
+//    self.areButtonsFanned = NO;
+//    self.dynamicAnimator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
 
-    self.logoutButton = [self createLogoutButton];
-    [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
-    [self.photoButton addTarget:self action:@selector(onCameraButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.logoutButton addTarget:self action:@selector(userLogout) forControlEvents:UIControlEventTouchUpInside];
-    [self.centerMapButton addTarget:self action:@selector(didTapCenterMapButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.feedButton addTarget:self action:@selector(onLeftButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+//    self.feedButton = [self createButtonWithTitle:@"feed" chooseColor:[UIColor peonyColor] andSize:45 andPositionX:-2];
+//    self.mapButton = [self createButtonWithTitle:@"map" chooseColor:[UIColor marigoldColor] andSize:45 andPositionX:-1];
+//    self.cameraButton = [self createButtonWithTitle:@"cam" chooseColor:[UIColor limeColor] andSize:65 andPositionX:0];
+//    self.activityButton = [self createButtonWithTitle:@"act" chooseColor:[UIColor hamlindigoColor] andSize:45 andPositionX:1];
+//    self.profileButton = [self createButtonWithTitle:@"pro" chooseColor:[UIColor peonyColor] andSize:45 andPositionX:2];
+//
+//
+//    self.centerMapButton = [self createCenterMapButton];
+
+//    self.logoutButton = [self createLogoutButton];
+//    [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.photoButton addTarget:self action:@selector(onCameraButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+////    [self.logoutButton addTarget:self action:@selector(userLogout) forControlEvents:UIControlEventTouchUpInside];
+//    [self.centerMapButton addTarget:self action:@selector(didTapCenterMapButton:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.feedButton addTarget:self action:@selector(onLeftButtonPressed) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (UIButton *)createButtonWithTitle:(NSString *)title chooseColor:(UIColor *)color {
-    CGRect frame = self.view.frame;
-    self.diameter = 65;
-    self.gap = 20;
-
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - (_diameter + (_gap * 1.6)),frame.size.height - (_diameter + _gap), _diameter, _diameter)];
-    button.layer.cornerRadius = button.bounds.size.width / 2;
-    button.backgroundColor = color;
-    button.tintColor = [UIColor paperColor];
-    [button setTitle:title forState:UIControlStateNormal];
-
-    [self.view addSubview:button];
+- (UIButton *)createButtonWithTitle:(NSString *)title chooseColor:(UIColor *)color andSize:(int)size andPositionX:(int)position {
+//    int gap = 45;
+//    int coefficient = (self.view.frame.size.width / 5) * position;
+//    CGPoint center = self.view.center;
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, size, size)];
+//    button.center = CGPointMake(center.x + coefficient, self.view.frame.size.height - gap);
+//    button.layer.cornerRadius = button.bounds.size.width / 2;
+//    button.backgroundColor = color;
+//    button.tintColor = [UIColor paperColor];
+//    [button setTitle:title forState:UIControlStateNormal];
+//    [self.view addSubview:button];
     return button;
 }
 
 - (void)fanButtons:(id)sender{
-    [self.dynamicAnimator removeAllBehaviors];
-    if (self.areButtonsFanned) {
-        [self fanIn];
-    } else {
-        [self fanOut];
-        [self switchMainButtonState];
-    }
-    self.areButtonsFanned = !self.areButtonsFanned;
+//    [self.dynamicAnimator removeAllBehaviors];
+//    if (self.areButtonsFanned) {
+//        [self fanIn];
+//    } else {
+//        [self fanOut];
+//        [self switchMainButtonState];
+//    }
+//    self.areButtonsFanned = !self.areButtonsFanned;
 }
 
 - (void)switchMainButtonState {
     //trying to change the state when pressed
-    [self.mainButton.layer setBorderColor:(__bridge CGColorRef)([UIColor peonyColor])];
-    [self.mainButton.layer setBorderWidth:5.0];
+//    [self.mainButton.layer setBorderColor:(__bridge CGColorRef)([UIColor peonyColor])];
+//    [self.mainButton.layer setBorderWidth:5.0];
 }
 
 - (void)fanOut {
-    UISnapBehavior *snapBehavior;
-    CGPoint point;
-    point = CGPointMake(self.mainButton.frame.origin.x - (_diameter * 0.75), self.mainButton.frame.origin.y + (_diameter/2));
-    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.soundButton snapToPoint:point];
-    [self.dynamicAnimator addBehavior:snapBehavior];
-    point = CGPointMake(self.mainButton.frame.origin.x - (_diameter * 2), self.mainButton.frame.origin.y + (_diameter/2));
-    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.photoButton snapToPoint:point];
-    [self.dynamicAnimator addBehavior:snapBehavior];
-    point = CGPointMake(self.mainButton.frame.origin.x - (_diameter * 3.25), self.mainButton.frame.origin.y + (_diameter/2));
-    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.feedButton snapToPoint:point];
-    [self.dynamicAnimator addBehavior:snapBehavior];
+//    UISnapBehavior *snapBehavior;
+//    CGPoint point;
+//    point = CGPointMake(self.mainButton.frame.origin.x - (_diameter * 0.75), self.mainButton.frame.origin.y + (_diameter/2));
+//    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.soundButton snapToPoint:point];
+//    [self.dynamicAnimator addBehavior:snapBehavior];
+//    point = CGPointMake(self.mainButton.frame.origin.x - (_diameter * 2), self.mainButton.frame.origin.y + (_diameter/2));
+//    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.photoButton snapToPoint:point];
+//    [self.dynamicAnimator addBehavior:snapBehavior];
+//    point = CGPointMake(self.mainButton.frame.origin.x - (_diameter * 3.25), self.mainButton.frame.origin.y + (_diameter/2));
+//    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.feedButton snapToPoint:point];
+//    [self.dynamicAnimator addBehavior:snapBehavior];
 
-    [self loginButtonFlyIn:self.logoutButton];
+//    [self loginButtonFlyIn:self.logoutButton];
 }
 
-- (void)loginButtonFlyIn:(UIButton *)button {
-    CGRect movement = button.frame;
-    movement.origin.x = self.view.frame.size.width - 97;
-
-    [UIView animateWithDuration:0.2 animations:^{
-        button.frame = movement;
-    }];
-}
-
-- (void)loginButtonFlyOut:(UIButton *)button {
-    CGRect movement = button.frame;
-    movement.origin.x = self.view.frame.size.width;
-
-    [UIView animateWithDuration:0.2 animations:^{
-        button.frame = movement;
-    }];
-}
+//- (void)loginButtonFlyIn:(UIButton *)button {
+//    CGRect movement = button.frame;
+//    movement.origin.x = self.view.frame.size.width - 97;
+//
+//    [UIView animateWithDuration:0.2 animations:^{
+//        button.frame = movement;
+//    }];
+//}
+//
+//- (void)loginButtonFlyOut:(UIButton *)button {
+//    CGRect movement = button.frame;
+//    movement.origin.x = self.view.frame.size.width;
+//
+//    [UIView animateWithDuration:0.2 animations:^{
+//        button.frame = movement;
+//    }];
+//}
 
 - (void)fanIn {
-    UISnapBehavior *snapBehavior;
-    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.soundButton snapToPoint:self.mainButton.center];
-    [self.dynamicAnimator addBehavior:snapBehavior];
-    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.photoButton snapToPoint:self.mainButton.center];
-    [self.dynamicAnimator addBehavior:snapBehavior];
-    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.feedButton snapToPoint:self.mainButton.center];
-    [self.dynamicAnimator addBehavior:snapBehavior];
+//    UISnapBehavior *snapBehavior;
+//    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.soundButton snapToPoint:self.mainButton.center];
+//    [self.dynamicAnimator addBehavior:snapBehavior];
+//    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.photoButton snapToPoint:self.mainButton.center];
+//    [self.dynamicAnimator addBehavior:snapBehavior];
+//    snapBehavior = [[UISnapBehavior alloc]initWithItem:self.feedButton snapToPoint:self.mainButton.center];
+//    [self.dynamicAnimator addBehavior:snapBehavior];
 
-    [self loginButtonFlyOut:self.logoutButton];
+//    [self loginButtonFlyOut:self.logoutButton];
 }
 
 - (void)onCameraButtonPressed {
@@ -303,8 +315,6 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"RootToCamera"]) {
         CameraViewController *cameraVC = segue.destinationViewController;
-//        NSString *pressed = @"hello";
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"Sent Location" object:nil userInfo:pressed];
         cameraVC.userLocation = self.userLocation;
     } else if ([segue.identifier isEqualToString:@"RootToDetail"]) {
         DetailViewController *detailVC = segue.destinationViewController;

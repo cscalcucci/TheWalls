@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FoursquareAPI.h"
 #import <CoreLocation/CoreLocation.h>
+
+#import "FoursquareAPI.h"
+#import "SharedLocation.h"
 
 @interface SelectLocationViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

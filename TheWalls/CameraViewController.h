@@ -10,13 +10,13 @@
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
 
+#import "FoursquareAPI.h"
 #import "Object.h"
 #import "SelectLocationViewController.h"
 #import "RootViewController.h"
-#import "FoursquareAPI.h"
 #import "UIColor+CustomColors.h"
 
-@interface CameraViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCaptureFileOutputRecordingDelegate>
+@interface CameraViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCaptureFileOutputRecordingDelegate, UITabBarControllerDelegate>
 
 @property CLLocation *userLocation;
 @property UIImage *imageDidSelected;
