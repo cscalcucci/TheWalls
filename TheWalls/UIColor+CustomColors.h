@@ -14,6 +14,7 @@
 + (UIColor *)hamlindigoColor;
 + (UIColor *)limeColor;
 + (UIColor *)paperColor;
++ (UIColor *)marigoldColor;
 + (UIImage *)imageWithColor:(UIColor *)color;
 
 @end

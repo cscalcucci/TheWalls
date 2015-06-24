@@ -13,6 +13,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self rightSwipeGestureInitialization];
+    self.userLocation = [[SharedLocation sharedLocation] getLocation];
+    NSLog(@"%@", self.userLocation);
 
     //Foursquare API
     self.venueUrlCall = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%f,%f&oauth_token=N5Z3YJNLEWD4KIBIOB1C22YOPTPSJSL3NAEXVUMYGJC35FMP&v=20150617", self.userLocation.coordinate.latitude, self.userLocation.coordinate.longitude]];
@@ -34,7 +36,6 @@
 - (void)setFoursquareResults:(NSArray *)foursquareResults {
     _foursquareResults = foursquareResults;
 }
-
 
 #pragma mark - Swipe Gestures
 
@@ -67,7 +68,5 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedLocation" object:[self.foursquareResults objectAtIndex:indexPath.row]];
 }
-
-
 
 @end

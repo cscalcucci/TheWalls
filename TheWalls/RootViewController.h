@@ -10,8 +10,8 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+#import "SharedLocation.h"
 #import "UIColor+CustomColors.h"
-//#import "TabBarController.h"
 #import "Object.h"
 #import "CameraViewController.h"
 #import "DetailViewController.h"
@@ -40,10 +40,17 @@ static NSString * const currentLocationDidChangeNotification = @"currentLocation
 
 //Button properties
 @property UIDynamicAnimator *dynamicAnimator;
-@property UIButton *soundButton;
-@property UIButton *photoButton;
+
 @property UIButton *feedButton;
-@property UIButton *mainButton;
+@property UIButton *mapButton;
+@property UIButton *cameraButton;
+@property UIButton *activityButton;
+@property UIButton *profileButton;
+
+
+
+
+
 @property UIButton *logoutButton;
 @property UIButton *centerMapButton;
 @property BOOL areButtonsFanned;
