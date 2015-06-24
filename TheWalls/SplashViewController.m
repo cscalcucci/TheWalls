@@ -28,8 +28,8 @@
         [self performSegueWithIdentifier:@"NewSessionSegue" sender:self];
     } else {
         self.currentUser = [PFUser currentUser];
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Feed" bundle:[NSBundle mainBundle]];
-        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
+        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
         [self presentViewController:viewController animated:NO completion:NULL];
     }
 }

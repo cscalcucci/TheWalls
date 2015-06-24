@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.currentUser = [PFUser currentUser];
     self.usernameNav.topItem.title = @"Username";
     self.usernameTextField.placeholder = @"create a username";
     [self.usernameTextField becomeFirstResponder];
@@ -48,12 +49,29 @@
 }
 
 -(void)updateUsername {
-    self.currentUser.username = self.usernameTextField.text;
-    [self.currentUser saveInBackground];
+    PFQuery *splatsQuery = [PFUser query];
+    [splatsQuery whereKey:@"username" equalTo:self.usernameTextField.text];
+    NSLog(@"%lu", splatsQuery.countObjects);
+    NSLog(@"%@", self.usernameTextField.text);
+    if (splatsQuery.countObjects == 0) {
+        self.currentUser[@"username"] = self.usernameTextField.text;
+        [self.currentUser saveInBackground];
 
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
-    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
-    [self presentViewController:viewController animated:YES completion:NULL];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"PrimaryView" bundle:[NSBundle mainBundle]];
+        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
+        [self presentViewController:viewController animated:YES completion:NULL];
+    } else {
+        [self showAlert:@"Username error" param2:[NSString stringWithFormat:@"Username %@ is already taken. Please try again.", self.usernameTextField.text]];
+    }
+}
+
+-(void)showAlert:(NSString *)message param2:(NSString *)error {
+    UIAlertView *alert = [UIAlertView new];
+    alert.title = message;
+    alert.message = error;
+    [alert addButtonWithTitle:@"Dismiss"];
+    alert.delegate = self;
+    [alert show];
 }
 
 -(IBAction)unwindUsername:(UIStoryboardSegue *)segue {
