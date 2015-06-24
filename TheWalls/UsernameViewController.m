@@ -61,6 +61,7 @@
         UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
         [self presentViewController:viewController animated:YES completion:NULL];
     } else {
+        self.usernameTextField.text = @"";
         [self showAlert:@"Username error" param2:[NSString stringWithFormat:@"Username %@ is already taken. Please try again.", self.usernameTextField.text]];
     }
 }
