@@ -45,7 +45,6 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

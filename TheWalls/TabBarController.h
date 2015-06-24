@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TabBarController : UITabBarController
+#import "UIColor+CustomColors.h"
+
+@interface TabBarController : UITabBarController <UITabBarControllerDelegate>
 
 @end

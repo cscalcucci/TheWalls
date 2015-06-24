@@ -16,6 +16,11 @@
     //UI setup
     self.view.backgroundColor = [UIColor paperColor];
 
+    //Tab bar item setup
+    self.tabBarItem.image = [[UIImage imageNamed:@"shape1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.tabBarItem.selectedImage = [[UIImage imageNamed:@"shape2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.tabBarItem.imageInsets = UIEdgeInsetsMake(-6, 0, 6, 0);
+
     //Map
     [self locationManagerInit];
     [self initializeMap];
@@ -161,19 +166,18 @@
     button.layer.borderColor = button.titleLabel.textColor.CGColor;
     [button setImage:[UIImage imageNamed:@"icon-location"] forState:UIControlStateNormal];
 
-
     [self.view addSubview:button];
     return button;
 }
 
 - (UIButton *)createLogoutButton {
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width, 20, 65, 65)];
-    button.layer.cornerRadius = button.bounds.size.width / 2;
-    button.backgroundColor = [UIColor peonyColor];
-    button.tintColor = [UIColor paperColor];
-    button.userInteractionEnabled = YES;
-    [button setTitle:@"logout" forState:UIControlStateNormal];
-    [self.view addSubview:button];
+//    button.layer.cornerRadius = button.bounds.size.width / 2;
+//    button.backgroundColor = [UIColor peonyColor];
+//    button.tintColor = [UIColor paperColor];
+//    button.userInteractionEnabled = YES;
+//    [button setTitle:@"logout" forState:UIControlStateNormal];
+//    [self.view addSubview:button];
     return button;
 }
 
@@ -184,14 +188,14 @@
 //    self.areButtonsFanned = NO;
 //    self.dynamicAnimator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
 
-    self.feedButton = [self createButtonWithTitle:@"feed" chooseColor:[UIColor peonyColor] andSize:45 andPositionX:-2];
-    self.mapButton = [self createButtonWithTitle:@"map" chooseColor:[UIColor marigoldColor] andSize:45 andPositionX:-1];
-    self.cameraButton = [self createButtonWithTitle:@"cam" chooseColor:[UIColor limeColor] andSize:65 andPositionX:0];
-    self.activityButton = [self createButtonWithTitle:@"act" chooseColor:[UIColor hamlindigoColor] andSize:45 andPositionX:1];
-    self.profileButton = [self createButtonWithTitle:@"pro" chooseColor:[UIColor peonyColor] andSize:45 andPositionX:2];
-
-
-    self.centerMapButton = [self createCenterMapButton];
+//    self.feedButton = [self createButtonWithTitle:@"feed" chooseColor:[UIColor peonyColor] andSize:45 andPositionX:-2];
+//    self.mapButton = [self createButtonWithTitle:@"map" chooseColor:[UIColor marigoldColor] andSize:45 andPositionX:-1];
+//    self.cameraButton = [self createButtonWithTitle:@"cam" chooseColor:[UIColor limeColor] andSize:65 andPositionX:0];
+//    self.activityButton = [self createButtonWithTitle:@"act" chooseColor:[UIColor hamlindigoColor] andSize:45 andPositionX:1];
+//    self.profileButton = [self createButtonWithTitle:@"pro" chooseColor:[UIColor peonyColor] andSize:45 andPositionX:2];
+//
+//
+//    self.centerMapButton = [self createCenterMapButton];
 
 //    self.logoutButton = [self createLogoutButton];
 //    [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
@@ -202,28 +206,28 @@
 }
 
 - (UIButton *)createButtonWithTitle:(NSString *)title chooseColor:(UIColor *)color andSize:(int)size andPositionX:(int)position {
-    int gap = 45;
-    int coefficient = (self.view.frame.size.width / 5) * position;
-    CGPoint center = self.view.center;
+//    int gap = 45;
+//    int coefficient = (self.view.frame.size.width / 5) * position;
+//    CGPoint center = self.view.center;
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, size, size)];
-    button.center = CGPointMake(center.x + coefficient, self.view.frame.size.height - gap);
-    button.layer.cornerRadius = button.bounds.size.width / 2;
-    button.backgroundColor = color;
-    button.tintColor = [UIColor paperColor];
-    [button setTitle:title forState:UIControlStateNormal];
-    [self.view addSubview:button];
+//    button.center = CGPointMake(center.x + coefficient, self.view.frame.size.height - gap);
+//    button.layer.cornerRadius = button.bounds.size.width / 2;
+//    button.backgroundColor = color;
+//    button.tintColor = [UIColor paperColor];
+//    [button setTitle:title forState:UIControlStateNormal];
+//    [self.view addSubview:button];
     return button;
 }
 
 - (void)fanButtons:(id)sender{
-    [self.dynamicAnimator removeAllBehaviors];
-    if (self.areButtonsFanned) {
-        [self fanIn];
-    } else {
-        [self fanOut];
-        [self switchMainButtonState];
-    }
-    self.areButtonsFanned = !self.areButtonsFanned;
+//    [self.dynamicAnimator removeAllBehaviors];
+//    if (self.areButtonsFanned) {
+//        [self fanIn];
+//    } else {
+//        [self fanOut];
+//        [self switchMainButtonState];
+//    }
+//    self.areButtonsFanned = !self.areButtonsFanned;
 }
 
 - (void)switchMainButtonState {

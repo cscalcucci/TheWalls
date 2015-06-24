@@ -16,7 +16,7 @@
 #import "FoursquareAPI.h"
 #import "UIColor+CustomColors.h"
 
-@interface CameraViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCaptureFileOutputRecordingDelegate>
+@interface CameraViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCaptureFileOutputRecordingDelegate, UITabBarControllerDelegate>
 
 @property CLLocation *userLocation;
 @property UIImage *imageDidSelected;

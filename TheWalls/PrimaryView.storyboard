@@ -385,7 +385,7 @@
         <scene sceneID="12s-9K-V1H">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bix-g6-rE5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="okI-uZ-Kpa"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Item" image="icon-location" id="okI-uZ-Kpa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bkq-Dg-4Bz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -404,7 +404,7 @@
         <scene sceneID="uxG-Ch-wb4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UaO-Uw-uCK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="moV-CS-zTp"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Item" image="icon-shutter" id="moV-CS-zTp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tbq-ou-jF4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -462,7 +462,7 @@
         <scene sceneID="Oxi-iA-Jvx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mqm-aj-IGE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="HPY-gS-dyL"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="Item" image="icon-exit" id="HPY-gS-dyL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pvR-Qm-7h7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -478,4 +478,9 @@
             <point key="canvasLocation" x="2808" y="-376"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-exit" width="32" height="32"/>
+        <image name="icon-location" width="20" height="20"/>
+        <image name="icon-shutter" width="33" height="33"/>
+    </resources>
 </document>
