@@ -56,7 +56,7 @@
     [self.view addSubview:self.primaryMapView];
 }
 
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"%@",error);
 }
 

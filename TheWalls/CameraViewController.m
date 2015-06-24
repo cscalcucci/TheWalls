@@ -55,17 +55,17 @@ AVCaptureConnection *videoConnection;
 }
 
 - (void)setupUIButtons {
-    self.cameraButton = [self createButtonWithTitle:@"" chooseColor:[UIColor limeColor] andPosition:200];
+    self.cameraButton = [self createButtonWithTitle:@"" chooseColor:[UIColor limeColor] andPosition: 0];
     [self.cameraButton setImage:[UIImage imageNamed:@"icon-shutter"] forState:UIControlStateNormal];
     UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPressGesture:)];
     [self.cameraButton addGestureRecognizer:longPressRecognizer];
     [self.cameraButton addTarget:self action:@selector(captureImage) forControlEvents:UIControlEventTouchUpInside];
 
-    self.saveButton = [self createButtonWithTitle:@"" chooseColor:[UIColor peonyColor] andPosition:100];
+    self.saveButton = [self createButtonWithTitle:@"" chooseColor:[UIColor peonyColor] andPosition: 100];
     [self.saveButton setImage:[UIImage imageNamed:@"icon-exit"] forState:UIControlStateNormal];
     [self.saveButton addTarget:self action:@selector(saveActions) forControlEvents:UIControlEventTouchUpInside];
 
-    self.locationButton = [self createButtonWithTitle:@"" chooseColor:[UIColor hamlindigoColor] andPosition:300];
+    self.locationButton = [self createButtonWithTitle:@"" chooseColor:[UIColor hamlindigoColor] andPosition:-100];
     [self.locationButton setImage:[UIImage imageNamed:@"icon-world"] forState:UIControlStateNormal];
     self.locationButton.userInteractionEnabled = YES;
     [self.locationButton addTarget:self action:@selector(segueToLocationTable) forControlEvents:UIControlEventTouchUpInside];
@@ -348,12 +348,11 @@ AVCaptureConnection *videoConnection;
 #pragma mark - Create buttons
 //Need to subclass each button - draw, photo, audio
 
-- (UIButton *)createButtonWithTitle:(NSString *)title chooseColor:(UIColor *)color andPosition:(int)xPosition {
-    CGRect frame = self.view.frame;
+- (UIButton *)createButtonWithTitle:(NSString *)title chooseColor:(UIColor *)color andPosition:(int)position {
+    CGPoint center = self.view.center;
     int diameter = 65;
-    int gap = 20;
-
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - xPosition,frame.size.height - (diameter + gap), diameter, diameter)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, diameter, diameter)];
+    button.center = CGPointMake(center.x + position, self.view.frame.size.height - 100);
     button.layer.cornerRadius = button.bounds.size.width / 2;
     button.backgroundColor = color;
     button.layer.borderColor = button.titleLabel.textColor.CGColor;
