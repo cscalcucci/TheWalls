@@ -19,6 +19,7 @@
 @dynamic latitude;
 @dynamic longitude;
 @dynamic venueName;
+@dynamic upVotes;
 
 + (void)load {
     [self registerSubclass];

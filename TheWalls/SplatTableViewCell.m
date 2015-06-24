@@ -30,4 +30,12 @@
     NSLog(@"Splat Upvoted");
 }
 
+- (IBAction)upvoteTapped:(UIButton *)sender {
+    [self.delegate ActivityCell:self didTapButton:sender ofType:@"upvote" atIndex:self.indexPath];
+}
+
+- (IBAction)downvoteTapped:(UIButton *)sender {
+    [self.delegate ActivityCell:self didTapButton:sender ofType:@"downvote" atIndex:self.indexPath];
+}
+
 @end

@@ -23,5 +23,6 @@
 @property NSString *venueName;
 @property double latitude; //fucked
 @property double longitude; //fucked
+@property int upVotes;
 
 @end

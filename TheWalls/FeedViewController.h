@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import "SplatTableViewCell.h"
 
-@interface FeedViewController : UIViewController <UICollectionViewDelegateFlowLayout>
+@interface FeedViewController : UIViewController <UICollectionViewDelegateFlowLayout, UITableViewDataSource, UITableViewDelegate, ActivityCellDelegate>
 
 @end

@@ -75,6 +75,9 @@
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="downvoteTapped:" destination="KEq-MI-prb" eventType="touchUpInside" id="BDT-PV-c5U"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdH-2a-LT5">
                                                     <rect key="frame" x="472" y="12" width="56" height="32"/>
@@ -87,6 +90,9 @@
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="upvoteTapped:" destination="KEq-MI-prb" eventType="touchUpInside" id="8QZ-yG-Z5L"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -105,9 +111,10 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="downButton" destination="cCS-9c-lJZ" id="5ay-nn-auM"/>
+                                            <outlet property="downvoteButton" destination="cCS-9c-lJZ" id="a1f-Q9-e9n"/>
                                             <outlet property="splatImageView" destination="loy-O1-Nh1" id="5VB-ya-rKS"/>
-                                            <outlet property="upButton" destination="DdH-2a-LT5" id="Yxp-h1-Y0v"/>
+                                            <outlet property="upvoteButton" destination="DdH-2a-LT5" id="ATY-43-e7s"/>
+                                            <outlet property="votesCount" destination="ZqQ-Sl-eLA" id="Mxt-NS-sL7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
