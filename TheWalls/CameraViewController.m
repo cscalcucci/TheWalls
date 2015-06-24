@@ -22,8 +22,6 @@ AVCaptureConnection *videoConnection;
                                        selector:@selector(updateLocation:) name:@"selectedLocation"
                                          object:nil];
 
-
-
     //Setup background and imageview
     self.view.backgroundColor = [UIColor blackColor];
     self.view.backgroundColor = [UIColor paperColor];

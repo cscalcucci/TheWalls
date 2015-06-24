@@ -44,16 +44,20 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SplatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
-    cell.upButton.backgroundColor = [UIColor
-                                     colorWithRed:0.518
-                                     green:0.894
-                                     blue:0.345
-                                     alpha:1];
-    cell.downButton.backgroundColor = [UIColor
-                                       colorWithRed:0.890
-                                       green:0.376
-                                       blue:0.494
-                                       alpha:1];
+    [[cell.downButton layer] setBorderWidth:1.0f];
+    [[cell.downButton layer] setCornerRadius:4.0f];
+    [[cell.downButton layer] setBorderColor:[UIColor
+                                             colorWithRed:0.38
+                                             green:0.38
+                                             blue:0.38
+                                             alpha:1].CGColor];
+    [[cell.upButton layer] setBorderWidth:1.0f];
+    [[cell.upButton layer] setCornerRadius:4.0f];
+    [[cell.upButton layer] setBorderColor:[UIColor
+                                             colorWithRed:0.38
+                                             green:0.38
+                                             blue:0.38
+                                             alpha:1].CGColor];
     cell.upButton.tag = indexPath.row;
     [cell.upButton addTarget:self action:@selector(onUpButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     cell.downButton.tag = indexPath.row;
