@@ -12,9 +12,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"Tab bar!");
+}
+
+- (void)setupUIElements {
     self.tabBar.tintColor = [UIColor peonyColor];
     [self.tabBar setTranslucent:YES];
-
 }
 
 - (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
@@ -23,6 +26,17 @@
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return newImage;
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+//    [self assignTabColors];
+    NSLog(@"%li", self.selectedIndex);
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+//    [self assignTabColors];
 }
 
 //- (void)assignTabColors {
@@ -46,21 +60,10 @@
 //        case 4:
 //            self.tabBar.tintColor = [UIColor paperColor];
 //            break;
-//            
+//
 //        default:
 //            break;
 //    }
 //}
-
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-//    [self assignTabColors];
-    NSLog(@"%li", self.selectedIndex);
-
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-//    [self assignTabColors];
-}
 
 @end

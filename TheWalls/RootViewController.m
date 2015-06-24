@@ -74,6 +74,8 @@
     [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         CLPlacemark *placemark = placemarks.firstObject;
         self.userLocation = placemark.location;
+        //Setting shared location variable
+        [[SharedLocation sharedLocation] setLocation:self.userLocation];
     }];
 }
 

@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+#import "SharedLocation.h"
 #import "UIColor+CustomColors.h"
 #import "Object.h"
 #import "CameraViewController.h"
@@ -19,7 +20,7 @@
 //Notification center - will probably have to refactor instead of passing location throughout the application
 static NSString * const currentLocationDidChangeNotification = @"currentLocationDidChangeNotification";
 
-@interface RootViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UITabBarControllerDelegate>
+@interface RootViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
 //Chris Properties
 @property NSArray *objectArray;

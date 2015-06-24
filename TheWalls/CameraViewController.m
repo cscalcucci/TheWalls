@@ -17,11 +17,11 @@ AVCaptureConnection *videoConnection;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    //Location
     [[NSNotificationCenter defaultCenter]
                                     addObserver:self
                                        selector:@selector(updateLocation:) name:@"selectedLocation"
                                          object:nil];
-
 
 
     //Setup background and imageview
@@ -38,7 +38,7 @@ AVCaptureConnection *videoConnection;
 
     //Initialize preview layer and AV functions
     [self initializeAVItems];
-    [self testDevices];
+//    [self testDevices];
 
     //Setup UI buttons;
     [self setupUIButtons];
